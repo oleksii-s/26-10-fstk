@@ -1,0 +1,73 @@
+                            /* Стили для всего сайта */
+ body {
+     background-color: azure;
+     font-size: 1em;
+     color: dimgray;
+     font-family: sans-serif;
+ }
+                           /* Стили для шапки сайта*/
+ img {
+     position: absolute;
+     padding-top:5px ;
+     padding-left: 5px;
+     height: 140px;
+     width: 120px;
+ }
+
+ header {
+     height: 200px;
+     background-color: #E3E3E3;
+     border-radius: 7px 7px 7px 7px;
+ }
+ h1 {
+     padding-left: 150px;
+     padding-top: 10px;
+ }
+ hr {
+     position:absolute;
+     top: 198px;
+     left:50px;
+     width:1500px;
+ }
+              /* Прописал для всех ссылок, но можно было и отдельно для меню прописать */
+ a {
+     color: dimgray;
+     text-decoration: none;
+
+     border-radius: 5px;
+ }
+ .menu {
+      position: relative;
+      left:160px;
+      margin-left:50px ;
+      font-size: 1.7em;
+      padding-left: 6px;
+ }
+ .menu:hover {
+     background-color: lightgray;
+ }
+ #h_info {
+     position: relative;
+     left:130px;
+
+ }
+                           /* Стили для контента */
+ #page-wrap {
+     position: relative;
+     height: 550px;
+     background-color: #E3E3E3;
+     padding-left: 30px;
+     padding-top: 10px;
+     border-radius: 7px 7px 7px 7px;
+ }
+ .clear{
+     height: 10px;
+ }
+                         /* Стили для футера */
+ footer {
+     height: 50px;
+     background:#E5E5E4;
+     padding-left: 10px;
+     padding-top: 20px;
+
+ }
