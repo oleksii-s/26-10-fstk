@@ -1,0 +1,75 @@
+html {
+    background: url("../resources/hero8.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Playfair Display', serif;
+    color: #050505;
+}
+
+header {
+    color: #f36617;
+}
+
+header, nav {
+    text-align: center;
+}
+
+nav a {
+    color: #f7d25c;
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+nav a:hover {
+    color: #f3efe5;
+}
+
+main {
+    width: 60% !important;
+    margin: 0 auto !important;
+    padding: 1%;
+    background-color: #e9d1b6;
+}
+
+main section p{
+    padding-left: 2%;
+}
+
+address {
+    width: 30% !important;
+    height: 5em;
+    margin: 0 auto !important;
+    padding: 1%;
+    background-color: #937b6a;
+}
+
+address section {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+address section p {
+    font-size: 0.8vw;
+}
+
+#scrollMe {
+    float: right;
+    margin-right: 7%;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    border-color: #7d3e16;
+    background-color: #f36617;
+    cursor: pointer;
+}
+
+#scrollMe:hover {
+    background-color: #b25717;
+}
+
+#scrollMe:active {
+    background-color: #7d3e16;
+}
