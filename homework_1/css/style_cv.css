@@ -11,7 +11,7 @@ a {
 }
 
 a:hover {
-    color: #003300;
+  color: #003300;
 }
 
 .bold {
@@ -41,7 +41,6 @@ header {
 
 header td {
   text-align: left;
-
 }
 
 article {
@@ -75,5 +74,4 @@ article li {
 footer li {
   list-style: none;
   display: inline;
-
 }
