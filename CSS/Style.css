@@ -46,7 +46,7 @@
  .menu:hover {
      background-color: lightgray;
  }
- #h_info {
+ article {
      position: relative;
      left:130px;
 
