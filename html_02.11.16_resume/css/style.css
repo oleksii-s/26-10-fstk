@@ -1,0 +1,65 @@
+
+body {
+    /*background-image: url("http://oboi77.ru/file/product/medium/Kirpichnaja_stena.jpg");*/
+    background-image: url(../src/wall.jpg);
+    background-size: contain;
+    font-family: Corbel;
+}
+
+header, nav, section {
+    width: 900px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 4px ridge rgba(255, 154, 15, 0.51);
+    padding: 10px;
+    background-color: moccasin;
+    text-align: center;
+}
+
+nav a {
+    font-size: 20px;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+}
+
+nav a:hover, nav a:focus {
+    color: #900400;
+}
+
+footer {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
+
+table {
+    margin: auto;
+    width: inherit;
+}
+
+h2, h3, dt, span {
+    font-weight: bold;
+    font-style: italic;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+li {
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
