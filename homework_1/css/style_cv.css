@@ -1,5 +1,5 @@
 * {
-  font-family: Cambria;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -11,7 +11,11 @@ a {
 }
 
 a:hover {
-  color: #003300;
+  color: #abc;
+}
+
+a[href*="@"] {
+  text-decoration: none;
 }
 
 .bold {
@@ -20,7 +24,7 @@ a:hover {
 
 .italic {
   font-style: italic;
-  font-size: 12pt;
+  font-size: 1.1rem;
   text-align: center;
 }
 
@@ -37,33 +41,53 @@ header {
   padding: 10px;
   border-top: 2px solid #EDEDED;
   border-bottom: 2px solid #EDEDED;
+  font-size: 0.9rem;
 }
 
-header td {
+.left-column {
   text-align: left;
+  width: 18%;
+}
+
+.right-column {
+  width: 82%;
 }
 
 article {
-  margin: 0px 15px 0px 15px;
+  margin: 0 15px 0 15px;
   padding: 10px;
   border-bottom: 2px solid #EDEDED;
   text-align: left;
+  font-size: 0.9rem;
+}
+
+article:hover {
+  background-color: rgba(219, 219, 219, 0.64);
+}
+
+article li {
+  list-style: circle;
+}
+
+article li:nth-child(3n){
+  text-decoration: underline;
+}
+
+article li::after{
+  content: " +";
 }
 
 .last {
-  margin: 0px 15px 0px 15px;
+  margin: 0 15px 0 15px;
   padding: 10px;
   text-align: left;
+  font-size: 0.9rem;
 }
 
 footer {
   padding: 5px;
   margin: 10px;
   background: #F2F2F2;
-}
-
-article li {
-  list-style: circle;
 }
 
 .next {
@@ -74,4 +98,31 @@ article li {
 footer li {
   list-style: none;
   display: inline;
+}
+/* Mobile devices */
+@media screen and (max-device-width: 480px) {
+  .container {
+    width: 70%;
+  }
+
+  header,
+  article {
+    font-size: 10px;
+  }
+
+  .last {
+    font-size: 10px;
+  }
+
+  .next {
+    margin-left: 32%;
+  }
+
+  .italic {
+    font-size: 10px;
+  }
+
+  img[alt*="myphoto"] {
+    height: 100px;
+  }
 }
