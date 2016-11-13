@@ -26,7 +26,7 @@ table {
     text-align: left;
 }
 tr {
-    font-size: 18px;
+    font-size: 0.8rem;
     padding: 10px;
 }
 td {
@@ -37,11 +37,17 @@ td {
 pre {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 }
-h1, h2 {
+h2 {
     font-family: "helvetica";
     color: #2E121A;
     text-align: center;
+    font-size: 1rem;
 }
+h1 {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 2rem;
+    color: #2E121A;
+ }
 .social_networks img {
     margin-right: 5px;
     margin-bottom: 5px;
@@ -53,4 +59,60 @@ h1, h2 {
 .link:hover {
     color: #008000;
     text-decoration: none;
+}
+img[src$=".png"] {
+    width: 25px;
+}
+ul :nth-child(odd) {
+    background: #FDF4E3;
+}
+li:before {
+    content: "\2713  ";
+}
+/* monitors and laptops */
+@media screen and (min-width: 1240px)  {
+    table {
+        width: 1000px;
+    }
+}
+/* tablet */
+@media screen and (min-width: 1024px) and (max-width: 1240px)  {
+    table {
+        width: 900px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    table {
+        width: 700px;
+    }
+}
+/* mobile */
+@media screen and (max-width: 768px) {
+    table {
+        width: 500px;
+        border: 10px solid #BABDBA;
+    }
+    .crop{
+        width: 50px;
+        overflow:hidden;
+    }
+    .crop img{
+        margin:-200px -250px -400px -250px;
+    }
+    img[src$=".png"] {
+        width: 15px;
+    }
+    tr {
+        padding: 5px;
+        font-size: 0.7rem;
+    }
+    td {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 0.8rem;
+    }
 }
