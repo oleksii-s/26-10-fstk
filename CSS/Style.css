@@ -1,73 +1,121 @@
-                            /* Стили для всего сайта */
- body {
-     background-color: azure;
-     font-size: 1em;
-     color: dimgray;
-     font-family: sans-serif;
- }
+
+
+  *{
+      transition: all.2s;
+  }                    /* Стили для всего сайта */
+
+  body {
+      background-color: azure;
+      font-size:1em;
+      color: dimgray;
+  }
+
+
                            /* Стили для шапки сайта*/
  img {
      position: absolute;
-     padding-top:5px ;
-     padding-left: 5px;
-     height: 140px;
-     width: 120px;
+     padding-top:0.313em ;
+     padding-left:0.313em;
+     height: 8.750em;
+     width: 7.500em;
  }
 
  header {
-     height: 200px;
+     height: 13em;
      background-color: #E3E3E3;
-     border-radius: 7px 7px 7px 7px;
+     border-radius: 0.438em 0.438em 0.438em 0.438em;
  }
  h1 {
-     padding-left: 150px;
-     padding-top: 10px;
+     padding-left: 5.375em;
+     padding-top: 0.025em;
+     text-shadow: 0.250em 0.250em 0.250em #aaa;
+     font-family: 'Pacifico', cursive;
+
  }
- hr {
-     position:absolute;
-     top: 198px;
-     left:50px;
-     width:1500px;
+ h3 {
+     font-family: 'Pacifico', cursive;
  }
-              /* Прописал для всех ссылок, но можно было и отдельно для меню прописать */
+                        /* Прописал для всех ссылок, но можно было и отдельно для меню прописать */
  a {
      color: dimgray;
      text-decoration: none;
 
-     border-radius: 5px;
+     border-radius: 0.313em;
  }
  .menu {
       position: relative;
-      left:160px;
-      margin-left:50px ;
-      font-size: 1.7em;
-      padding-left: 6px;
+      left:8em;
+      margin-left:3.125em ;
+      font-size: 1.5em;
+      padding-left: 0.375em;
  }
- .menu:hover {
-     background-color: lightgray;
+ .menu:hover {  background-color: lightgray;
  }
  article {
      position: relative;
-     left:130px;
+     left:8.125em;
 
  }
                            /* Стили для контента */
  #page-wrap {
      position: relative;
-     height: 550px;
+     height: 36.875em;
+     width: auto;
      background-color: #E3E3E3;
-     padding-left: 30px;
-     padding-top: 10px;
-     border-radius: 7px 7px 7px 7px;
+     padding-left: 1.875em;
+     padding-top: 0.625em;
+     border-radius: 0.438em 0.438em 0.438em 0.438em;
  }
  .clear{
-     height: 10px;
+     height: 0.625em;
  }
                          /* Стили для футера */
  footer {
-     height: 50px;
+     height: 3.125em;
      background:#E5E5E4;
-     padding-left: 10px;
-     padding-top: 20px;
+     padding-left: 0.625em;
+     padding-top: 1.250em;
+}
+                         /* селектор аьрибута */
+[title] {
+    color:#5F665A;
+}
+                        /* псевдоэлементы */
+ h1::after{
+     content:"";         /* можно было просто <hr> вставить, но я создал ее с помощью CSS */
+     display: block;
+     width:490px;
+     height: 1px;
+     background: #5F665A;
+     margin-top: 1px;
+ }
+
+ @media screen and (min-width: 1920px) {
+    body{
+        width: 1920px;
+    }
+ }
+ @media screen and (min-width: 1024px) and (max-width:1280px){
+     body{
+         width: 1100px;
+         background-color: antiquewhite;
+     }
+ }
+ @media screen and (min-width: 700px)and(max-width: 1024px) {
+     body {
+         width: 800px;
+         color:red;
+     }
 
  }
+                                 /*mobile*/
+  @media screen and (min-width:320px) and (max-width:480px ){
+      body{
+          background-color: lawngreen;
+          font-size:0.35em;
+          color: dimgray;
+      }
+
+  }
+
+
