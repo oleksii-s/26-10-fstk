@@ -53,6 +53,10 @@ header {
   width: 82%;
 }
 
+.middle-column {
+  width: 40%;
+}
+
 article {
   margin: 0 15px 0 15px;
   padding: 10px;
@@ -86,7 +90,7 @@ article li::after{
 
 footer {
   padding: 5px;
-  margin: 10px;
+  /*margin: 10px;*/
   background: #F2F2F2;
 }
 
@@ -102,27 +106,46 @@ footer li {
 /* Mobile devices */
 @media screen and (max-device-width: 480px) {
   .container {
-    width: 70%;
+    width: 95%;
   }
 
   header,
   article {
-    font-size: 10px;
+    font-size: 0.6rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .middle-column {
+    width: 30%;
   }
 
   .last {
-    font-size: 10px;
+    font-size: 0.6rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer {
+    margin: 0;
+    padding: 0;
   }
 
   .next {
-    margin-left: 32%;
+    position: relative;
+    right: 7%;
   }
 
   .italic {
-    font-size: 10px;
+    font-size: 0.8rem;
   }
 
   img[alt*="myphoto"] {
     height: 100px;
   }
+
+  .next img {
+    height: 30px;
+  }
+
 }
