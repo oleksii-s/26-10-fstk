@@ -1,25 +1,32 @@
 
+@import "style_min1920px.css";
+@import "style_1600-1920px.css";
+@import "style_1280-1600px.css";
+@import "style_960-1280px.css";
+@import "style_640-960px.css";
+@import "style_max640px.css";
+
+@import url('https://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400i&subset=cyrillic,cyrillic-ext');
+
 body {
-    /*background-image: url("http://oboi77.ru/file/product/medium/Kirpichnaja_stena.jpg");*/
+    margin: auto;
+    width: 70%;
+    max-width: 3200px;
     background-image: url(../src/wall.jpg);
     background-size: contain;
-    font-family: Corbel;
+    font-family: 'PT Serif Caption', serif;
 }
 
 header, nav, section {
-    width: 900px;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 4px ridge rgba(255, 154, 15, 0.51);
-    padding: 10px;
     background-color: moccasin;
     text-align: center;
 }
 
+section {
+    padding: 0;
+}
+
 nav a {
-    font-size: 20px;
-    padding: 5px;
     color: black;
     font-weight: bold;
     font-style: italic;
@@ -31,7 +38,6 @@ nav a:hover, nav a:focus {
 }
 
 footer {
-    font-size: 18px;
     font-weight: bold;
     text-align: center;
     text-decoration: underline;
@@ -39,7 +45,7 @@ footer {
 
 table {
     margin: auto;
-    width: inherit;
+    border-top: none;
 }
 
 h2, h3, dt, span {
@@ -47,15 +53,13 @@ h2, h3, dt, span {
     font-style: italic;
 }
 
-h3 {
-    font-size: 20px;
-}
-
 li {
     text-align: left;
 }
 
-
+footer p:before {
+    content: "© ";
+}
 
 
 

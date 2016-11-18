@@ -1,0 +1,50 @@
+
+@media screen and (min-width: 1921px) { /*640px - 20%*/
+
+    header img {
+        width: 432px; /*+ 20%*/
+    }
+
+    table img {
+        width: 79px;
+    }
+
+    header, nav, section {
+        border: 0.36em ridge rgba(255, 154, 15, 0.51);
+        padding: 1.08em;
+        margin-top: 1.08em;
+    }
+
+    nav a {
+        font-size: 1.8em;
+        padding: 0.288em;
+    }
+
+    footer {
+        font-size: 1.584em;
+    }
+
+    table {
+        border-spacing: 1.44em;
+    }
+
+    h1, h2 {
+        margin: 2.592%;
+    }
+
+    h1 {
+        font-size: 2.88em;
+    }
+
+    h2 {
+        font-size: 2.16em;
+    }
+
+    main {
+        font-size: 1.44em;
+    }
+
+    [name] {
+        font-size: 1.44em;
+    }
+}
