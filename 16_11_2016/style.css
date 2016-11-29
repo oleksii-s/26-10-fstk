@@ -1,0 +1,308 @@
+body {
+    background-color: #fafafa;
+    width: 100%;
+    margin: auto;
+    zoom: 80%;
+}
+ul {
+    list-style-type: none;
+}
+
+.call {
+    float: right;
+    font: 15px Myriad Pro;
+    color: #fafafa;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#header-top {
+    margin-top: 0px;
+    height: 40px;
+    background: url("images/top.png") no-repeat;
+}
+
+#white {
+    height: 130px;
+}
+
+nav {
+    float: right;
+    margin-top: 30px;
+    margin-right: 400px;
+}
+
+nav ul li {
+    float: left;
+    margin-right: 50px;
+    font: 15px Myriad Pro;
+    font-weight: 500;
+}
+
+#about_us {
+    background: url("images/about_us.png") no-repeat;
+    color: #fafafa;
+    width: 95px;
+    height: 35px;
+    text-align: center;
+}
+
+#about_us a {
+    color: #fafafa;
+}
+
+#logo {
+    float: left;
+    padding-top: 30px;
+    padding-left: 410px;
+    width: 262px;
+}
+
+header {
+    background: url("images/header.png") no-repeat;
+    height: 512px;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #3d3d3d;
+}
+
+#number {
+    color: #f4af00;
+    padding-right: 420px;
+    margin-right: 0;
+}
+
+#header-text {
+    height: 254px;
+    width: 600px;
+    background: url("images/header-text.png") no-repeat;
+    position: absolute;
+    left: 380px;
+    top: 128px;
+}
+
+#white-line {
+    height: 60px;
+}
+
+.white {
+    background: url("images/white-line.png") no-repeat;
+}
+
+#header-bottom {
+    background: url("images/bottom-back.png") no-repeat;
+    height: 430px;
+    position: relative;
+}
+
+#header-bottom img {
+    display: block;
+    margin: 0 auto;
+}
+
+#button1 {
+    position: absolute;
+    top: 235px;
+    left: 380px;
+}
+
+#button2 {
+    position: absolute;
+    top: 235px;
+    left: 765px;
+}
+
+#button3 {
+    position: absolute;
+    top: 235px;
+    left: 1150px;
+}
+
+.container {
+   width: 360px;
+    float: left;
+}
+
+.text {
+    text-transform: uppercase;
+    font-family: Myriad Pro;
+    font-size: 30px;
+    text-align: left;
+    padding-left: 0px;
+}
+
+main {
+    height: 595px;
+}
+
+#content {
+    width: auto;
+}
+
+#container1 {
+    margin-left:380px;
+}
+
+.container ul {
+    padding-left: 0px;
+}
+
+.container li {
+    padding-top: 35px;
+}
+
+.first_li {
+    padding-top: 0px;
+}
+
+#container2 {
+   padding-left: 25px;
+}
+
+#first_li, #second_li {
+    padding-top: 0px;
+}
+
+#container3 {
+    padding-left: 25px;
+    padding-top: 50px;
+}
+
+.list {
+    background: url("images/black.png") no-repeat;
+    width: 364px;
+    height: 55px;
+    position: relative;
+    margin-top: 7px;
+}
+
+.choose {
+    position: absolute;
+    left: 80px;
+    top: 5px;
+}
+
+.list p {
+    font: 15px Myriad Pro;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+img:hover {
+    display: inline-block;
+    -o-transform: rotate(720deg);
+    -ms-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg);
+}
+
+#footer {
+    background: url("images/footer-back.png") no-repeat;
+    height: 80px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#social li {
+    float: right;
+    margin-right: 10px;
+}
+
+#social {
+    float: right;
+    position: absolute;
+    top: 7px;
+    right: 370px;
+}
+
+#copy {
+    width: 250px;
+    font: 14px Myriad Pro;
+    color: white;
+    margin-left: 380px;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
+@media screen and (max-width: 320px) {
+
+    body {
+        width: 95%;
+    }
+    .call {
+        float: right;
+        font: 15px Myriad Pro;
+        color: #fafafa;
+        vertical-align: middle;
+        margin-right: 0px;
+    }
+    #number {
+        padding-right: 0px;
+    }
+
+    #header-bottom img {
+        display: block;
+        margin: 0 0;
+    }
+
+    #container1 {
+        margin-left:0px;
+    }
+
+    #logo {
+        float: left;
+        padding-left: 0px;
+    }
+
+    #footer {
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 1132px) and (max-width: 1280px){
+    body {
+        width: 95%;
+    }
+
+    #header-bottom img {
+        display: block;
+        margin: 0 0;
+    }
+
+    #container1 {
+        margin-left:0px;
+    }
+
+    #logo {
+        float: left;
+        padding-left: 0px;
+    }
+
+    #footer {
+        display: none;
+    }
+
+    #button1 {
+        position: absolute;
+        top: 235px;
+        left: 0px;
+    }
+
+    #button2 {
+        position: absolute;
+        top: 235px;
+        left: 365px;
+    }
+
+    #button3 {
+        position: absolute;
+        top: 235px;
+        left: 765px;
+    }
+}
