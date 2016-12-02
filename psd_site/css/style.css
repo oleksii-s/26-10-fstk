@@ -13,7 +13,33 @@
 a{
     text-decoration: none;
 }
-                             /*Вверх сайта*/
+h1{
+    width: 10%;
+    font-size: 5em;
+    padding-top: 6%;
+    padding-bottom: 1%;
+    margin-left: 12%;
+    color: antiquewhite;
+}
+h1:hover{
+    color:#EFAF11;
+}
+
+#h2_for_foto {
+    font-size: 2em;
+    margin-left: 12%;
+    margin-top: -1%;
+    padding-bottom: 7px;
+}
+ #p_fofto {
+    
+     margin-left: 12%;
+     padding-bottom: 5em;
+}
+     
+
+     
+                           /*Вверх сайта*/
 #headertop {
     background-color:dimgray;
     height: 1.875em;
@@ -67,7 +93,6 @@ nav {
    
     float: right;
     margin-top: 3em;
-     
     text-decoration: none;
     padding-right: -2em;
 }
@@ -95,12 +120,13 @@ nav {
     padding-bottom: 1em;
     background: linear-gradient(to bottom,#E6E6E6 28%,#FFFFFF 72% );
 }
-
+                              /*side-bar*/
 
 .side-bar {
     margin-left: 18%;
     margin-top: 5%;
     display: inline-block;
+    vertical-align:top;
     height: auto;
     width:20%;
     
@@ -108,17 +134,33 @@ nav {
 }
 .side-bar1 {
      display: inline-block;
+    margin-top: 5%;
     height: auto;
+    vertical-align:top;
     padding-left: 1em;
     
     
     width:20%;
 }
-
-.imgh2 {
+               
+.int_div {
+    text-align: center;
+    background-color: #494949;
+    width: 23%;
+    height: 3.7em;;
+    display: inline-block;
     float: left;
-    margin-right: 1.125em;
+    margin-right: 13px;
+    border-radius: 4px;
 }
+
+.int_int {
+    font-size: 2.5em;
+    color: aliceblue;
+}
+
+
+
 
 button {
     height: 37px;
@@ -144,6 +186,14 @@ button:hover{
     
 }
 
+#img_content {
+    background-image:url('../img/5xlKY_croper_ru.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+   
+   
+        
+}
 
 
 .imgMG {
@@ -242,7 +292,15 @@ footer {
   -moz-transition: all .3s ease-out;
 }
                                 
- @media screen and (max-width:1000px){
+ @media screen and (max-width:1170px){
+     
+     h2 {
+       font-size: 1.1em;         
+         
+     }
+h3{
+    font-size: 0.8em;
+}
       
         #logo {
     float: left;
@@ -258,7 +316,24 @@ footer {
     text-decoration: none;
     padding-right: -2em;
 }
+    h1{
+    font-size: 2.9em;
+    padding-top: 5%;
+    padding-bottom: 1%;
+    margin-left: 12%;
+       color: azure;
+}
+#h2_for_foto {
+    font-size: 1.3em;
+    margin-left: 12%;
+    margin-top: -1%;
+}
+ #p_fofto {
     
+     margin-left: 12%;
+     padding-bottom: 1em;
+    
+}                          
         
    @media screen and  (max-width:768px){
       
@@ -268,13 +343,30 @@ footer {
     margin-top: 2%;
     font-size: 1.6em;
 }  
-   
+   h1{
+    font-size: 2.3em;
+    padding-top: 5%;
+    padding-bottom: 1%;
+    margin-left: 12%;
+       color: azure;
+}
+#h2_for_foto {
+    font-size: 1em;
+    margin-left: 12%;
+    margin-top: -1%;
+}
+ #p_fofto {
+    
+     margin-left: 12%;
+     padding-bottom: 1em;
+    
+}                          
 .side-bar {
-   margin-left:  20%;
+   margin-left:  4%;
     margin-top: 5%;
     display: inline-block;
     height: auto;
-    width:20%;
+    width:29%;
     
     
       
@@ -286,7 +378,7 @@ footer {
     padding-left: 1em;
     
     
-    width:20%;
+    width:29%;
 }
         #menuHreffs {
    
@@ -300,7 +392,7 @@ footer {
      }
      
      @media screen and (max-width:425px) {
-         
+    
          
     #button_mobile_version {
         position: absolute;
@@ -320,12 +412,38 @@ footer {
     text-decoration: none;
     padding-right: -2em;
 }
+h1{
+    display: none;
+    width: 10%;
+    font-size: 5em;
+    padding-top: 6%;
+    padding-bottom: 1%;
+    margin-left: 12%;
+    color: antiquewhite;
+}
+h1:hover{
+    color:#EFAF11;
+}
+
+#h2_for_foto {
+    display: none;
+    font-size: 2em;
+    margin-left: 12%;
+    margin-top: -1%;
+    padding-bottom: 7px;
+}
+  #p_fofto {
+     display: none;
+     margin-left: 12%;
+     padding-bottom: 1em;
+    
+}         
          .side-bar {
     position: relative;
-    margin: 5px;         
+    margin: 5%;         
     padding-bottom: 10px;
     height: auto;
-    width:81%;
+    width:91%;
     padding: 26px;
              
     
@@ -348,6 +466,10 @@ footer {
     font-size: 1em;
 }
      }
+
+
+
+
 
 
 
