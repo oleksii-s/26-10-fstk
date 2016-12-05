@@ -1,0 +1,487 @@
+            /* подключаю шрифты */
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Ranga');
+                          
+            /* Стили для всего сайта*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxygen', sans-serif;
+
+}
+img{
+    max-width: 100%;
+}
+
+    
+body{
+    width: 100%;
+    max-width: 1940px;
+    height: auto;
+    position: relative;
+}
+
+a{
+    text-decoration: none;
+}
+h1{
+    width: 10%;
+    font-size: 5em;
+    padding-top: 6%;
+    padding-bottom: 1%;
+    margin-left: 12%;
+    color: antiquewhite;
+}
+h1:hover{
+    color:#EFAF11;
+}
+             
+#h2_for_foto {
+    font-size: 2em;
+    margin-left: 12%;
+    margin-top: -1%;
+    padding-bottom: 7px;
+}
+ #p_fofto {
+    
+     margin-left: 12%;
+     padding-bottom: 5em;
+}
+     
+
+     
+                           /*Вверх сайта*/
+#headertop {
+    background-color:dimgray;
+    height: 1.875em;
+    width: auto;
+}
+
+
+
+#call {
+    position: relative;
+    float: right;
+    padding-top: 6px;
+    padding-right: 14px;
+    color:darkgoldenrod;
+}
+
+nav {
+    width: 100%;
+    height: 7.500em;
+    background-color: #FBFBFB;
+}
+
+.color_first_logo {
+    color:#EFAF11;    
+}
+
+.head_call {
+    color: #FBFBFB;
+    
+}
+
+#logo {
+    float: left;
+    margin-left: 21%;
+    margin-top: 2%;
+    font-size: 1.6em;
+}
+
+#menu-hreffs {
+   
+    float: right;
+    margin-top: 3em;
+    text-decoration: none;
+    padding-right: -2em;
+}
+
+#menu-hreffs a:hover{
+    background-color: #EFAF11;
+    color:aliceblue;
+}
+
+
+  
+
+.menu {
+    float: right;
+    margin-right: 1em;
+    padding: 0.563em 0.563em 0.6em 0.5em;
+    color:#696969;
+}
+                  
+
+
+#header-bottom {
+    width: 100%;
+    height: auto;
+    padding-bottom: 1em;
+    background: linear-gradient(to bottom,#E6E6E6 28%,#FFFFFF 72% );
+}
+                              /*side-bar*/
+
+.side-bar {
+    margin-left: 18%;
+    margin-top: 5%;
+    display: inline-block;
+    vertical-align:top;
+    height: auto;
+    width:20%;
+    
+      
+}
+.side-bar1 {
+     display: inline-block;
+    margin-top: 5%;
+    height: auto;
+    vertical-align:top;
+    padding-left: 1em;
+    
+    
+    width:20%;
+}
+               
+.int_div {
+    text-align: center;
+    background-color: #494949;
+    width: 23%;
+    height: 3.7em;;
+    display: inline-block;
+    float: left;
+    margin-right: 13px;
+    border-radius: 4px;
+}
+
+.int_int {
+    font-size: 2.5em;
+    color: aliceblue;
+}
+
+
+
+
+button {
+    height: 37px;
+    width: 100px;
+    background-color: #F3B000;
+    border-color: #F3B000;
+    margin-top: 26px;
+    color:antiquewhite;
+    border-radius: 7px 7px 7px 7px; 
+}
+
+button:hover{
+    background-color: chartreuse;
+}
+#button_mobile_version {
+    display: none;
+}
+
+
+#foto-logo {
+    float: left;
+    margin: 3px;
+    
+}
+
+#img_content {
+    background-image:url('../img/8wkfn_croper_ru.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+   
+   
+        
+}
+
+#mail_form {
+    text-align: center;
+    width: 100%;
+    height: 600px;
+}
+
+
+.imgMG {
+    float: left;
+    margin-right: 15px;
+    margin-top: 4px;
+    font-family: 'Ranga', cursive;
+}
+#content {
+    width: 100%;
+    height: auto;
+    padding-bottom: 100px;
+}
+
+                    /* стили для странички mail_us.html*/
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 51px;
+    width: 100%;
+    background: #494949;
+}
+
+
+
+.footer-copy {
+    position: relative;
+    top:0.938em;
+    color:antiquewhite;
+    margin-left: 24px;
+    
+}
+
+.footer-myname {
+    position: relative;
+    color:#F3B000;
+    top: 15px;
+    left: 16px;
+    
+}
+
+.con-bottom-h3 {
+    color: #F3B000;
+}
+.rounded {
+  counter-reset: li;
+  list-style: none;
+  font: 19px "Trebuchet MS", "Lucida Sans";
+  padding: 0;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+.rounded a {
+  position: relative;
+  display: block;
+  padding: .4em .4em .4em 2em;
+  margin: .5em 0;
+  background: #494949;
+  color:antiquewhite;
+  text-decoration: none;
+  border-radius: .3em;
+  -webkit-border-radius: .3em;
+  -moz-border-radius: .3em;
+  transition: .3s ease-out;
+  -webkit-transition: .3s ease-out;
+  -moz-transition: .3s ease-out;
+}
+
+.rounded a:hover {
+  background: #F3B000;
+}
+
+.rounded a:hover:before {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+}
+
+.rounded a:before {
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  left: -1.3em;
+  top: 50%;
+  margin-top: -1.3em;
+  background: #F3B000;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  border: .3em solid white;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 2em;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+}
+                                
+ @media screen and (max-width:1170px){
+     
+     h2 {
+       font-size: 1.1em;         
+         
+     }
+h3{
+    font-size: 0.8em;
+}
+      
+        #logo {
+    float: left;
+    margin-left: 10%;
+    margin-top: 2%;
+    font-size: 1.6em;
+}  
+     #menu-hreffs {
+   
+    float: right;
+    margin-top: 3em;
+    
+    text-decoration: none;
+    padding-right: -2em;
+}
+    h1{
+    font-size: 2.9em;
+    padding-top: 5%;
+    padding-bottom: 1%;
+    margin-left: 12%;
+       color: azure;
+}
+#h2_for_foto {
+    font-size: 1.3em;
+    margin-left: 12%;
+    margin-top: -1%;
+}
+ #p_fofto {
+    
+     margin-left: 12%;
+     padding-bottom: 1em;
+    
+}                          
+        
+   @media screen and  (max-width:768px){
+      
+        #logo {
+    float: left;
+    margin-left: -1%;
+    margin-top: 2%;
+    font-size: 1.6em;
+}  
+   h1{
+    font-size: 2.3em;
+    padding-top: 5%;
+    padding-bottom: 1%;
+    margin-left: 12%;
+       color: azure;
+}
+#h2_for_foto {
+    font-size: 1em;
+    margin-left: 12%;
+    margin-top: -1%;
+}
+ #p_fofto {
+    
+     margin-left: 12%;
+     padding-bottom: 1em;
+    
+}                          
+.side-bar {
+   margin-left:  4%;
+    margin-top: 5%;
+    display: inline-block;
+    height: auto;
+    width:29%;
+    
+    
+      
+}
+.side-bar1 {
+    
+     display: inline-block;
+    height: auto;
+    padding-left: 1em;
+    
+    
+    width:29%;
+}
+        #menu-hreffs {
+   
+    float: right;
+    margin-top: 3em;
+    
+    text-decoration: none;
+    padding-right: -5em;
+}
+
+     }
+     
+     @media screen and (max-width:425px) {
+
+         #button_mobile_version {
+             position: absolute;
+             top: 82px;
+             display: flex;
+             background-color: dimgrey;
+             width: 200px;
+             height: 30px;
+             margin-left: 6%;
+             border-color: darkgray
+         }
+
+         #menuHreffs {
+             display: none;
+             float: right;
+             margin-top: 3em;
+             text-decoration: none;
+             padding-right: -2em;
+         }
+
+         h1 {
+             display: none;
+             width: 10%;
+             font-size: 5em;
+             padding-top: 6%;
+             padding-bottom: 1%;
+             margin-left: 12%;
+             color: antiquewhite;
+         }
+
+         h1:hover {
+             color: #EFAF11;
+         }
+
+         #h2_for_foto {
+             display: none;
+             font-size: 2em;
+             margin-left: 12%;
+             margin-top: -1%;
+             padding-bottom: 7px;
+         }
+
+         #p_fofto {
+             display: none;
+             margin-left: 12%;
+             padding-bottom: 1em;
+
+         }
+
+         .side-bar {
+             position: relative;
+             margin: 5%;
+             padding-bottom: 10px;
+             height: auto;
+             width: 91%;
+             padding: 26px;
+
+         }
+
+         .side-bar1 {
+
+             height: auto;
+             padding: 26px;
+
+             width: 91%;
+         }
+
+         #call {
+             position: relative;
+             float: left;
+             padding-top: 6px;
+             padding-right: 14px;
+             color: darkgoldenrod;
+             font-size: 1em;
+         }
+
+         footer{
+             
+         }
+     }
+
+
+
+
