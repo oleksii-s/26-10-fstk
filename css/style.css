@@ -7,13 +7,10 @@
     margin: 0;
     padding: 0;
     font-family: 'Oxygen', sans-serif;
-
 }
 img{
     max-width: 100%;
 }
-
-    
 body{
     width: 100%;
     max-width: 1940px;
@@ -48,17 +45,12 @@ h1:hover{
      padding-bottom: 5em;
 }
      
-
-     
                            /*Вверх сайта*/
 #headertop {
     background-color:dimgray;
     height: 1.875em;
     width: auto;
 }
-
-
-
 #call {
     position: relative;
     float: right;
@@ -101,19 +93,12 @@ nav {
     background-color: #EFAF11;
     color:aliceblue;
 }
-
-
-  
-
 .menu {
     float: right;
     margin-right: 1em;
     padding: 0.563em 0.563em 0.6em 0.5em;
     color:#696969;
 }
-                  
-
-
 #header-bottom {
     width: 100%;
     height: auto;
@@ -138,8 +123,6 @@ nav {
     height: auto;
     vertical-align:top;
     padding-left: 1em;
-    
-    
     width:20%;
 }
                
@@ -158,10 +141,6 @@ nav {
     font-size: 2.5em;
     color: aliceblue;
 }
-
-
-
-
 button {
     height: 37px;
     width: 100px;
@@ -190,10 +169,7 @@ button:hover{
     background-image:url('../img/8wkfn_croper_ru.png');
     background-repeat: no-repeat;
     background-size: 100%;
-   
-   
-        
-}
+   }
 
 #mail_form {
     text-align: center;
@@ -215,8 +191,6 @@ button:hover{
 }
 
                     /* стили для странички mail_us.html*/
-
-
 footer {
     position: absolute;
     bottom: 0;
@@ -224,9 +198,6 @@ footer {
     width: 100%;
     background: #494949;
 }
-
-
-
 .footer-copy {
     position: relative;
     top:0.938em;
@@ -413,7 +384,7 @@ h3{
              border-color: darkgray
          }
 
-         #menuHreffs {
+         #menu-hreffs {
              display: none;
              float: right;
              margin-top: 3em;
