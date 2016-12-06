@@ -56,7 +56,7 @@ nav {
   padding: 5px;
 }
 
-.logo div {
+.logo img {
   margin: 0 40%;
   padding: 10px 0;
 }
@@ -113,7 +113,7 @@ nav {
   cursor: default;
 }
 
-.header-main {
+.promo-wrapper  {
   background-image: url("../img/slide-3.jpg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -122,7 +122,7 @@ nav {
   position: relative;
 }
 
-.header-div {
+.promo-content {
   width: 30%;
   margin: 0 auto;
   position: absolute;
@@ -154,34 +154,34 @@ nav {
   color: rgb(73, 73, 73);
 }
 
-.header-div ul {
+.promo-content ul {
   list-style: none;
   align-items: center;
   padding: 0;
   margin: 0;
 }
 
-.header-div li {
+.promo-content li {
   list-style: none;
   text-align: center;
   display: inline;
 }
 
-.wonder-span {
-  width: 20px;
-  background-color: rgb(73, 73, 73);
-  color: rgb(73, 73, 73);
-  font-size: 0.3rem;
-}
-
-.wonder-span1 {
-  width: 20px;
+.nav-button {
+  width: 45px;
+  height: 8px;
   background-color: white;
   color: white;
   font-size: 0.3rem;
+  display: inline-block;
 }
 
-.header-div a {
+.nav-button.active {
+  background-color: rgb(73, 73, 73);
+  color: rgb(73, 73, 73);
+}
+
+.promo-content a {
   text-decoration: none;
 }
 
@@ -495,7 +495,7 @@ h3 {
     text-align: center;
   }
 
-  .header-div {
+  .promo-content {
     display:none;
   }
 
@@ -512,7 +512,7 @@ h3 {
     margin: auto;
   }
 
-  .logo div {
+  .logo img {
     margin: 0 25%;
     padding: 10px 0;
   }
@@ -546,39 +546,27 @@ h3 {
     padding:0 5px;
   }
 
-  .header-main {
+  .talkbubble.left {
+    margin-left: 17%;
+  }
+
+  .author {
+    margin: -15px 40px 20px 0;
+  }
+
+  .promo-wrapper {
     background-image: url("../img/slide-31.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     height:150px;
   }
 
-  h2 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 1rem;
-    color: rgb(73, 73, 73);
-    text-align: left;
+  .div-gradient {
+    margin-top:30px;
   }
 
-  h3 {
-    font-family: 'Roboto', serif;
-    font-weight: 100;
-    color: rgb(127, 157, 176);
-    font-size: 0.6rem;
-  }
-
-  .orange-new {
-    font-family: 'Roboto', serif;
-    font-weight: 400;
-    color: #f4af00;
-    font-size: 0.8rem;
-  }
-
-  .author {
-    text-align: right;
-    font-size: 0.6rem;
-    text-transform: uppercase;
+  .row {
+    width: 95%;
   }
 
   #foot {
@@ -608,11 +596,11 @@ h3 {
     text-align: right;
   }
 
-  .logo div {
+  .logo img {
     margin: 0 20%;
   }
 
-  .header-div {
+  .promo-content {
     width: 50%;
     margin: 0 auto;
     position: relative;
