@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Roboto:100,300,400,500&subset=cyrillic');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
 * {
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
@@ -30,23 +33,30 @@
   font-weight: 300;
 }
 
+.unicode-tel:after {
+  font-family: "FontAwesome", sans-serif;
+  content: "\f095";
+  color: white;
+}
+
 .textcolor {
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
+  text-transform: uppercase;
 }
 
 nav {
   width: 100%;
 }
 
-.left-nav {
+.logo {
   float: left;
   width: 45%;
   padding: 5px;
 }
 
-.left-nav div {
+.logo div {
   margin: 0 40%;
   padding: 10px 0;
 }
@@ -75,8 +85,8 @@ nav {
 
 .right-nav a {
   text-decoration: none;
+  text-transform: uppercase;
   font-family: 'Roboto', 'sans-serif';
-  font-weight: bold;
   color: #000;
   display: inline-block;
   transition: .5s all;
@@ -91,7 +101,6 @@ nav {
   background: -o-linear-gradient(to bottom, #FFB800, #f4af00);
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   color: #fff;
-  font-weight: normal;
 }
 
 .right-nav a.active {
@@ -102,17 +111,6 @@ nav {
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   color: #fff;
   cursor: default;
-}
-
-.rectangle {
-  background-image: -moz-linear-gradient( 90deg, rgb(235, 174, 68) 0%, rgb(244, 175, 0) 26%);
-  background-image: -webkit-linear-gradient( 90deg, rgb(235, 174, 68) 0%, rgb(244, 175, 0) 26%);
-  background-image: -ms-linear-gradient( 90deg, rgb(235, 174, 68) 0%, rgb(244, 175, 0) 26%);
-  position: relative;
-  color: white;
-  padding:10px;
-  width: 96px;
-  height: 36px;
 }
 
 .header-main {
@@ -139,6 +137,7 @@ nav {
   font-size: 5rem;
   color: #fff;
   text-align: left;
+  text-transform: uppercase;
 }
 
 #middle-font {
@@ -196,12 +195,12 @@ nav {
 }
 
 .row {
-   display: table;
-   width: 60%;
-   table-layout: fixed;
-   border-spacing: 10px;
-   margin: 0 auto;
- }
+  display: table;
+  width: 60%;
+  table-layout: fixed;
+  border-spacing: 10px;
+  margin: 0 auto;
+}
 
 .column {
   display: table-cell;
@@ -214,8 +213,21 @@ nav {
   padding: 10px;
 }
 
+.number-square {
+  float: left;
+  padding: 7px 9px 7px 9px;
+  margin: 8px;
+  color:white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+  background: radial-gradient(#535353, #474747);
+}
+
 .number1 {
-  padding:10px;
+  padding:10px 10px 10px 0;
+  text-transform: uppercase;
 }
 
 .clear {
@@ -229,13 +241,14 @@ nav {
 
 .clear-text {
   clear:both;
-  font-family: 'Arial', serif;
   color: rgb(76, 92, 102);
   font-size: 0.7rem;
   padding:10px 8px;
 }
 
-.item-font {
+h2 {
+  text-transform: uppercase;
+  padding: 10px 10px 0 10px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 1.2rem;
@@ -243,8 +256,9 @@ nav {
   text-align: left;
 }
 
-.item-font1 {
+h3 {
   font-family: 'Roboto', serif;
+  text-transform: uppercase;
   font-weight: 100;
   color: rgb(127, 157, 176);
   font-size: 0.8rem;
@@ -255,6 +269,12 @@ nav {
   font-weight: 100;
   color: rgb(127, 157, 176);
   font-size: 0.7rem;
+  text-transform: none;
+  line-height: 1.7;
+}
+
+.item-font-arial.cl {
+  line-height: normal;
 }
 
 .author {
@@ -263,11 +283,13 @@ nav {
   color: rgb(55, 70, 79);
   text-align: right;
   font-size: 0.8rem;
-  margin: -15px -20px 0 0;
+  margin: -15px -13px 20px 0;
+  text-transform: uppercase;
 }
 
 .author.left {
   text-align: left;
+  margin: -15px -13px 0 0;
 }
 
 .orange {
@@ -279,10 +301,12 @@ nav {
   font-weight: 400;
   color: #f4af00;
   font-size: 1rem;
+  text-transform: uppercase;
 }
 
 .but {
   padding:15px 0;
+  text-transform: uppercase;
 }
 
 .button {
@@ -304,16 +328,16 @@ nav {
 }
 
 .talkbubble {
-  width:75%;
-  margin: 0.5em 0 1.4em;
-  padding: 15px;
+  width:77%;
+  margin: 0.6em 0 1.4em;
+  padding: 10px;
   /*min-height:20px;*/
   background: #fff;
   position: relative;
   border: 1px solid #e1e1e1;
 }
 .talkbubble.left {
-  margin-left: 35%;
+  margin-left: 30%;
 }
 .talkbubble.left:before {
   content:"";
@@ -322,9 +346,9 @@ nav {
   top: 10px;
   width: 0;
   height: 0;
-  border-top: 14px inset transparent;
-  border-right: 20px dashed #e1e1e1;
-  border-bottom: 14px inset transparent;
+  border-top: 7px inset transparent;
+  border-right: 7px dashed #e1e1e1;
+  border-bottom: 7px inset transparent;
 }
 .talkbubble.left:after {
   content:"";
@@ -333,16 +357,15 @@ nav {
   top: 11px;
   width: 0;
   height: 0;
-  border-top: 13px inset transparent;
-  border-right: 19px dashed #fff;
-  border-bottom: 13px inset transparent;
+  border-top: 6px inset transparent;
+  border-right: 6px dashed #fff;
+  border-bottom: 6px inset transparent;
 }
 
 .date {
   float: left;
   padding: 10px;
   width: 80px;
-
 }
 
 .date-in {
@@ -365,60 +388,48 @@ nav {
   background: radial-gradient(#535353, #474747);
 }
 
-.table-main {
-  display: table;
+.trends {
+  text-align: left;
+  text-transform: uppercase;
   width: 100%;
-  table-layout: fixed;
-  border-spacing: 0px;
-  margin: 12px auto;
 }
 
-.row-main {
-  display: table-row;
-}
-
-.column-main-right {
-  width: 84%;
-  display: table-cell;
-  padding: 5px;
+.trends li {
+  list-style: none;
   vertical-align: middle;
-  text-align: center;
-  background: #474747;
   color: #fff;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
-  font-size: 0.6rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  transition: .3s all;
-}
-
-.column-main-right:hover {
+  font-weight: 400;
+  margin-bottom: 3px;
+  text-align: left;
+  text-transform: uppercase;
   background: radial-gradient(#535353, #474747);
   background: -webkit-radial-gradient(#535353, #474747);
   background: -moz-radial-gradient(#535353, #474747);
   background: -o-radial-gradient(#535353, #474747);
-  cursor: pointer;
 }
 
-.column-main-left {
-  width: 50%;
-  padding: 20px;
-  background: #f4af00;
+.trends a {
+  font-size: 0.7rem;
   color: #fff;
-  vertical-align: middle;
-  text-align: center;
-  font-weight: 500;
-  font-size: 0.5rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  transition: .3s all;
+  text-decoration:none;
+  padding-left: 1.4rem;
 }
 
-.column-main-left:hover {
+.trends li:before {
+  list-style: none;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  width: 15%;
+  content: "\203A";
+  font-size: 2rem;
+  font-weight: 100;
+  color: white;
   background: radial-gradient(#FFB800, #f4af00);
   background: -webkit-radial-gradient(#FFB800, #f4af00);
   background: -moz-radial-gradient(#FFB800, #f4af00);
   background: -o-radial-gradient(#FFB800, #f4af00);
-  cursor: pointer;
 }
 
 #foot {
@@ -432,13 +443,15 @@ nav {
 .left-foot {
   float: left;
   width: 50%;
+  position: relative;
+  left:22%;
+  top:20%;
   padding: 5px;
-}
-
-.left-foot div {
-  margin: 0 40%;
-  padding: 10px 0;
-  width: 100%;
+  color: #ffffff;
+  font-family: 'Open Sans', serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .right-foot {
@@ -464,6 +477,7 @@ nav {
   font-family: 'Open Sans', serif;
   font-size: 0.9rem;
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 /*for mobile*/
@@ -491,14 +505,14 @@ nav {
     background-repeat: repeat-x;
   }
 
-  .left-nav {
+  .logo {
     width: 100%;
     float: none;
     padding: 5px;
     margin: auto;
   }
 
-  .left-nav div {
+  .logo div {
     margin: 0 25%;
     padding: 10px 0;
   }
@@ -526,7 +540,6 @@ nav {
   .right-nav a {
     text-decoration: none;
     font-family: 'Roboto', 'sans-serif';
-    font-weight: bold;
     color: #000;
     display: inline-block;
     transition: .5s all;
@@ -540,7 +553,7 @@ nav {
     height:150px;
   }
 
-  .item-font {
+  h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 1rem;
@@ -548,7 +561,7 @@ nav {
     text-align: left;
   }
 
-  .item-font1 {
+  h3 {
     font-family: 'Roboto', serif;
     font-weight: 100;
     color: rgb(127, 157, 176);
@@ -565,25 +578,21 @@ nav {
   .author {
     text-align: right;
     font-size: 0.6rem;
-  }
-
-  .textcolor-foot {
-    color: #ffffff;
-    font-family: 'Open Sans', serif;
-    font-size: 0.6rem;
-    font-weight: 300;
+    text-transform: uppercase;
   }
 
   #foot {
     height: 50px;
   }
 
-  .left-foot div {
-    margin: 0 0 0 10%;
-  }
-
   .left-foot {
+    left:10%;
+    top:30%;
     width: 60%;
+    color: #ffffff;
+    font-family: 'Open Sans', serif;
+    font-size: 0.6rem;
+    font-weight: 300;
   }
 
   .right-foot {
@@ -599,7 +608,7 @@ nav {
     text-align: right;
   }
 
-  .left-nav div {
+  .logo div {
     margin: 0 20%;
   }
 
@@ -620,11 +629,11 @@ nav {
     width: 100%;
   }
 
-  .item-font {
+  h2 {
     font-size: 1rem;
   }
 
-  .item-font1 {
+  h3 {
     font-size: 0.6rem;
   }
 
@@ -637,7 +646,7 @@ nav {
   }
 
   .author {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
   }
 
 }
