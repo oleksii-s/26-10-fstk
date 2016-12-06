@@ -5,147 +5,204 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <script src="https://use.fontawesome.com/727dfcaab9.js"></script>
         <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
+    <!-- START HEADER -->
         <header>
-            <section class="header_top">
+            <div class="header_top">
                 <img src="resources/images/telephone.png" alt="telephone.png">
-                <span class="text">Give us A Call:</span>
-                <span class="number">+1 800 567 45 56</span>
-            </section>
+                <div class="text">Give us a call:</div>
+                <div class="number">+1 800 567 45 56</div>
+            </div>
 
-            <section class="menu">
-                <div class="label_wrapper">
-                    <div class="flower_box">
-                        <img src="resources/images/flower.png" alt="flower.png">
+            <div class="menu">
+                <a href="#">
+                    <div class="label_wrapper">
+                        <div class="flower_box">
+                            <img src="resources/images/flower.png" alt="flower.png">
+                        </div>
+                        <div class="label_name">
+                            <p>Interior</p>
+                            <p>Design</p>
+                        </div>
                     </div>
-                    <div class="label_name">
-                        <p>Interior</p>
-                        <p>Design</p>
+                </a>
+                <nav class="menu_wrapper">
+                    <a href="#">About us</a>
+                    <a href="#">Our blog</a>
+                    <a href="#">Services</a>
+                    <a href="#">Catalogue</a>
+                    <a href="#">Mail us</a>
+                </nav>
+            </div>
+        </header>
+    <!-- END HEADER -->
+    <!-- START MAIN -->
+        <main>
+            <!-- START SLIDE -->
+            <section class="header_middle">
+                <div class="images">
+                    <input type="radio" name="point" id="slide1" checked>
+                    <input type="radio" name="point" id="slide2">
+                    <input type="radio" name="point" id="slide3">
+                    <div class="slider">
+                        <div class="slides slide1">
+                            <div class="caption">
+                                <h2>Quality</h2>
+                                <h3>Sed utem perspiciatis</h3>
+                                <p>Mes cuml dia sed in lacus ut eniascet etor ingerto aliiqt essitet amet eismod ictorut ligulate ameti dapibus ticdu nt mtsent lusto dolor ltisim comme.</p>
+                            </div>
+                        </div>
+                        <div class="slides slide2">
+                            <div class="caption">
+                                <h2>Quality</h2>
+                                <h3>Sed utem perspiciatis</h3>
+                                <p>Mes cuml dia sed in lacus ut eniascet etor ingerto aliiqt essitet amet eismod ictorut ligulate ameti dapibus ticdu nt mtsent lusto dolor ltisim comme.</p>
+                            </div>
+                        </div>
+                        <div class="slides slide3">
+                            <div class="caption">
+                                <h2>Quality</h2>
+                                <h3>Sed utem perspiciatis</h3>
+                                <p>Mes cuml dia sed in lacus ut eniascet etor ingerto aliiqt essitet amet eismod ictorut ligulate ameti dapibus ticdu nt mtsent lusto dolor ltisim comme.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <label for="slide1"></label>
+                        <label for="slide2"></label>
+                        <label for="slide3"></label>
                     </div>
                 </div>
-                <div class="menu_wrapper">
+            </section>
+            <!-- END SLIDE -->
+            <!-- START CONTENT -->
+            <div class="header_bottom">
+                <article>
+                    <header>
+                        <div class="number">01</div>
+                        <h4>Interior design</h4>
+                        <small>Mes cuml dia sed in lacus</small>
+                    </header>
+                    <section>
+                        <p>Mes cuml dia sed in lacus ut eniascet etor ingerto aliiqt essitet amet eismod ictorut ligulate ameti dapibus ticdu nt mtsent lusto dolor ltisim comme.</p>
+                        <a href="#">Read more</a>
+                    </section>
+                </article>
+                <article>
+                    <header>
+                        <div class="number">02</div>
+                        <h4>Our team</h4>
+                        <small>Mes cuml dia sed in lacus</small>
+                    </header>
+                    <section>
+                        <p>Mes cuml dia sed in lacus ut eniascet etor ingerto aliiqt essitet amet eismod ictorut ligulate ameti dapibus ticdu nt mtsent lusto dolor ltisim comme.</p>
+                        <a href="#">Read more</a>
+                    </section>
+                </article>
+                <article>
+                    <header>
+                        <div class="number">03</div>
+                        <h4>Design ideas</h4>
+                        <small>Mes cuml dia sed in lacus</small>
+                    </header>
+                    <section>
+                        <p>Mes cuml dia sed in lacus ut eniascet etor ingerto aliiqt essitet amet eismod ictorut ligulate ameti dapibus ticdu nt mtsent lusto dolor ltisim comme.</p>
+                        <a href="#">Read more</a>
+                    </section>
+                </article>
+            </div>
+
+            <section class="content_bottom">
+                <div class="testimonials">
+                    <header>
+                        <h4>Teastimontials</h4>
+                    </header>
                     <ul>
-                        <li><a href="#">ABOUT US</a></li>
-                        <li><a href="#">OUR BLOG</a></li>
-                        <li><a href="#">SERVICES</a></li>
-                        <li><a href="#">CATALOGUE</a></li>
-                        <li><a href="#">MAIL US</a></li>
+                        <li id="man">
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet consect adpisc inge. Commete ipsum</p>
+                                <a href="#">Jack Smith</a>/Metho org
+                            </blockquote>
+                        </li>
+                        <li id="woman">
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet consect adpisc inge. Commete ipsum</p>
+                                <a href="#">Lisa Kole</a>/Metho org
+                            </blockquote>
+                        </li>
+                    </ul>
+                </div>
+                <div class="news">
+                    <header>
+                        <h4>Latest news</h4>
+                    </header>
+                    <ul>
+                        <li>
+                            <div>
+                                <p class="day">25</p>
+                                <p class="mon">APR</p>
+                            </div>
+                            <div>
+                                <h5><a href="#">Donece pelente</a></h5>
+                                <small>Dolore ipsim colette</small>
+                                <p>Lorem ipsum dolor sit amet consect adpisc inge. Commete ipsum dolorem.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="day">23</p>
+                                <p class="mon">APR</p>
+                            </div>
+                            <div>
+                                <h5><a href="#">Donece pelente</a></h5>
+                                <small>Dolore ipsim colette</small>
+                                <p>Lorem ipsum dolor sit amet consect adpisc inge. Commete ipsum dolorem.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="day">21</p>
+                                <p class="mon">APR</p>
+                            </div>
+                            <div>
+                                <h5><a href="#">Donece pelente</a></h5>
+                                <small>Dolore ipsim colette</small>
+                                <p>Lorem ipsum dolor sit amet consect adpisc inge. Commete ipsum dolorem.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="design_trends">
+                    <header>
+                        <h4>Design trends</h4>
+                    </header>
+                    <ul>
+                        <li><a href="#">bla bla bla</a></li>
+                        <li><a href="#">bla bla bla</a></li>
+                        <li><a href="#">bla bla bla</a></li>
+                        <li><a href="#">bla bla bla</a></li>
+                        <li><a href="#">bla bla bla</a></li>
+                        <li><a href="#">bla bla bla</a></li>
                     </ul>
                 </div>
             </section>
-
-            <section class="header_middle">
-                <div class="caption">
-                    <p>QUALITY</p>
-                    <p>SED UTEM PERSPICIATIS</p>
-                    <p>Mes cuml dia sed in lacus ut eniascet etor ingerto aliiqt essitet amet eismod ictorut ligulate ameti dapibus ticdu nt mtsent lusto dolor ltisim comme.</p>
-                </div>
-                <div class="images">
-                    <div class="slider">
-                        <div class="slide1"></div>
-                        <div class="slide2"></div>
-                        <div class="slide3"></div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="line">
-            </section>
-
-            <section class="header_bottom">
-                <div>
-                    <header>
-                        <div class="number">01</div>
-                        <h4>INTERIOR DESIGN</h4>
-                        <small>MES CUML DIA SED IN LACUS</small>
-                    </header>
-                    <section>
-                        <p>Mes cuml dia sed in lacus ut eniascet etor ingerto aliiqt essitet amet eismod ictorut ligulate ameti dapibus ticdu nt mtsent lusto dolor ltisim comme.</p>
-                        <a href="#">READ MORE</a>
-                    </section>
-                </div>
-                <div>
-                    <header>
-                        <div class="number">02</div>
-                        <h4>OUR TEAM</h4>
-                        <small>MES CUML DIA SED IN LACUS</small>
-                    </header>
-                    <section>
-                        <p>Mes cuml dia sed in lacus ut eniascet etor ingerto aliiqt essitet amet eismod ictorut ligulate ameti dapibus ticdu nt mtsent lusto dolor ltisim comme.</p>
-                        <a href="#">READ MORE</a>
-                    </section>
-                </div>
-                <div>
-                    <header>
-                        <div class="number">03</div>
-                        <h4>DESIGN IDEAS</h4>
-                        <small>MES CUML DIA SED IN LACUS</small>
-                    </header>
-                    <section>
-                        <p>Mes cuml dia sed in lacus ut eniascet etor ingerto aliiqt essitet amet eismod ictorut ligulate ameti dapibus ticdu nt mtsent lusto dolor ltisim comme.</p>
-                        <a href="#">READ MORE</a>
-                    </section>
-                </div>
-            </section>
-        </header>
-
-        <main>
-            <div class="testimonials">
-                <header>
-                    <h4>TESTIMONIALS</h4>
-                </header>
-                <ul>
-                    <li id="man">
-                        <p>Lorem ipsum dolor sit amet consect adpisc inge. Commete ipsum</p>
-                        <a href="#">JACK SMITH</a>/METHO ORG
-                    </li>
-                    <li id="woman">
-                        <p>Lorem ipsum dolor sit amet consect adpisc inge. Commete ipsum</p>
-                        <a href="#">LISA KOLE</a>/METHO ORG
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <header>
-                    <h4>LATEST NEWS</h4>
-                </header>
-                <ul>
-                    <li>
-                        <h5><a href="#">DONECE PELLENTE</a></h5>
-                        <small>DOLORE IPSIM COMMETE</small>
-                        <p>Lorem ipsum dolor sit amet consect adpisc inge. Commete ipsum</p>
-                    </li>
-                    <li>
-                        <h5><a href="#">DONECE PELLENTE</a></h5>
-                        <small>DOLORE IPSIM COMMETE</small>
-                        <p>Lorem ipsum dolor sit amet consect adpisc inge. Commete ipsum</p>
-                    </li>
-                    <li>
-                        <h5><a href="#">DONECE PELLENTE</a></h5>
-                        <small>DOLORE IPSIM COMMETE</small>
-                        <p>Lorem ipsum dolor sit amet consect adpisc inge. Commete ipsum</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="design_trends">
-                <header>
-                    <h4>DESIGN TRENDS</h4>
-                </header>
-                <ul>
-                    <li>BLA BLA BLA</li>
-                    <li>BLA BLA BLA</li>
-                    <li>BLA BLA BLA</li>
-                    <li>BLA BLA BLA</li>
-                    <li>BLA BLA BLA</li>
-                    <li>BLA BLA BLA</li>
-                </ul>
-            </div>
+            <!-- END CONTENT-->
         </main>
-
+    <!-- END MAIN -->
+    <!-- START FOOTER -->
         <footer>
+            <div>intermex <span>© 2013 | Privacy Policy</span></div>
+            <div class="social">
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-wifi" aria-hidden="true"></i></i></a>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></i></a>
+                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></i></a>
+            </div>
         </footer>
+    <!-- END FOOTER -->
     </body>
 </html>

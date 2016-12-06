@@ -15,6 +15,7 @@ html {
     line-height: 1.15; /* 2 */
     -ms-text-size-adjust: 100%; /* 3 */
     -webkit-text-size-adjust: 100%; /* 3 */
+    box-sizing: border-box;
 }
 
 /* Sections
@@ -125,7 +126,6 @@ a:hover {
 abbr[title] {
     border-bottom: none; /* 1 */
     text-decoration: underline; /* 2 */
-    text-decoration: underline dotted; /* 2 */
 }
 
 /**
