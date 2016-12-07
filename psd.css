@@ -130,14 +130,9 @@ h3 {
     color: #494949;
     font-weight: 100;
 }
-/*Белая полоска*/
-#line {
-    height: 50px;
-    overflow:hidden;
-    background-color: #ffffff;
-}
 /*Блоки Interior Design, Our Team, Design Ideas*/
 .feature {
+    margin-top: 50px;
     overflow:hidden;
     height: 28%;
     background: linear-gradient(to bottom, #e2e2e2, #fdfdfd);
