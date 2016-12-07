@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+<!--  -->
+<script>
+
+  var a = 2 + 2;
+
+  switch (a) {
+    case 3:
+      alert( 'Маловато' );
+      break;
+    case 4:
+      alert( 'В точку!' );
+      break;
+    case 5:
+      alert( 'Перебор' );
+      break;
+    default:
+      alert( 'Я таких значений не знаю' );
+  }
+
+
+  // Если break нет, то выполнение пойдёт ниже по
+  // следующим case, при этом остальные проверки игнорируются.
+
+  switch (a) {
+    case 3:
+      alert( 'Маловато' );
+    case 4:
+      alert( 'В точку!' );
+    case 5:
+      alert( 'Перебор' );
+    default:
+      alert( 'Я таких значений не знаю' );
+  }
+
+  // Группировка case
+
+  switch (a) {
+    case 4:
+      alert('Верно!');
+      break;
+
+    case 3:                    // (*)
+    case 5:                    // (**)
+      alert('Неверно!');
+      alert('Немного ошиблись, бывает.');
+      break;
+
+    default:
+      alert('Странный результат, очень странный');
+  }
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

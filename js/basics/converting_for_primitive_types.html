@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+<!-- Строковое преобразование -->
+<script>
+  // преобразование производит функция alert
+  var a = true;
+  alert( a ); // "true"
+
+  // преобразование явным вызовом String(val)
+  alert( String(null) === "null" ); // true
+
+  // Также для явного преобразования применяется оператор "+"
+  alert( true + "test" ); // "truetest"
+  alert( "123" + undefined ); // "123undefined"
+</script>
+
+
+
+<!-- Численное преобразование -->
+<script>
+  var a = +"123"; // 123
+  var b = Number("123"); // 123, тот же эффект
+
+  // после обрезания пробельных символов останется "123"
+  alert( +"   \n  123   \n  \n" ); // 123
+
+
+  // Логические значения:
+  alert( +true ); // 1
+  alert( +false ); // 0
+
+  // Сравнение разных типов – значит численное преобразование:
+  alert( "\n0 " == 0 ); // true
+
+  // С логическими значениями:
+  alert( "\n" == false );
+  alert( "1" == true );
+
+  // Специальные значения !!!
+  // null:
+  alert( null >= 0 ); // true, т.к. null преобразуется к 0
+  alert( null > 0 ); // false (не больше), т.к. null преобразуется к 0
+  alert( null == 0 ); // false (и не равен!), т.к. == рассматривает null особо.
+
+  // Значение undefined вообще «несравнимо»
+  alert( undefined > 0 ); // false, т.к. undefined -> NaN
+  alert( undefined == 0 ); // false, т.к. это undefined (без преобразования)
+  alert( undefined < 0 ); // false, т.к. undefined -> NaN
+</script>
+
+
+
+<!-- Логическое преобразование -->
+<script>
+  // двойное логическое отрицание !!value или вызов Boolean(value)
+  alert( !!"0" ); // true
+  alert( !!" " ); // любые непустые строки, даже из пробелов - true!
+
+  // «==» – численное преобразование, а в if – логическое
+  alert( 0 == "\n0\n" ); // true
+  // versus
+  if ("\n0\n") {
+    alert( "true, совсем не как 0!" );
+  }
+</script>
+
+
+
+</body>
+
+</html>

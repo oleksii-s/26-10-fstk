@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+<!--|| (ИЛИ)-->
+<script>
+  // если хотя бы один из аргументов true,
+  // то возвращает true, иначе – false
+  alert( true || true ); // true
+  alert( false || true ); // true
+  alert( true || false ); // true
+  alert( false || false ); // false
+
+  if (1 || 0) { // сработает как if( true || false )
+    alert( 'верно' );
+  }
+
+  var hour = 9;
+
+  if (hour < 10 || hour > 18) {
+    alert( 'Офис до 10 или после 18 закрыт' );
+  }
+
+
+  hour = 12;
+  var  isWeekend = true;
+
+  if (hour < 10 || hour > 18 || isWeekend) {
+    alert( 'Офис до 10 или после 18 или в выходной закрыт' );
+  }
+
+  // Короткий цикл вычислений
+  var x;
+
+  true || (x = 1);
+  alert(x); // undefined, x не присвоен
+
+  false || (x = 1);
+  alert(x); // 1
+
+
+
+  // Значение ИЛИ
+  alert( 1 || 0 ); // 1
+  alert( true || 'неважно что' ); // true
+
+  alert( null || 1 ); // 1
+  alert( undefined || 0 ); // 0
+
+  // Если все значения «ложные», то || возвратит последнее из них
+  alert( undefined || '' || false || 0 ); // 0
+
+
+</script>
+
+
+
+
+<!--&& (И)-->
+<script>
+
+  alert( true && true ); // true
+  alert( false && true ); // false
+  alert( true && false ); // false
+  alert( false && false ); //
+
+
+  // Пример с if
+  if (1 && 0) { // вычислится как true && false
+    alert( 'не сработает, т.к. условие ложно' );
+  }
+
+  var hour = 12,
+    minute = 30;
+
+  if (hour == 12 && minute == 30) {
+    alert( 'Время 12:30' );
+  }
+
+  // тот же принцип «короткого цикла вычислений»
+  // Первый аргумент - true,
+  // Поэтому возвращается второй аргумент
+  alert( 1 && 0 ); // 0
+  alert( 1 && 5 ); // 5
+
+  // Первый аргумент - false,
+  // Он и возвращается, а второй аргумент игнорируется
+  alert( null && 5 ); // null
+  alert( 0 && "не важно" ); // 0
+
+  alert( 1 && 2 && null && 3 ); // null
+  alert( 1 && 2 && 3 ); // 3
+</script>
+
+
+<!--Приоритет у && больше, чем у ||-->
+<script>
+  alert( 5 || 1 && 0 ); // 5
+</script>
+
+
+
+
+<!--! (НЕ)-->
+<script>
+  var result = !true; // false
+
+  alert( !true ); // false
+  alert( !0 ); // true
+
+  // двойное НЕ используют
+  // для преобразования значений к логическому типу
+  alert( !!"строка" ); // true
+  alert( !!null ); // false
+
+</script>
+
+
+
+</body>
+
+</html>

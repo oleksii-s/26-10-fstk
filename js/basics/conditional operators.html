@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+  // Неверное условие, else
+  var year = prompt('Введите год появления стандарта ECMA-262 5.1', '');
+
+  if (year == 2011) {
+    alert( 'Да вы знаток!' );
+  } else {
+    alert( 'А вот и неправильно!' ); // любое значение, кроме 2011
+  }
+
+  // Несколько условий, else if
+  if (year < 2011) {
+    alert( 'Это слишком рано..' );
+  } else if (year > 2011) {
+    alert( 'Это поздновато..' );
+  } else {
+    alert( 'Да, точно в этом году!' );
+  }
+
+
+
+
+
+  // Тернарный оператор (условие ? значение1 : значение2)
+  var access;
+  var age = prompt('Сколько вам лет?', '');
+
+  access = (age > 14) ? true : false;
+  access = age > 14 ? true : false;
+  access = age > 14;
+
+
+
+
+
+  // Несколько операторов „?“
+  var age = prompt('возраст?', 18);
+
+  var message = (age < 3) ? 'Здравствуй, малыш!' :
+    (age < 18) ? 'Привет!' :
+      (age < 100) ? 'Здравствуйте!' :
+        'Какой необычный возраст!';
+
+  alert( message );
+
+  // То же самое через if..else
+  if (age < 3) {
+    message = 'Здравствуй, малыш!';
+  } else if (age < 18) {
+    message = 'Привет!';
+  } else if (age < 100) {
+    message = 'Здравствуйте!';
+  } else {
+    message = 'Какой необычный возраст!';
+  }
+
+</script>
+
+</body>
+</html>
