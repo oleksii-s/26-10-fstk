@@ -1,12 +1,12 @@
 
+@import url('https://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400i&subset=cyrillic,cyrillic-ext');
+
 @import "style_min1920px.css";
 @import "style_1600-1920px.css";
 @import "style_1280-1600px.css";
 @import "style_960-1280px.css";
 @import "style_640-960px.css";
 @import "style_max640px.css";
-
-@import url('https://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400i&subset=cyrillic,cyrillic-ext');
 
 body {
     margin: auto;
