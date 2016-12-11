@@ -11,35 +11,42 @@
                 getAge(dater);
             }
             var today = new Date;
-            var edited_date = date.replace(/[^/0-9]/g, '');
-            var arrAge = edited_date.split('/');
+            //var edited_date = date.replace(/[^/0-9]/g, '');
+            var arrAge = date.split('/');
             //alert(arrAge);
             var mm = +arrAge[0] - 1;
             var dd = +arrAge[1];
             var yyyy = +arrAge[2];
             var birthDate = new Date(yyyy, mm, dd);
             // alert(birthDate);
-
             var age = today.getFullYear() - birthDate.getFullYear();
             var m = today.getMonth() - birthDate.getMonth();
             if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
                 age--;
             }
-            if (mm < 0 || mm > 12 || dd < 0 || dd > 31 || age >= 120 || birthDate.getFullYear() > today.getFullYear()) {
+            function isValidDate(date) {
+                var arrAge = date.split('/'),
+                        month = +arrAge[0] - 1,
+                        day = +arrAge[1],
+                        year = +arrAge[2],
+                        birthDate = new Date(year, month, day);
+                return birthDate.getMonth() === month && birthDate.getDate() === day && birthDate.getFullYear() === year;
+            }
+            if (!isValidDate(date) || isNaN(Date.parse(date)) || age >= 120 || birthDate.getFullYear() > today.getFullYear()) {
                 var datet = prompt('Год рождения введен не верно. Введите правильный год рождения.(mm/dd/yyyy)', '');
                 getAge(datet);
             }
-            switch (true) {
-                case age <= 24:
-                    alert( 'Привет дружище!' );
-                    break;
-                case 25 <= age && age <= 49:
-                    alert( 'Добрый день!' );
-                    break;
-                case age >= 50 && age <= 119:
-                    alert( 'Приветствуем Вас!' );
-                    break;
-            }
+                switch (true) {
+                    case age <= 24:
+                        alert('Привет дружище!');
+                        break;
+                    case 25 <= age && age <= 49:
+                        alert('Добрый день!');
+                        break;
+                    case age >= 50 && age <= 119:
+                        alert('Приветствуем Вас!');
+                        break;
+                }
         };
         getAge(date);
 
