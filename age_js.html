@@ -6,6 +6,10 @@
     <script>
         var date = prompt('What is your date of birth? (mm/dd/yyyy)', '');
         var getAge = function(date) {
+            if (date == '') {
+                var dater = prompt('Ошибочно отправлено пустое поле. Введите год рождения.(mm/dd/yyyy)');
+                getAge(dater);
+            }
             var today = new Date;
             var edited_date = date.replace(/[^/0-9]/g, '');
             var arrAge = edited_date.split('/');
@@ -21,22 +25,20 @@
             if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
                 age--;
             }
-            if (date == '') {
-                var dater = prompt('Ошибочно отправлено пустое поле. Введите год рождения.(mm/dd/yyyy)');
-                getAge(dater);
-            }
-            else if (mm < 0 || mm > 12 || dd < 0 || dd > 31 || age >= 120 || birthDate.getFullYear() > today.getFullYear()) {
+            if (mm < 0 || mm > 12 || dd < 0 || dd > 31 || age >= 120 || birthDate.getFullYear() > today.getFullYear()) {
                 var datet = prompt('Год рождения введен не верно. Введите правильный год рождения.(mm/dd/yyyy)', '');
                 getAge(datet);
             }
-            else if (age <= 24) {
-                alert('Привет дружище!');
-            }
-            else if (25 <= age && age <= 49) {
-                alert('Добрый день!');
-            }
-            else if (age >= 50 && age <= 119) {
-                alert('Приветствуем Вас!');
+            switch (true) {
+                case age <= 24:
+                    alert( 'Привет дружище!' );
+                    break;
+                case 25 <= age && age <= 49:
+                    alert( 'Добрый день!' );
+                    break;
+                case age >= 50 && age <= 119:
+                    alert( 'Приветствуем Вас!' );
+                    break;
             }
         };
         getAge(date);
