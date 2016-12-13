@@ -81,6 +81,11 @@ header {
 
 .menu .mobile_menu {
     display: none;
+    width: 80%;
+    padding: 2%;
+    margin: 0 auto 5% auto;
+    background-color: rgba(183, 183, 183, 0.41);
+    font-size: 1.4rem;
 }
 
 .menu .menu_wrapper {
@@ -155,7 +160,7 @@ main {
 }
 
 .content_bottom > div {
-    width: 33.33%;
+    width: 32%;
     float: left;
 }
 
@@ -420,16 +425,26 @@ main div header {
     text-transform: none;
 }
 
-.testimonials ul li p:before {
+.testimonials ul li p:before, .testimonials ul li p:after {
     content: "";
+    display: block;
     position: absolute;
     right: 100%;
-    top: 10px;
     width: 0;
     height: 0;
-    border-top: 1rem inset transparent;
-    border-right: 1.4286rem dashed #e1e1e1;
-    border-bottom: 1rem inset transparent;
+    border-style: solid;
+}
+
+.testimonials ul li p:after {
+    top: 10px;
+    border-color: transparent #fff transparent transparent;
+    border-width: 10px;
+}
+
+.testimonials ul li p:before {
+    top: 9px;
+    border-color: transparent #dbdbdb transparent transparent;
+    border-width: 11px;
 }
 
 .testimonials ul li a{
@@ -443,12 +458,13 @@ main div header {
 
 .news {
     width: 100%;
+    padding: 0 1%;
 }
 
 .news ul {
     width: 100%;
     list-style-type: none;
-    margin: 10.0796% 0 0 0;
+    margin: 9.7% 0 0 0;
     padding: 0;
 }
 
@@ -462,24 +478,27 @@ main div header {
     border: none;
 }
 
+.news ul > :nth-child(n+2) {
+    margin-top: 4.2%;
+}
+
 .news ul li :first-child {
     width: 20%;
 }
 
 .news ul li :last-child {
     width: 70%;
-    height: 100%;
     margin-left: 5%;
 }
 
-.news ul li div {
+.news ul li > div {
     display: inline-block;
 }
 
 .news ul li .day{
     width: 100%;
     margin: 0;
-    padding: 25.3333% 0;
+    padding: 18.5% 0;
     font-size: 2.5rem;
     font-weight: 500;
     line-height: 2.5714rem;
@@ -495,6 +514,7 @@ main div header {
     font-size: 1.07rem;
     font-weight: 300;
     color: #c5e2ed;
+    border: 1px solid rgb(64, 64, 64);
     background-image: -webkit-linear-gradient(bottom, rgb(64, 64, 64), rgb(85, 85, 85));
     background-image: -moz-linear-gradient(bottom, rgb(64, 64, 64), rgb(85, 85, 85));
     background-image: -o-linear-gradient(bottom, rgb(64, 64, 64), rgb(85, 85, 85));
@@ -527,7 +547,7 @@ main div header {
 
 .news ul li :last-child p {
     width: 100%;
-    margin: 7% 0 0 0;
+    margin: 4% 0 0 0;
     color: #9f9f9f;
     font-family: "Arial", sans-serif;
     font-size: 1rem;
@@ -538,6 +558,7 @@ main div header {
 
 .design_trends {
     width: 100%;
+    padding: 0 1%;
 }
 
 .design_trends ul {
@@ -676,12 +697,20 @@ footer span {
 
     .menu .mobile_menu {
         display: block;
-        width: 50%;
-        margin: 0 auto 5% auto;
     }
 
     .menu .menu_wrapper {
         display: none;
+    }
+
+    .menu .label_name :first-child {
+        font-size: 4rem;
+        line-height: 3rem;
+    }
+
+    .menu .label_name :last-child {
+        font-size: 4rem;
+        line-height: 3rem;
     }
 
     .header_middle .caption{
