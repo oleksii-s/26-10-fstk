@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Age request</title>
+</head>
+<body>
+
+<script>
+
+    var year = prompt('Введите свой год рождения', '');
+
+    if (!year) {
+        year = prompt('Ошибочно отправлено пустое поле. Введите год рождения.', '');
+    }
+
+    var date = new Date();
+    var age = date.getFullYear() - year;
+
+    if (age > 120 || age < 0 ){
+        year = prompt('Год рождения введен не верно. Введите правильный год рождения.', '');
+        age = date.getFullYear() - year;
+    }
+
+    var message = (age >= 50) ? 'Приветствуем Вас!' :
+            (age >= 25 && age < 50) ? 'Добрый день!' :
+                    'Привет дружище!';
+    alert(message);
+
+</script>
+
+</body>
+</html>
