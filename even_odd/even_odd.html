@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Even_Odd</title>
+    <script>
+        var number = prompt('Please, write a number:', '');
+        //Checking the correctness of number
+        function isValidNumber(number) {
+               if (isNaN(number) || number == '') {
+                number = prompt('Please, write a NUMBER:', '');
+                isValidNumber(number);
+            } else if (number === null) {
+                window.stop()
+            } else {
+                evenOdd(number);
+            }
+        }
+        //Even or Odd number
+        function evenOdd(number)
+        {
+            if (number % 2 == 0){
+                alert("This is an even number");
+            } else {
+                alert("This is an odd number");
+            }
+        }
+        isValidNumber(number);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
