@@ -1,0 +1,18 @@
+html {
+    font-size: 14px;
+}
+
+textarea, input {
+    display: block;
+    margin: 2em;
+}
+
+textarea {
+    width: 30em;
+    height: 15em;
+}
+
+#output {
+    width: 30em;
+    height: 15em;
+}
