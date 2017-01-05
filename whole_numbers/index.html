@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Whole numbers</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- START HEADER -->
@@ -17,8 +19,9 @@
         <input id="number_from" type="number" name="number_from">
         <label for="number_to">To: </label>
         <input id="number_to" type="number" name="number_to">
-        <input type="submit" value="Check" onclick="chooseWholeNumbersFromRange()">
+        <input type="submit" value="Check" onclick="return chooseWholeNumbersFromRange()">
     </form>
+    <div id="show"></div>
 </main>
 <!-- END MAIN -->
 <script src="main.js"></script>

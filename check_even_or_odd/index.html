@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Even or Odd</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- START HEADER -->
@@ -15,8 +17,9 @@
         <form action="" method="">
             <label for="number">Enter your number: </label>
             <input id="number" type="number" name="number">
-            <input type="submit" value="Check" onclick="checkEvenOrOdd()">
+            <input type="submit" value="Check" onclick="return checkEvenOrOdd()">
         </form>
+        <div id="show"></div>
     </main>
 <!-- END MAIN -->
 <script src="check_even_or_odd.js"></script>

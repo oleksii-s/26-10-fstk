@@ -14,18 +14,11 @@ form {
     margin: 0 auto;
 }
 
-textarea, input, label {
+input, label {
     display: block;
 }
 
-textarea {
-    width: 90%;
-    height: 100px;
-    margin: 2% auto;
-    font-size: 20px;
-}
-
-input[type="text"] {
+input[type="number"] {
     margin: 1% auto;
 }
 
@@ -34,7 +27,8 @@ input[type="submit"] {
 }
 
 #show {
-    width: 3%;
+    display: none;
+    width: 30%;
     margin: 2% auto;
     border: 2px solid #fff;
     font-size: 60px;

@@ -22,7 +22,6 @@ textarea {
     width: 90%;
     height: 100px;
     margin: 2% auto;
-    font-size: 20px;
 }
 
 input[type="text"] {
@@ -39,3 +38,4 @@ input[type="submit"] {
     border: 2px solid #fff;
     font-size: 60px;
 }
+
