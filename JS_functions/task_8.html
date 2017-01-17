@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    (function() {
+
+        var number = getNumber();
+
+        getNFibonacci();
+
+        function getNumber() {
+            var defaultMessage = 'Пожалуйста, введите число!',
+                    wrongNumMessage = 'Вы ввели не число. Введите число.',
+                    emptyNumMessage = 'Вы ничего не ввели. Введите число.';
+
+            var numberInput = prompt(defaultMessage, '1');
+
+            while (numberInput == '') {
+                numberInput = prompt(emptyNumMessage, '1');
+            }
+            while (isNaN(numberInput)) {
+                numberInput = prompt(wrongNumMessage, '1');
+            }
+            return numberInput;
+        }
+
+        function getNFibonacci() {
+            var arrFibonacci = [0, 1];
+            for (var n = 2; n < number; n++) {
+                arrFibonacci[n] = arrFibonacci[n-2] + arrFibonacci[n-1];
+            } alert(arrFibonacci);
+        }
+    }());
+
+</script>
+</body>
+</html>

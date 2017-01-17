@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    'use strict';
+
+    (function() {
+
+        var userString = getString(),
+                userLetter = getLetter();
+
+        countLetter();
+
+        function getString() {
+            var defaultMessage = 'Пожалуйста, введите пару слов!',
+                    wrongNumMessage = 'Вы ввели не слова. Введите слова.',
+                    emptyNumMessage = 'Вы ничего не ввели.';
+
+            var stringInput = prompt(defaultMessage, 'hello');
+
+            while (stringInput == '') {
+                stringInput = prompt(emptyNumMessage, 'hello');
+            }
+            while ($.isNumeric(stringInput)) {
+                stringInput = prompt(wrongNumMessage, 'hello');
+            }
+
+            return stringInput;
+        }
+
+        function getLetter() {
+            var defaultMessage = 'Пожалуйста, введите одну букву.',
+                    wrongStrMessage = 'Вы ввели не одну букву. Введите одну букву.',
+                    wrongNumMessage = 'Вы ввели число. Пожалуйста введите одну букву.',
+                    emptyStrMessage = 'Вы ничего не ввели.';
+
+            var stringInput = prompt(defaultMessage, 'a');
+
+            while (stringInput == '') {
+                stringInput = prompt(emptyStrMessage, 'a');
+            }
+            while (stringInput.length > 1) {
+                stringInput = prompt(wrongStrMessage, 'a');
+            }
+
+            while ($.isNumeric(stringInput)) {
+                stringInput = prompt(wrongNumMessage, 'a');
+            }
+
+            return stringInput;
+        }
+
+        function countLetter() {
+            var count =0;
+            for (var i = 0; i < userString.length; i++) {
+                if (userLetter == userString[i])
+                    count++;
+            }
+            alert('Буква ' + userLetter + ' встречаеться в Вашей строке ' + count + ' раз(а).');
+        }
+    }());
+
+</script>
+</body>
+</html>

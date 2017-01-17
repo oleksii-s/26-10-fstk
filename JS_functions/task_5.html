@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    (function() {
+        var numbers = [];
+
+        fizzBuzz();
+
+        function fizzBuzz() {
+            for (var n = 1; n <=100; n++) {
+                if (n%5 == 0 && n%3 == 0) {
+                    numbers.push('FizzBuzz');
+                }
+                if (n%3 == 0) {
+                    numbers.push('Fizz');
+                } else if (n%5 == 0) {
+                    numbers.push('Buzz');
+                } else (numbers.push(n))
+            } alert(numbers);
+        }
+    }());
+
+</script>
+</body>
+</html>

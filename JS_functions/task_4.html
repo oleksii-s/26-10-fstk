@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    (function() {
+
+        var minNumber = getMinNumber(),
+                maxNumber = getMaxNumber();
+
+        rowIntegers(minNumber, maxNumber);
+
+        function getMinNumber() {
+            var defaultMessage = 'Пожалуйста, введите минимальное число!',
+                    wrongNumMessage = 'Вы ввели не число. Введите число.',
+                    emptyNumMessage = 'Вы ничего не ввели. Введите число.';
+
+            var minNumberInput = prompt(defaultMessage, '1');
+
+            while (minNumberInput == '') {
+                minNumberInput = prompt(emptyNumMessage, '1');
+            }
+            while (isNaN(minNumberInput)) {
+                minNumberInput = prompt(wrongNumMessage, '1');
+            }
+
+            return minNumberInput;
+        }
+
+        function getMaxNumber() {
+            var defaultMessage = 'Пожалуйста, введите максимальное число!',
+                    wrongNumMessage = 'Вы ввели не число. Введите число.',
+                    wrongMaxNumber = 'Максимальное число меньше чем минимальное!',
+                    emptyNumMessage = 'Вы ничего не ввели. Введите число.';
+
+            var maxNumberInput = prompt(defaultMessage, '1');
+
+            while (maxNumberInput == '') {
+                maxNumberInput = prompt(emptyNumMessage, '1');
+            }
+            while (isNaN(maxNumberInput)) {
+                maxNumberInput = prompt(wrongNumMessage, '1');
+            }
+
+            while (maxNumberInput < minNumber) {
+                maxNumberInput = prompt(wrongMaxNumber, '1');
+            }
+            return maxNumberInput;
+        }
+
+        function rowIntegers() {
+            var integers = [];
+            for (var i = minNumber; i < maxNumber; i++) {
+                integers.push(i);
+            } alert(integers);
+        }
+    }());
+
+</script>
+</body>
+</html>

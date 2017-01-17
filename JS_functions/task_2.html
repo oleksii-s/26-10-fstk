@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    (function() {
+
+        var userNumber = getNumber(),
+                randNumber = generateRandNumber(1, 10);
+
+        checkYourLuck();
+
+        alert(randNumber);
+
+        function getNumber() {
+            var defaultMessage = 'Пожалуйста, введите число от 1 до 10!',
+                    wrongNumMessage = 'Вы ввели не число. Введите число.',
+                    wrongRangeMessage = 'Вы ввели неверное число',
+                    emptyNumMessage = 'Вы ничего не ввели. Введите число.';
+
+            var numberInput = prompt(defaultMessage, '1');
+
+            while (numberInput == '') {
+                numberInput = prompt(emptyNumMessage, '1');
+            }
+            while (isNaN(numberInput)) {
+                numberInput = prompt(wrongNumMessage, '1');
+            }
+
+            while (numberInput < 0 || numberInput > 10) {
+                numberInput = prompt(wrongRangeMessage, '1');
+            }
+            return numberInput;
+        }
+
+        function generateRandNumber(min, max) {
+            return Math.floor(Math.random()*(max-min+1)) + min;
+        }
+
+        function checkYourLuck() {
+            if (userNumber == randNumber) {
+                alert("Отличная работа!")
+            } else (alert("Неудача."))
+        }
+    }());
+
+</script>
+</body>
+</html>

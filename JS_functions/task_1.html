@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    (function() {
+
+        var num = getNumber();
+
+        evenNumber(num);
+
+        function getNumber() {
+            var defaultMessage = 'Пожалуйста, введите целое число!',
+                    wrongNumMessage = 'Вы ввели не число. Введите число.',
+                    emptyNumMessage = 'Вы ничего не ввели. Введите число.';
+
+            var numberInput = prompt(defaultMessage, '1');
+
+            while (numberInput == '') {
+                numberInput = prompt(emptyNumMessage, '1');
+            }
+            while (isNaN(numberInput)) {
+                numberInput = prompt(wrongNumMessage, '1');
+            }
+
+            return numberInput;
+        }
+
+
+        function evenNumber(num) {
+            if (num%2 == 0) {
+                alert("Вы ввели парное число!")
+            } else (alert("Вы ввели непарное число"))
+        }
+    }());
+
+</script>
+</body>
+</html>

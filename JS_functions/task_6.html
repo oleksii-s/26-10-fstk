@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    'use strict';
+
+    (function() {
+
+        var userString = getString();
+
+        upperFirstLetter();
+
+        function getString() {
+            var defaultMessage = 'Пожалуйста, введите пару слов!',
+                    wrongStrMessage = 'Вы ввели не слова. Введите слова.',
+                    emptyStrMessage = 'Вы ничего не ввели.';
+
+            var stringInput = prompt(defaultMessage, 'hello');
+
+            while (stringInput == '') {
+                stringInput = prompt(emptyStrMessage, 'hello');
+            }
+            while ($.isNumeric(stringInput)) {
+                stringInput = prompt(wrongStrMessage, 'hello');
+            }
+
+            return stringInput;
+        }
+
+        function upperFirstLetter() {
+            var words = userString.split(' '),
+                    newWords = [];
+
+            words.forEach (function(value) {
+                newWords.push(value.charAt(0).toUpperCase() + value.substring(1));
+            });
+
+            var newString = newWords.join(' ');
+            alert(newString);
+        }
+    }());
+
+</script>
+</body>
+</html>
