@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Even or Odd</title>
+</head>
+<body>
+
+    <script>
+        var num = prompt('Введите число:', '');
+
+        // Проверяем число на корректность
+        while (!window.num || isNaN(num)) {
+            num = prompt('Введите число правильно:', '');
+        }
+
+        // Проверка на четность/нечетность
+        if (num % 2 == 0)
+            alert('Это число - четное');
+        else
+            alert('Это число - нечетное');
+    </script>
+
+</body>
+</html>

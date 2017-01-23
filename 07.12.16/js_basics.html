@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+</head>
+<body>
+
+<script>
+
+    var years_old = prompt("Здравствуйте! Сколько Вам лет?", "");
+    var this_year = new Date().getFullYear();
+    var year_birth;
+
+    // Это варианты проверок того, что вводит пользователь
+
+    // 1 вариант. Этот код работает не совсем правильно.
+    // После того, как пользователь ввел свой год рождения не верно и потом отправить пустое поле,
+    // выдаст сообщение со второго цикла, а не с первого, как нам надо. Когда попадаем во второй цикл,
+    // в первый мы уже попасть не можем.
+//    while (!years_old) {
+//        years_old = prompt("Ошибочно отправлено пустое поле. Введите год рождения.", "");
+//    }
+//    year_birth = this_year - years_old;
+//
+//    while (years_old > 120 || year_birth >= this_year) {
+//        years_old = prompt("Год рождения введен не верно. Введите правильный год рождения.", "");
+//        year_birth = this_year - years_old;
+//    }
+
+    // 2 вариант. Этот код работает корректно, хоть и не совсем красиво написан
+//    var b1, b2;
+//    while (!(b1 && b2)) {
+//        year_birth = this_year - years_old;
+//        if (!years_old) {
+//            years_old = prompt("Ошибочно отправлено пустое поле. Введите год рождения.", "");
+//            b1 = false;
+//        } else if (years_old > 120 || year_birth >= this_year) {
+//            years_old = prompt("Год рождения введен не верно. Введите правильный год рождения.", "");
+//            b2 = false;
+//        } else {
+//            b1 = true;
+//            b2 = true;
+//        }
+//    }
+
+    // 3 вариант. Немного модифицирован предыдущий вариант
+    var count_true = 0;
+    while (count_true < 2) {
+        count_true = 2;
+        year_birth = this_year - years_old;
+        if (!years_old) {
+            years_old = prompt("Ошибочно отправлено пустое поле. Введите год рождения.", "");
+            count_true--;
+        } else if (years_old > 120 || year_birth >= this_year) {
+            years_old = prompt("Год рождения введен не верно. Введите правильный год рождения.", "");
+            count_true--;
+        }
+    }
+
+    // Когда проверки пройдены, значит число входит в рамки 1-120 и можно выводить конкретные сообщение
+    if (years_old < 25) alert("Привет дружище!");
+    else if (years_old >= 25 && years_old <= 50) alert("Добрый день!");
+    else if (years_old > 50) alert("Приветствуем Вас!");
+
+</script>
+
+</body>
+</html>
