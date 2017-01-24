@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Longest word</title>
+</head>
+<body>
+
+<script>
+
+    function longest_word (string) {
+
+        var arr = string.split(' ');
+
+        function compareElements(a, b) {
+            if (a.length > b.length) return -1;
+            if (a.length < b.length) return 1;
+        }
+
+        arr.sort(compareElements);
+
+        return alert('Самое длинное слово -  ' + arr[0]);
+    }
+    var str = prompt('Введите строку', '');
+    while (!str) {
+        str = prompt('Строка не должна быть пустой! Введите строку', '');
+    }
+    longest_word(str);
+
+</script>
+
+</body>
+</html>
