@@ -1,0 +1,36 @@
+body {
+    background-color: #211e1c;
+    color: #fff;
+}
+
+header, main {
+    width: 100%;
+    text-align: center;
+}
+
+form {
+    width: 40%;
+    border: 1px solid #fff;
+    margin: 0 auto;
+}
+
+input, label {
+    display: block;
+}
+
+input[type="number"] {
+    margin: 1% auto;
+    font-size: 30px;
+}
+
+input[type="submit"] {
+    margin: 3% auto;
+}
+
+#show {
+    display: none;
+    width: 30%;
+    margin: 2% auto;
+    border: 2px solid #fff;
+    font-size: 30px;
+}
