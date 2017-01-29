@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>to upper</title>
+</head>
+<body>
+<script>
+
+    //Напишите JavaScript функцию, которая принимает строку в качестве параметра
+    // и преобразует первую букву каждого слова строки в верхний регистр.
+    //Пример строки: ‘тестовая строка коротка’
+    //Ожидаемый результат: ‘‘Тестовая Строка Коротка’
+
+
+    //var str = 'hello world';
+
+    function foobar(str) {
+        return str.replace(/\b(.)/g, function (s) {
+            return s.toUpperCase();
+        })
+    }
+    var str = prompt("Введите любой текст в нижнем регистре", "");
+    alert(foobar(str));
+
+</script>
+</body>
+</html>
