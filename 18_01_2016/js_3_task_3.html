@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function makeCounter ()
+        {
+            var currentCount = 0;
+
+            function counter()
+            {
+                return currentCount;
+            }
+
+            counter.increment = function() {
+                return ++currentCount;
+            };
+            counter.decrement = function() {
+                return --currentCount;
+            };
+            counter.get = function() {
+                return currentCount;
+            };
+            counter.reset = function() {
+                return currentCount = 0;
+            };
+
+            return counter;
+        }
+
+        var counter = makeCounter();
+
+        alert(counter.increment());
+        alert(counter.increment());
+        alert(counter.increment());
+        alert(counter.decrement());
+        alert(counter.reset());
+        alert(counter.increment());
+        alert(counter.increment());
+        alert(counter.decrement());
+        alert(counter.get());
+
+
+    </script>
+</body>
+</html>

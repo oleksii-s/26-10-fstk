@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var obj = {name: 'Mike', age: 32};
+
+    function objectCopy (obj)
+    {
+        var objCopy = {};
+        for (var key in obj) {
+            objCopy[obj[key]] = key;
+        }
+        alert(objCopy.name);
+    }
+
+    objectCopy(obj);
+
+</script>
+</body>
+</html>
