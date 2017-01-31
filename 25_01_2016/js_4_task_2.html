@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var arr = [1,11,7,4,5,6,10,8,9];
+
+    function arrSummarise(arr)
+    {
+        var arrSum = arr.map(function(value, i)
+        {
+            var sum =0;
+
+            arr.slice(0, i+1).forEach(function (value2)
+                {
+                    sum += value2;
+                });
+            return (sum);
+
+        });
+        alert(arrSum);
+    }
+
+    arrSummarise(arr);
+
+</script>
+</body>
+</html>

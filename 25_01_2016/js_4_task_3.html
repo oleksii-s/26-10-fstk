@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var arr = [222,444,888,777];
+
+    function findN(arr)
+    {
+
+        var isEvenN = arr.filter(function(value)
+       {
+           return value % 2 == 0;
+       });
+
+        var isNotEvenN = arr.filter(function(value)
+        {
+            return value % 2 != 0;
+        });
+
+        var count = 0;
+        arr.forEach(function(value)
+        {
+            if(value % 2 == 0)
+                count++;
+        });
+
+        if(count >= 2) {
+            alert(isNotEvenN);
+        } else {
+            alert(isEvenN);
+        }
+    }
+
+    findN(arr);
+
+</script>
+</body>
+</html>

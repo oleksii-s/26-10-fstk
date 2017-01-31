@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var arr = [12,45,78,25,24,15,7,16,23,89,52,45];
+    function filterArrayValues (arr, a, b)
+    {
+        arr.forEach(function(value) {
+            if(value <= a || value >= b) {
+                delete arr[arr.indexOf(value)];
+            }
+        });
+        alert(arr);
+    }
+
+    filterArrayValues(arr, 10, 50);
+
+</script>
+</body>
+</html>
