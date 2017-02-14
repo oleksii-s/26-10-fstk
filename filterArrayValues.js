@@ -7,13 +7,7 @@ function filterArrayValues(arr, a, b)
 }
 var art = [1,2,3,6,9,80,1,10];
 filterArrayValues(art, 2, 7);
-console.log(art);
-
-// var arr = [1,2,3,6,9,80,1,10];
-// var a= 2, b=7;
-//
-
-
+// console.log(art);
 
 // arr.forEach(function(item, i, arr) {
 //     if (a > item || item > b) {
