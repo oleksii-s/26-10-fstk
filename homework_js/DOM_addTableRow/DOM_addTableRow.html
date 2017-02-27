@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(list of songs)</title>
+</head>
+
+<style>
+    td {
+        height: 20px;
+        width: 40px;
+    }
+</style>
+<body>
+
+<table border="1">
+    <tbody>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+</table>
+
+
+<input type="button" name="change" value="AddRow">
+
+<script>
+
+    var button = document.querySelector('input');
+    var tbody = document.getElementsByTagName('tbody')[0];
+    var trAll =  document.querySelectorAll('tr');
+    var countTd = trAll[trAll.length -1].cells.length;
+
+    button.onclick = function(){
+        tbody.appendChild(document.createElement('tr'));
+        for (var i = 0; i < countTd; i++) {
+            tbody.lastElementChild.appendChild(document.createElement('td'));
+        }
+    }
+
+</script>
+
+
+</body>
+</html>
