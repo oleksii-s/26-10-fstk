@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_1</title>
+
+    <script>
+        function changeStyles() {
+            var element = document.getElementById('par');
+            var rand = Math.round(Math.random() * 3);
+
+            switch (rand) {
+                case 1:
+                    element.style.fontSize = '30px';
+                    element.style.fontStyle = 'italic';
+                    element.style.color = 'red';
+                    break;
+                case 2:
+                    element.style.fontSize = '25px';
+                    element.style.fontStyle = 'oblique';
+                    element.style.color = 'blue';
+                    break;
+                case 3:
+                    element.style.fontSize = '20px';
+                    element.style.fontStyle = 'normal';
+                    element.style.color = 'green';
+                    break;
+            }
+        }
+    </script>
+
+    <style>
+        .btn {
+            position: fixed;
+            top: 150px;
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: .5em 2em;
+            outline: none;
+            border-width: 2px 0;
+            border-style: solid none;
+            border-color: #FDBE33 #000 #D77206;
+            border-radius: 6px;
+            background: linear-gradient(#F3AE0F, #E38916) #E38916;
+            transition: 0.2s;
+        }
+        .btn:hover { background: linear-gradient(#f5ae00, #f59500) #f5ae00; }
+        .btn:active { background: linear-gradient(#f59500, #f5ae00) #f59500; }
+    </style>
+</head>
+
+<body>
+    <p id="par">
+        Создайте простую HTML страничку, которая содержит параграф и кнопку при клике на которую, при помощи javascript,
+        должны изменяться стили парагоафа (размер шрифта, стиль шрифта и цвет).
+    </p>
+
+    <input class="btn" type="button" onclick="changeStyles()" value="Изменить стиль"/>
+</body>
+</html>

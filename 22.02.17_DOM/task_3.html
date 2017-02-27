@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_3</title>
+
+    <script>
+        function addRow() {
+            var table = document.body.children[0];
+            var row = table.insertRow();
+            row.insertCell(0);
+            row.insertCell(1);
+            row.insertCell(2);
+        }
+    </script>
+
+    <style>
+        .btn {
+            position: fixed;
+            top: 20px;
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: .5em 2em;
+            background: linear-gradient(#F3AE0F, #E38916) #E38916;
+        }
+        table {
+            margin-top: 70px;
+            text-align: center;
+        }
+        td {
+            border: 1px solid black;
+            padding: 3px 5px;
+            background: lightgreen;
+            width: 40px;
+            height:20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+
+    <input class="btn" type="button" onclick="addRow()" value="Добавить строку"/>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_2</title>
+
+    <script>
+        function alertPerformers() {
+            var elements = document.getElementsByTagName('dl');
+            alert(elements[0].firstElementChild.innerHTML);
+            alert(elements[0].lastElementChild.innerHTML);
+        }
+    </script>
+
+    <style>
+        .btn {
+            position: fixed;
+            top: 150px;
+            display: inline-block;
+            color: white;
+            background: linear-gradient(#F3AE0F, #E38916) #E38916;
+        }
+        .btn:hover { background: linear-gradient(#f5ae00, #f59500) #f5ae00; }
+        .btn:active { background: linear-gradient(#f59500, #f5ae00) #f59500; }
+    </style>
+</head>
+
+<body>
+    <dl>Исполнители:
+        <dd>The Prodigy</dd>
+        <dd>David Guetta</dd>
+        <dd>Океан Ельзи</dd>
+        <dd>Daft Punk</dd>
+        <dd>Кино</dd>
+    </dl>
+
+    <input class="btn" type="button" onclick="alertPerformers()" value="Вывод исполнителя"/>
+</body>
+</html>
