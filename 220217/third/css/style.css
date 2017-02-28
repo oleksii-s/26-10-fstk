@@ -1,0 +1,56 @@
+/* ============================================
+    TABLE
+============================================= */
+table {
+    width: 60%;
+    margin: 10% auto 2% auto;
+    border: 1px solid rgba(0, 0, 0, 0.42);
+    border-spacing: 0;
+    font-size: 40px;
+}
+
+thead {
+    background-color: rgba(0, 0, 0, 0.42);
+}
+
+tbody > tr:nth-child(2n+1) {
+    background-color: rgba(0, 0, 0, 0.11);
+}
+
+thead tr td:nth-child(2) {
+    border-left: 1px solid rgba(0, 0, 0, 0.42);
+    border-right: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+tbody tr td:nth-child(2) {
+    border-left: 1px solid rgba(0, 0, 0, 0.42);
+    border-right: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+tbody td {
+    padding: 10px;
+}
+
+.first-col {
+    width: 15%;
+}
+
+.second-col {
+    width: 70%;
+}
+
+.third-col {
+    width: 15%;
+}
+
+/* ============================================
+    FORM
+============================================= */
+form {
+    text-align: center;
+    font-size: 30px;
+}
+
+form input {
+    font-size: 30px;
+}

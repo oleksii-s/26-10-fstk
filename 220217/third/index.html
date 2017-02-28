@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th class="first-col">№</th>
+                <th class="second-col">Name</th>
+                <th class="third-col">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="row">
+                <td class="first-col">1</td>
+                <td class="second-col">Bob</td>
+                <td class="third-col">23</td>
+            </tr>
+            <tr class="row">
+                <td class="first-col">2</td>
+                <td class="second-col">John</td>
+                <td class="third-col">45</td>
+            </tr>
+            <tr class="row">
+                <td class="first-col">3</td>
+                <td class="second-col">Kevin</td>
+                <td class="third-col">15</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form action="" method="post">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name">
+        <label for="age">Age</label>
+        <input id="age" type="number" name="age" min="1" max="100">
+        <input type="submit" value="Add" onclick="addRow(); return false;">
+    </form>
+
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

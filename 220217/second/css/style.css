@@ -1,0 +1,40 @@
+/* =======================================
+    FONTS
+========================================== */
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Sansita');
+
+/* ======================================
+    MAIN STYLES
+========================================== */
+h1 {
+    text-align: center;
+    font-family: 'Sansita', sans-serif;
+    font-size: 70px;
+    color: rgba(20, 98, 179, 0.94);
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+ul li {
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 30px;
+    color: rgba(187, 32, 48, 0.79);
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    padding: 15px 35px;
+    background-color: #4c806e;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7fc4b1;
+}
