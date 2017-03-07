@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Асинхронный XMLHttpRequest</title>
+</head>
+<body>
+<input type="button" value="браузер НЕ подвиснет" onclick="asynchronousExample()">
+<script>
+    function getXmlHttp(){
+        var xmlhttp;
+        try {
+            xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            try {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (E) {
+                xmlhttp = false;
+            }
+        }
+        if (!xmlhttp && typeof XMLHttpRequest != 'undefined') {
+            xmlhttp = new XMLHttpRequest();
+        }
+        return xmlhttp;
+    }
+
+    function asynchronousExample() {
+        var req = getXmlHttp();
+        req.open('GET', 'xhr/test.html', true);
+        req.onreadystatechange = function() {
+            if (req.readyState == 4) {
+                if(req.status == 200) {
+                    alert(req.responseText)
+                }
+            }
+        };
+        req.send(null)
+    }
+
+</script>
+</body>
+</html>
