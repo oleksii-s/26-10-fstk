@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Всплытие события</title>
+</head>
+<body>
+    <style>
+        body * {
+            margin: 20px;
+            border: 1px solid darkslategrey;
+        }
+
+        section {
+            background-color: antiquewhite;
+        }
+
+        div {
+            background-color: brown;
+        }
+
+        p {
+            background-color: steelblue;
+        }
+    </style>
+
+    <section id="section">SECTION
+        <div>DIV
+            <p>SPAN</p>
+            <p onclick="event.stopPropagation()">SPAN STOPS BUBBLING</p>
+        </div>
+    </section>
+
+    <script>
+        var section = document.querySelector('section');
+
+        section.onclick = function(event) {
+
+            alert("element.target = " + event.target.tagName + ", this=" + this.tagName);
+
+        };
+    </script>
+</body>
+</html>

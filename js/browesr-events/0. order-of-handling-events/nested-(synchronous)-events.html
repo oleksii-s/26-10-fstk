@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вложенные (синхронные) события</title>
+</head>
+<body>
+    <input type="button" id="button" value="Нажми меня">
+    <input type="text" id="text" size="60">
+
+    <script>
+
+        button.onclick = function() {
+            text.value += ' ->в onclick ';
+
+            text.focus(); // вызов инициирует событие onfocus
+
+            text.value += ' из onclick-> ';
+        };
+
+        text.onfocus = function() {
+            text.value += ' !focus! ';
+        };
+    </script>
+
+    <!--Делаем события асинхронными через setTimeout(…,0)-->
+
+    <!--<script>-->
+        <!--button.onclick = function() {-->
+            <!--text.value += ' ->в onclick ';-->
+
+            <!--setTimeout(function() {-->
+                <!--text.focus(); // сработает после onclick-->
+            <!--}, 0);-->
+
+            <!--text.value += ' из onclick-> ';-->
+        <!--};-->
+
+        <!--text.onfocus = function() {-->
+            <!--text.value += ' !focus! ';-->
+        <!--};-->
+    <!--</script>-->
+</body>
+</html>

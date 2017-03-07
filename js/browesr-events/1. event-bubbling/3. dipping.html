@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Перехват события</title>
+</head>
+<body>
+<style>
+    body * {
+        margin: 20px;
+        border: 1px solid darkslategrey;
+    }
+
+    section {
+        background-color: antiquewhite;
+    }
+
+    div {
+        background-color: brown;
+    }
+
+    p {
+        background-color: steelblue;
+    }
+</style>
+
+<section id="section">SECTION
+    <div>DIV
+        <p>SPAN</p>
+    </div>
+</section>
+
+<script>
+    var section = document.querySelector('section');
+    var div = document.querySelector('div');
+    var text = document.querySelector('p');
+
+    section.addEventListener("click", doAlert, true);
+    div.addEventListener("click", doAlert, true);
+    text.addEventListener("click", doAlert, true);
+
+
+    function doAlert() {
+        alert(this.tagName);
+    }
+</script>
+</body>
+</html>
