@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM (light words)</title>
+
+    <style>
+    .light {
+        background: yellow;
+        color:white;
+    }
+    </style>
+</head>
+<body>
+
+<p><strong>Lorem Ipsum</strong> - это текст-"рыба", часто используемый в печати и вэб-дизайне.
+    Lorem Ipsum является <strong>стандартной "рыбой"</strong> для текстов на латинице с начала XVI века.
+    В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
+    используя <strong>Lorem Ipsum</strong> для распечатки образцов. Lorem Ipsum не только успешно пережил
+    без заметных изменений пять веков, но и перешагнул в <strong>электронный дизайн</strong>.
+    Его популяризации в новое время послужили публикация листов Letraset с образцами
+    Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной
+    вёрстки типа <strong>Aldus PageMaker</strong>,
+    в шаблонах которых используется Lorem Ipsum.</p>
+<a href="#">Я ссылка!</a>
+
+<script>
+
+    var elemA = document.querySelector("a");
+    var elemStrong = document.getElementsByTagName("strong");
+
+    elemA.onmouseover = function(){
+        for(var i = 0; i < elemStrong.length; i ++) {
+            elemStrong[i].className = "light";
+        }
+    };
+    elemA.onmouseout = function(){
+        for(var i = 0; i < elemStrong.length; i ++) {
+            elemStrong[i].className = "";
+        }
+    }
+
+</script>
+
+</body>
+</html>
