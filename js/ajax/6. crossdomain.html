@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кросс-доменные запросы c XMLHttpRequest</title>
+</head>
+<body>
+    <!--Кросс-доменные запросы-->
+    <script>
+        // (1)
+        var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+
+        var xhr = new XHR();
+
+        // (2) запрос на другой домен :)
+        xhr.open('GET', 'http://anywhere.com/request', true);
+
+        xhr.onload = function() {
+            alert( this.responseText );
+        };
+
+        xhr.onerror = function() {
+            alert( 'Ошибка ' + this.status );
+        };
+
+        xhr.send();
+    </script>
+
+
+    <!--CORS для простых запросов-->
+
+    <!--Заголовки запроса-->
+    GET /request
+    Host:target.com
+    Origin:http://mypage.net
+    ...
+
+    <!--Заголовки ответа-->
+    HTTP/1.1 200 OK
+    Content-Type:text/html; charset=UTF-8
+    Access-Control-Allow-Origin: http://javascript.ru
+</body>
+</html>
