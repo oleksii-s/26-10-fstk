@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+</head>
+<body>
+<!--Создайте простую HTML страничку, которая содержит форому с произвольным набором строк и столбцов.
+Так же на страницу добавьте кнопку, при клике на которую, при помощи javascript,
+ в таблицу добавляется новая строка. -->
+<table id="tab" border="1" width="100%" cellpadding="5">
+    <tr>
+        <td>ячейка 1</td>
+        <td>ячейка 1</td>
+        <td>ячейка 1</td>
+        <td>ячейка 1</td>
+        <td>ячейка 1</td>
+    </tr>
+    <tr>
+        <td>ячейка 1</td>
+        <td>ячейка 1</td>
+        <td>ячейка 1</td>
+        <td>ячейка 1</td>
+        <td>ячейка 1</td>
+    </tr>
+</table>
+ <input type="submit" value="добавить ячейку" onclick="adTr()">
+ <script>
+
+     function adTr() {
+         var element = document.getElementById('tab');
+         var trNew = document.createElement("tr");
+         var tdNew = document.createElement("td");
+         tdNew.innerHTML ="new";
+
+         element.appendChild(trNew);
+         element.appendChild(tdNew);
+     }
+ </script>
+</body>
+</html>

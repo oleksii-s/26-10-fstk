@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>paragraf</title>
+</head>
+<body>
+<!--Создайте простую HTML страничку,
+которая содержит параграф и кнопку при клике на которую, при помощи javascript,
+ должны изменяться стили парагоафа (размер шрифта, стиль шрифта и цвет). -->
+
+<p id="p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Ut bibendum suscipit nunc, laoreet viverra quam aliquam vel.
+    Donec nibh ante, dapibus quis interdum sit amet, suscipit mollis tortor.
+    Donec pulvinar sem vitae metus rhoncus ultricies vitae a purus. Vivamus vel
+    venenatis justo, non vulputate velit. Nunc vehicula convallis tortor sed feugiat.
+    Phasellus ullamcorper sit amet turpis at facilisis. Vestibulum condimentum posuere enim,
+    et congue lorem lacinia vel. Ut a dolor non purus sollicitudin lobortis in suscipit leo.
+    Phasellus aliquet velit sit amet risus congue, a iaculis massa interdum. Nam posuere neque
+    mi, ut lacinia felis varius tempor. Praesent justo dolor, laoreet sit amet nulla eu, consequat
+    tincidunt erat.</p>
+<input type="submit" value="нажмите и цвет станет красным!" onclick="changeP();">
+<script>
+    function changeP() {
+        document.getElementById("p1").style.fontSize = "15px";
+        document.getElementById("p1").style.fontFamily = "Arial";
+        document.getElementById("p1").style.color = "red";
+    }
+
+</script>
+</body>
+</html>
