@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+</head>
+<body>
+<!-- Написать функцию JavaScript,
+которая при загрузке страницы создает HTML таблицу с произвольным количеством строк и столбцов.
+ Количество ячеек в таблице должно быть одинаковым.
+  Написать дополнительную функцию которая принимает номер строки и
+  столбца (для идентификации конкретной ячейки) а так же текст,
+ для обновления содержимого этой ячейки. -->
+<input type="submit" onclick="getRandom()">
+<script>
+
+    function randomInteger(min, max) {
+        var rand = min + Math.random() * (max - min)
+        rand = Math.round(rand);
+        return rand;
+    }
+
+
+    function getRandom() {
+        var newElem=document.createElement("table");
+
+        newElem.width=500;
+        newElem.border=1;
+        var newRow=newElem.insertRow(0);
+        var newCell = newRow.insertCell(0);
+        newCell.width="200";
+        newCell.innerHTML="строка 1 столбец 1";
+
+        var newCell = newRow.insertCell(1);
+        newCell.width="400";
+        newCell.innerHTML="строка 1 столбец 2";
+
+        var newRow=newElem.insertRow(1);
+        var newCell = newRow.insertCell(0);
+        newCell.width="200";
+        newCell.innerHTML="строка 2 столбец 1";
+
+        var newCell = newRow.insertCell(1);
+        newCell.width="400";
+        newCell.innerHTML="строка 2 столбец 2";
+
+        document.body.appendChild(newElem);
+    }
+
+
+
+
+</script>
+</body>
+</html>
