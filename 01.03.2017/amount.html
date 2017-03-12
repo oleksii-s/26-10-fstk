@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>amount</title>
+</head>
+<body>
+
+<!--Напишите программу JavaScript для вычисления объема сферы.
+Используйте HTML форму для определения радиуса сферы.
+Результат вычислений выводить на страницу.  -->
+
+
+введите радиус:
+<div id="result"></div>
+<br>
+<input placeholder="R=5" id="x"/>
+
+<button onclick="getResult()">Вычислить</button>
+
+
+<script>
+    function getResult() {
+        var x = document.getElementById('x').value;
+        var i = (Math.PI * ((x) * (x) * (x)) * (4 / 3));
+        var resultDiv = document.getElementById('result');
+        resultDiv.innerHTML += "объем равен " + i + "<br/> ";
+
+    }
+
+
+</script>
+</body>
+</html>
