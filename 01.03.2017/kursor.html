@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kursor</title>
+</head>
+<body>
+<!--Создайте простую HTML страничку,
+которая содержит текст и ссылку.
+Напишите программу JavaScript,
+которая подсветит выделенные жирным шрифтом слова текста,
+при наведении курсора на ссылку. -->
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Ut <b id="b">bibendum</b> suscipit nunc, laoreet viverra quam aliquam vel.
+    Donec nibh ante, apidbus quis <b id="b1">apidbus</b> interdum sit amet, suscipit mollis tortor.
+    Donec <b id="b2">pulvinar</b> sem vitae metus rhoncus ultricies vitae a purus.
+    Vivamus vel venenatis justo <a href="kursor.html" onmouseover="changeB()" onmouseout="normal()">нажмите на ссылку</a></p>
+
+
+<script>
+   function changeB() {
+       document.getElementById('b').style.color ="red"; // ничего, кроме id не срабатывает
+       document.getElementById('b1').style.color ="red";
+       document.getElementById('b2').style.color ="red";
+   }
+   function normal() {
+       document.getElementById('b').style.color ="";
+       document.getElementById('b1').style.color ="";
+       document.getElementById('b2').style.color ="";
+   }
+</script>
+</body>
+</html>
