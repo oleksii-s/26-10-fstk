@@ -3,6 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>table</title>
+    <style>
+        table {
+           width: 600px;
+            border: 1px solid gray;
+        }
+        th{
+            width: 20%;
+        }
+        td:first-child{
+            width: 30%;
+        }
+        td,th {
+            border: 1px crimson groove;
+        }
+    </style>
 </head>
 <body>
 <!-- Написать функцию JavaScript,
@@ -11,45 +26,69 @@
   Написать дополнительную функцию которая принимает номер строки и
   столбца (для идентификации конкретной ячейки) а так же текст,
  для обновления содержимого этой ячейки. -->
+<table id="tad">
+    <tr>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+
+    </tr>
+</table>
+<table id='table'></table>
 <input type="submit" onclick="getRandom()">
 <script>
 
+
+   function getRandom() {
+
+       var newElem=document.createElement("table");
+
+       var newRow=newElem.insertRow(0);
+       var newCell = newRow.insertCell(0);
+       newCell.width="200";
+       newCell.innerHTML="строка 1 столбец 1";
+
+       var newCell = newRow.insertCell(1);
+       newCell.width="400";
+       newCell.innerHTML="строка 1 столбец 2";
+
+       var newRow=newElem.insertRow(1);
+       var newCell = newRow.insertCell(0);
+       newCell.width="200";
+       newCell.innerHTML="строка 2 столбец 1";
+
+       var newCell = newRow.insertCell(1);
+       newCell.width="400";
+       newCell.innerHTML="строка 2 столбец 2";
+
+       document.body.appendChild(newElem);
+   }
+   /*
     function randomInteger(min, max) {
-        var rand = min + Math.random() * (max - min)
-        rand = Math.round(rand);
-        return rand;
+    var rand = min + Math.random() * (max - min);
+    rand = Math.round(rand);
+    return rand;
     }
-
-
     function getRandom() {
-        var newElem=document.createElement("table");
+    var newElem=document.createElement("th");
+    var id = document.getElementById("tad");
 
-        newElem.width=500;
-        newElem.border=1;
-        var newRow=newElem.insertRow(0);
-        var newCell = newRow.insertCell(0);
-        newCell.width="200";
-        newCell.innerHTML="строка 1 столбец 1";
 
-        var newCell = newRow.insertCell(1);
-        newCell.width="400";
-        newCell.innerHTML="строка 1 столбец 2";
-
-        var newRow=newElem.insertRow(1);
-        var newCell = newRow.insertCell(0);
-        newCell.width="200";
-        newCell.innerHTML="строка 2 столбец 1";
-
-        var newCell = newRow.insertCell(1);
-        newCell.width="400";
-        newCell.innerHTML="строка 2 столбец 2";
-
-        document.body.appendChild(newElem);
+    for(var i=0; i<; i++){
+    id.appendChild(newElem);
+    newElem.innerHTML ="new";
     }
 
+    // alert(id);
+    }
 
-
-
+    */
 </script>
 </body>
 </html>
+
+
+
+
