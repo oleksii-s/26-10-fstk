@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_3</title>
+
+    <style>
+        table {
+            margin-top: 70px;
+            text-align: center;
+        }
+        td {
+            border: 1px solid black;
+            padding: 3px 5px;
+            background: lightgreen;
+            width: 40px;
+            height:20px;
+        }
+    </style>
+
+    <script>
+        var table = document.createElement('table');
+
+        function createTable() {
+            var numTr = Math.round(Math.random() * 10);
+            var numTd = Math.round(Math.random() * 10);
+
+            for (var i = 0; i < numTr; i++) { // для строк
+                var tr = document.createElement('tr');
+
+                for (var j = 0; j < numTd; j++) { // для столбцов
+                    var td = document.createElement('td');
+                    var textCell = document.createTextNode((i+1) + ' : ' + (j+1));
+                    td.appendChild(textCell);
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+            document.body.appendChild(table);
+        }
+
+        function updateCell(rowNum, colNum, text) {
+            table.rows[rowNum-1].cells[colNum-1].innerHTML = text;
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        createTable();
+        updateCell(3, 3, "update");
+    </script>
+</body>
+</html>

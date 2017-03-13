@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_2</title>
+</head>
+
+<body>
+    <form>
+        <label for="radius">Введите радиус:</label>
+        <input id="radius" type="number" size="30">
+        <input id="button" type="button" value="Вычеслить" onclick="calcVolumeSphere()">
+    </form>
+
+    <script>
+        function calcVolumeSphere() {
+            var form = document.forms[0];
+            var radius = form.elements['radius'].value;
+            var result = 4/3 * Math.PI * Math.pow(radius, 3);
+
+            var divResult = document.createElement('div');
+            divResult.innerHTML = "Объем сферы равен: " + result;
+            document.body.appendChild(divResult);
+        }
+    </script>
+</body>
+</html>
