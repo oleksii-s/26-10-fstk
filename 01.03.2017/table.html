@@ -5,16 +5,19 @@
     <title>table</title>
     <style>
         table {
-           width: 600px;
+            width: 600px;
             border: 1px solid gray;
         }
-        th{
+
+        th {
             width: 20%;
         }
-        td:first-child{
+
+        td:first-child {
             width: 30%;
         }
-        td,th {
+
+        td, th {
             border: 1px crimson groove;
         }
     </style>
@@ -32,41 +35,38 @@
 <script>
 
 
-   function getRandom() {
-
-       var newElem=document.createElement("table");
-    for(var i=0; i<5;i++){
-        var newRow=newElem.insertRow(0);
-        var newCell = newRow.insertCell(0);
-        newCell.width="20px";
-        newCell.innerHTML="new";
-    }
-
-
-
-       document.body.appendChild(newElem);
-   }
-   /*
-    function randomInteger(min, max) {
-    var rand = min + Math.random() * (max - min);
-    rand = Math.round(rand);
-    return rand;
-    }
     function getRandom() {
-    var newElem=document.createElement("th");
-    var id = document.getElementById("tad");
+
+        var newElem = document.createElement("table");
+        for (var i = 0; i < 5; i++) {
+            var newRow = newElem.insertRow(0);
+            var newCell = newRow.insertCell(0);
+            newCell.width = "20px";
+            newCell.innerHTML = "new";
+        }
 
 
-    for(var i=0; i<; i++){
-    id.appendChild(newElem);
-    newElem.innerHTML ="new";
+        document.body.appendChild(newElem);
     }
+    /*
+     function randomInteger(min, max) {
+     var rand = min + Math.random() * (max - min);
+     rand = Math.round(rand);
+     return rand;
+     }
+     function getRandom() {
+     var newElem=document.createElement("th");
+     var id = document.getElementById("tad");
 
-    // alert(id);
-    }
 
+     for(var i=0; i<; i++){
+     id.appendChild(newElem);
+     newElem.innerHTML ="new";
+     }
 
-  */
+     // alert(id);
+     }
+    */
 </script>
 </body>
 </html>
