@@ -44,24 +44,14 @@
    function getRandom() {
 
        var newElem=document.createElement("table");
+    for(var i=0; i<5;i++){
+        var newRow=newElem.insertRow(0);
+        var newCell = newRow.insertCell(0);
+        newCell.width="20px";
+        newCell.innerHTML="new";
+    }
 
-       var newRow=newElem.insertRow(0);
-       var newCell = newRow.insertCell(0);
-       newCell.width="200";
-       newCell.innerHTML="строка 1 столбец 1";
 
-       var newCell = newRow.insertCell(1);
-       newCell.width="400";
-       newCell.innerHTML="строка 1 столбец 2";
-
-       var newRow=newElem.insertRow(1);
-       var newCell = newRow.insertCell(0);
-       newCell.width="200";
-       newCell.innerHTML="строка 2 столбец 1";
-
-       var newCell = newRow.insertCell(1);
-       newCell.width="400";
-       newCell.innerHTML="строка 2 столбец 2";
 
        document.body.appendChild(newElem);
    }
@@ -84,7 +74,8 @@
     // alert(id);
     }
 
-    */
+
+  */
 </script>
 </body>
 </html>
