@@ -3,24 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>table</title>
-    <style>
-        table {
-            width: 600px;
-            border: 1px solid gray;
-        }
 
-        th {
-            width: 20%;
-        }
-
-        td:first-child {
-            width: 30%;
-        }
-
-        td, th {
-            border: 1px crimson groove;
-        }
-    </style>
 </head>
 <body>
 <!-- Написать функцию JavaScript,
@@ -29,44 +12,39 @@
   Написать дополнительную функцию которая принимает номер строки и
   столбца (для идентификации конкретной ячейки) а так же текст,
  для обновления содержимого этой ячейки. -->
+<input type="number" id="oneInput">
+<input type="number" id="twoInput">
 
 <table id='table'></table>
-<input type="submit" value="create table" onclick="getRandom()">
+<input type="submit" value="create table" onclick="createTable();">
 <script>
+    onload = function createTable() {
 
-
-    function getRandom() {
-
-        var newElem = document.createElement("table");
-        for (var i = 0; i < 5; i++) {
-            var newRow = newElem.insertRow(0);
-            var newCell = newRow.insertCell(0);
-            newCell.width = "20px";
-            newCell.innerHTML = "new";
+        //var cols = document.getElementById("oneInput").value;  // надо вводить числа
+        // var rows = document.getElementById("twoInput").value;// надо вводить числа
+        var cols = randomInteger(5, 10); // random integer
+        var rows = randomInteger(5, 10);  // random integer
+        //var cols = prompt('Введите количество строк', '');     // задать размер через модальное окно
+        // var rows = prompt('Введите количество столбцов', ''); // задать размер через модальное окно
+        cols = parseInt(cols);
+        rows = parseInt(rows);
+        document.write('<table border="1" cellpadding="2" cellspacing="0" width="90%">');
+        for (var r = 0, lr = rows + 1; r < lr; r++) {
+            for (var t, z = '', c = 0, lc = cols + 1; c < lc; c++) {
+                t = r * c;
+                if (!r && !c) t = '&nbsp;'; else if (!Math.min(r, c)) t = Math.max(r, c);
+                z += '<td style="background-color: ' + ((!r || !c) ? 'green' : 'silver') + '">' + t + '</td>';
+            }
+            document.write('<tr>' + z + '</tr>')
         }
-
-
-        document.body.appendChild(newElem);
+        document.write('</table>');
     }
-    /*
-     function randomInteger(min, max) {
-     var rand = min + Math.random() * (max - min);
-     rand = Math.round(rand);
-     return rand;
-     }
-     function getRandom() {
-     var newElem=document.createElement("th");
-     var id = document.getElementById("tad");
+    function randomInteger(min, max) {
+        var rand = min - 0.5 + Math.random() * (max - min + 1)
+        rand = Math.round(rand);
+        return rand;
+    }
 
-
-     for(var i=0; i<; i++){
-     id.appendChild(newElem);
-     newElem.innerHTML ="new";
-     }
-
-     // alert(id);
-     }
-    */
 </script>
 </body>
 </html>
