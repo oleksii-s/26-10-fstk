@@ -1,9 +1,14 @@
 /**
  * Created by oleksii-s on 16.03.17.
  */
-
 "use strict";
-
+/**
+ * доступ к объекту из внутреннего метода
+ * Call / bind / this
+ *
+ * @param power
+ * @constructor
+ */
 function Kettle(power) {
 
   this.waterAmount = 0;
@@ -11,16 +16,22 @@ function Kettle(power) {
   // физическая константа - удельная теплоёмкость воды для getBoilTime
   var WATER_HEAT_CAPACITY = 4200;
 
-  // расчёт времени для кипячения
-  function getBoilTime() {
-    return this.waterAmount * WATER_HEAT_CAPACITY * 80 / power; // !!!!!!!!!!!!!!!! ошибка!
-  }
+
 
   // Привязка через .bind(context)
+  var getBoilTime = function() {
+    return this.waterAmount * WATER_HEAT_CAPACITY * 80 / power;
+  }.bind(this);
 
-  // var getBoilTime = function() {
-  //   return this.waterAmount * WATER_HEAT_CAPACITY * 80 / power;
-  // }.bind(this);
+  // ИЛИ Сохранение this в замыкании
+
+  // var self = this;
+  //
+  // function getBoilTime() {
+  //   return self.waterAmount * WATER_HEAT_CAPACITY * 80 / power;
+  // }
+
+
 
   // что делать по окончании процесса
   function onReady() {
@@ -30,6 +41,7 @@ function Kettle(power) {
   this.boil = function() {
     setTimeout(onReady, getBoilTime());
 
+    // ИЛИ
     // .call(context)
     // setTimeout(onReady, getBoilTime.call(this));
   };
