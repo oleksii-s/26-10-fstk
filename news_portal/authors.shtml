@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Authors</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="news-icon.png">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <script src="show_date.js"></script>
+</head>
+<body onload="show_date()">
+<div id="wrapper">
+    <!--#include file="header.html" -->
+    <!--#include file="nav.html" -->
+    <div class="authors_content"><ul id="list"></ul></div>
+</div>
+<!--#include file="footer.html" -->
+
+
+
+<script>
+    "use strict";
+    getData();
+
+    function getData()
+    {
+        var root = "http://jsonplaceholder.typicode.com/users";
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("GET", root, true);
+
+        xhr.onreadystatechange = function()
+        {
+            if (xhr.readyState != 4) return;
+
+            if (xhr.status != 200) {
+                alert(xhr.status + ': ' + xhr.statusText);
+            } else {
+                try {
+                    var data = JSON.parse(xhr.responseText);
+                } catch (e) {
+                    alert("Invalid answer " + e.message);
+                }
+                return show_authors_list(data);
+            }
+        };
+        xhr.send();
+    }
+
+    function show_authors_list(data){
+
+
+
+        //LIST
+        for (var i=0; i< data.length; i++){
+            var ava = document.createElement('div');
+            ava.innerHTML = "<div><div><img src='ava.png' alt='avatar'></div>";
+            var list = document.getElementById('list');
+            var li = document.createElement('li');
+
+            var username = '<span class="username">Username: ' + data[i]['username'] + '</span><br/>';
+            var email = '<span class="email">Email: ' + data[i]['email'] + '</span><br/>';
+            var phone = '<span class="phone">Phone: ' + data[i]['phone'] + '</span><br/>';
+            var website = '<span class="website">Website: <a href="#">' + data[i]['website'] + '</a></span><br/>';
+            var company = '<span class="company">Company: ' + data[i]['company']['name'] + '</span><br/>';
+
+            var authors_name = '<div class="a"><span class="authors_name"><a href="javascript:void(0)" onclick="showHide()">' + data[i]['name'] + '</a></span><br/><div class="info" style="display: none;"></div><br/>';
+            var link = "<span class='link'><a href='author_articles.shtml?id=" + data[i]['id'] + "'>Read articles>>></a></span></div></div>";
+            li.innerHTML = ava.innerHTML + authors_name + link;
+            list.appendChild(li);
+
+            var obj2 = document.getElementsByClassName('info')[i];
+            var info = document.createElement('div');
+            info.innerHTML = '<div>' + email + username + phone + website + company + '</div>';
+            obj2.appendChild(info);
+        }
+    }
+
+    function showHide()
+    {
+        var obj = document.getElementsByClassName('info')[0];
+        if (obj.style.display != "block") {
+            obj.style.display = "block";
+        }else obj.style.display = "none";
+    }
+</script>
+</body>
+</html>
