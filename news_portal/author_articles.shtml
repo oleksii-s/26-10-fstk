@@ -9,56 +9,14 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="style.css"/>
     <script src="show_date.js"></script>
+    <script src="author_articles.js"></script>
 </head>
 <body onload="show_date()">
 <div id="wrapper">
-    <!--#include file="header.html" -->
-    <!--#include file="nav.html" -->
+    <!--#include file="tpls/header.html" -->
+    <!--#include file="tpls/nav.html" -->
     <section id="sec"></section>
 </div>
-<!--#include file="footer.html" -->
-
-<script>
-    "use strict";
-
-    getData();
-
-    //function for ajax
-    function getData() {
-
-        var root = "http://jsonplaceholder.typicode.com/posts?userId=";
-        var strGET = window.location.search.replace('?id=', '');
-        var xhr = new XMLHttpRequest();
-
-        xhr.open("GET", root + strGET, true);
-
-        xhr.onreadystatechange = function()
-        {
-            if (xhr.readyState != 4) return;
-
-            if (xhr.status != 200) {
-                alert(xhr.status + ': ' + xhr.statusText);
-            } else {
-                try {
-                    var data = JSON.parse(xhr.responseText);
-                } catch (e) {
-                    alert("Invalid answer " + e.message);
-                }
-                return show_full_article(data);
-            }
-        };
-        xhr.send();
-    }
-
-    function show_full_article(data)
-    {
-        console.log(data);
-        for (var i=0; i< data.length; i++) {
-            var section = document.getElementById('sec');
-            section.innerHTML += "<div class='list'><div class='article_name'><a href='article.shtml?id=" + data[i]['id'] + "'>" + data[i]['title'] + "</a><article></div><div class='show_comment'><a href='article.shtml?id=" + data[i]['id'] + "'>Read full article>>></a></div></div><br/>"
-        }
-    }
-
-</script>
+<!--#include file="tpls/footer.html" -->
 </body>
 </html>
