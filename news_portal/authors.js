@@ -31,14 +31,12 @@ function show_authors_list(data){
 
     //LIST
     for (var i=0; i< data.length; i++){
-        var ava = document.createElement('div');
-        ava.innerHTML = "<div><div><img src='ava.png' alt='avatar'></div>";
-        var list = document.getElementById('list');
-        var li = document.createElement('li');
-        var authors_name = '<div class="a"><span class="authors_name"><a href="javascript:void(0)" onclick="">' + data[i]['name'] + '</a></span><br/><div class="info" style="display: none;"></div><br/>';
-        var link = "<span class='link'><a href='author_articles.shtml?id=" + data[i]['id'] + "'>Read articles>>></a></span></div></div>";
-        li.innerHTML = ava.innerHTML + authors_name + link;
-        list.appendChild(li);
+        var list = document.getElementById('authors_content');
+        var id = data[i]['id'] - 1;
+        var ava = "<div class='author_block'><div class='ava'><img src='ava.png' alt='avatar'></div>";
+        var authors_name = '<div class="name_link"><span class="authors_name"><a href="javascript:void(0)" onclick="' + id + '">' + data[i]['name'] + '</a></span><br/><div class="info" style="display: none;"></div><br/>';
+        var link = "<span class='link_read_articles'><a href='author_articles.shtml?id=" + data[i]['id'] + "'>Read articles>>></a></span></div></div>";
+        list.innerHTML += ava + authors_name + link;
 
         //popup info
         var username = '<span class="username">Username: ' + data[i]['username'] + '</span><br/>';
@@ -51,7 +49,7 @@ function show_authors_list(data){
         info.innerHTML = '<div>' + email + username + phone + website + company + '</div>';
         popup.appendChild(info);
     }
-
+// console.log(document.getElementsByClassName('author_block')[0].innerHTML);
     //setOnClick
     function setOnClick() {
         var elems = document.body.getElementsByClassName('authors_name');
@@ -59,7 +57,8 @@ function show_authors_list(data){
         for (var i=0; i < elems.length; i++) {
             var onclick = elems[i].getElementsByTagName('a')[0].getAttribute("onclick");
             if(typeof(onclick) != "function") {
-                elems[i].getElementsByTagName('a')[0].setAttribute('onclick','showHide(' + i + ')');}
+                elems[i].getElementsByTagName('a')[0].setAttribute('onclick','showHide(' + onclick + ');');
+            }
         }
     }
     setOnClick();
@@ -71,5 +70,7 @@ function showHide(i)
     var obj = document.getElementsByClassName('info')[i];
     if (obj.style.display != "block") {
         obj.style.display = "block";
-    }else obj.style.display = "none";
+    }else{
+        obj.style.display = "none";
+    }
 }

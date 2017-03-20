@@ -15,7 +15,7 @@
 <div id="wrapper">
     <!--#include file="tpls/header.html" -->
     <!--#include file="tpls/nav.html" -->
-    <div class="authors_content"><ul id="list"></ul></div>
+    <div id="authors_content"></div>
 </div>
 <!--#include file="tpls/footer.html" -->
 </body>

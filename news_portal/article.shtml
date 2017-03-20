@@ -10,6 +10,7 @@
     <link type="text/css" rel="stylesheet" href="style.css"/>
     <script src="show_date.js"></script>
     <script src="article.js"></script>
+    <script src="show_author.js"></script>
 </head>
 <body onload="show_date()">
 <div id="wrapper">
@@ -19,6 +20,8 @@
         <h2 id="title"></h2>
     </div>
     <section id="article_section">
+        <div id="author"></div>
+        <div id="article_date">February 17, 2017</div><br/>
         <div id="article"></div><br/>
         <div class='show_comment'><a href="javascript:void(0)" onclick="showHide()">Show comments</a></div><br/><br/>
         <div id="comments" style="display: none;"></div>

@@ -34,6 +34,7 @@ function getData(func, path) {
 function show_full_article(data)
 {
     document.getElementById('title').innerHTML = data['title'];
+    document.getElementById('author').innerHTML = "by <a href='author_articles.shtml?id=" + data['userId'] + "'>" + getAuthor(data['userId']) + "</a>";
     document.getElementById('article').innerHTML = data['body'];
 }
 

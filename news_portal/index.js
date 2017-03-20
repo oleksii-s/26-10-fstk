@@ -33,7 +33,7 @@ function show_articles(data)
     var section = document.getElementById("section");
     function cell_content(i)
     {
-        var author = "<span class='author'><a href=''>Author</a></span></br>";
+        var author = "<span class='author'><a href='author_articles.shtml?id=" + data[i]['userId'] + "'>" + data[i]['userId'] + "</a></span></br>";
         var title = '<span class="title"><a href="article.shtml?id=' + data[i]['id'] + '">' + data[i]['title'] + '</a></span><br/>';
         var desc = '<br>' + '<span class="desc">' + data[i]['body'].substr(0,100) + '...' + '</span>';
         var link = "<a href='article.shtml?id=" + data[i]['id'] + "'>Read more>>></a>";
@@ -45,5 +45,16 @@ function show_articles(data)
         var cell2 = '<div class="col-xs-12 col-sm-3">'+ cell_content(i++) +'</div>';
         var cell3 = '<div class="col-xs-12 col-sm-4">'+ cell_content(i) +'</div>';
         section.innerHTML += '<div class="row">' + cell1 + cell2 + cell3 + '</div>';
+   }
+
+}
+
+function author()
+{
+    var class_author = document.getElementsByClassName('author');
+    for (var j = 0; j < class_author.length; j++) {
+        var id = class_author[j].getElementsByTagName('a')[0].innerHTML;
+        getAuthor(id, j);
     }
 }
+author();
