@@ -16,6 +16,10 @@ html, body {
     font-size: 14px;
 }
 
+.nav li a:active {
+    background-color: #78cae7;
+}
+
 article {
     padding-bottom: 5%;
     text-align: center;
@@ -34,6 +38,20 @@ article .author {
     color: rgba(18, 59, 87, 0.83);
     text-decoration: none;
     cursor: pointer;
+}
+
+ul li h5 {
+    font-size: 20px;
+    color: #2e6da4;
+    cursor: pointer;
+}
+
+.comments {
+    text-align: left;
+}
+
+.comments h6 {
+    color: red;
 }
 
 .footer {
