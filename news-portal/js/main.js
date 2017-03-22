@@ -163,29 +163,34 @@ function moreTextArticles(obj) {
                 var usid = (dataPost[i]['id']);
                 var titleArt = (dataPost[i]['title']);
                 var bodyArt = (dataPost[i]['body']);
+                var upperTitle = titleArt.charAt(0).toUpperCase() + titleArt.substr(1).toLowerCase();
+                var upperBody = bodyArt.charAt(0).toUpperCase() + bodyArt.substr(1).toLowerCase();
                 user.innerHTML = usid + "<br>";
-                arth1.innerHTML = "<b>" + titleArt + "</b><br><hr>";
-                artP.innerHTML = bodyArt;
+                arth1.innerHTML = "<b>" + upperTitle + "</b><br><hr>";
+                artP.innerHTML = upperBody;
                 // divId.appendChild(user);
                 arth1.appendChild(artP);
                 divId.appendChild(arth1);
 
                 var data = (dataC);
-                var pId = (data[i]['postId']);
+
                 //console.log(pId);
                 //console.log(linkId);
-
+                for(var value in data){
                 //.............................COMMENTS.................................
-                var nameComments = (data[i]['name']);
-                var emailComments = (data[i]['email']);
-                var bodyComments = (data[i]['body']);
-                var parent = document.getElementById("in");
-                var div = document.createElement("div");
-                var comP = document.createElement("p");
-                comP.innerHTML = "<blockquote>" + "<br>" + "<b>Name:</b>" + nameComments + "<br>" + "<b>Email:</b>" + emailComments + "<br>" + "<b>Message:</b>" + "<i>" + bodyComments + "</i>" + "</blockquote>";
-                parent.appendChild(div);
-                div.appendChild(comP);
-
+                    var pId = (data[value]['postId']);
+                    if(pId==usid) {
+                        var nameComments = (data[value]['name']);
+                        var emailComments = (data[value]['email']);
+                        var bodyComments = (data[value]['body']);
+                        var parent = document.getElementById("in");
+                        var div = document.createElement("div");
+                        var comP = document.createElement("p");
+                        comP.innerHTML = "<blockquote>" + "<br>" + "<b>Name:</b>" + nameComments + "<br>" + "<b>Email:</b>" + emailComments + "<br>" + "<b>Message:</b>" + "<i>" + bodyComments + "</i>" + "</blockquote>";
+                        parent.appendChild(div);
+                        div.appendChild(comP);
+                    }
+                }
 
             }
         }
@@ -193,3 +198,102 @@ function moreTextArticles(obj) {
 }
 
 //...............................................END TEXT AND COMMENTS............................................
+
+//...............................................AUTHOR PAGE........................................................
+
+function authorPage() {
+    clearList();
+    //alert("im author page!!!");
+    var rxhrAuthor = new XMLHttpRequest();
+
+    var rootAuthor = 'http://jsonplaceholder.typicode.com/users/';
+    rxhrAuthor.open('GET', rootAuthor, false);
+    rxhrAuthor.send();
+    if (rxhrAuthor.status != 200) {
+
+        alert(rxhrAuthor.status + ': ' + rxhrAuthor.statusText);
+    } else {
+
+        //alert( xhrPosts.responseText );
+        var text11 = rxhrAuthor.responseText;
+        var dataA = JSON.parse(text11);
+        //console.log(dataA);
+    }
+    for (var i = 0; i < dataA.length; i++) {
+
+        var div = document.getElementById("in");
+        var newP = document.createElement("p");
+        var p = (dataA[i]["name"]);
+        var upperP = p.toUpperCase();
+        newP.innerHTML = "<a href='#' id=" + i + " value=" + i + " onclick='moreTextAuthor(this)' ><b>" + i + "." + upperP + "</b></a><hr>";
+        div.appendChild(newP);
+    }
+}
+
+//................................................................END AUTHORS PAGE...........................................
+
+//..................................................................ARTICLES AUTHOR.......................................
+
+function moreTextAuthor(obj) {
+
+    var uId = (obj.id);
+    //console.log(userId);
+
+    clearList();
+    //alert("im author page!!!");
+    var xhrAuthor = new XMLHttpRequest();
+
+    var rootAuthor = 'http://jsonplaceholder.typicode.com/users/';
+    xhrAuthor.open('GET', rootAuthor, false);
+    xhrAuthor.send();
+    if (xhrAuthor.status != 200) {
+
+        alert(xhrAuthor.status + ': ' + xhrAuthor.statusText);
+    } else {
+
+        //alert( xhrPosts.responseText );
+        var text111 = xhrAuthor.responseText;
+        var dataU = JSON.parse(text111);
+        //console.log(dataU);
+    }
+    //..........................................................
+    var xhr = new XMLHttpRequest();
+    var rootAll = 'http://jsonplaceholder.typicode.com/posts/';
+    xhr.open('GET', rootAll, false);
+    xhr.send();
+    if (xhr.status != 200) {
+        alert(xhr.status + ': ' + xhr.statusText);
+    } else {
+        //alert( xhrPosts.responseText );
+        var text = xhr.responseText;
+        //console.log(text);
+        var encodeText = JSON.parse(text);
+
+        for (var i = 0; i < dataU.length; i++) {
+            var userId = (dataU[i]["id"]);
+            if (i == uId) {
+                var divU = document.getElementById("in");
+                var newPU = document.createElement("p");
+                var pU = (dataU[i]["name"]);
+
+                var upperPU = pU.toUpperCase();
+                newPU.innerHTML = "<a href='#'id=" + i + " value=" + i + "><b>" + upperPU + "</b></a><hr>";
+                divU.appendChild(newPU);
+
+                for (var prop in encodeText) {
+                    var postId = (encodeText[prop]["userId"]);
+
+                    if (postId == userId) {
+                        var div = document.getElementById("in");
+                        var newP = document.createElement("ul");
+
+                        var p = (encodeText[prop]["title"]);
+                        var upperP = p.charAt(0).toUpperCase() + p.substr(1).toLowerCase();
+                        newP.innerHTML = "<li><b>" + upperP + "</b></li>";
+                        div.appendChild(newP);
+                    }
+                }
+            }
+        }
+    }
+}
