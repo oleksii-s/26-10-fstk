@@ -156,10 +156,10 @@ function moreTextArticles(obj) {
                 //console.log("im linkId");
                 var divId = document.getElementById("in");
                 var arth1 = document.createElement("h1");
-                var artP = document.createElement("p");
+                var artP = document.createElement("h2");
                 var user = document.createElement("h3");
                 artP.setAttribute("class", "bg-info");
-                artP.setAttribute("fontSize", "14px");
+                //artP.setAttribute("fontSize", "20px");
                 var usid = (dataPost[i]['id']);
                 var titleArt = (dataPost[i]['title']);
                 var bodyArt = (dataPost[i]['body']);
@@ -169,8 +169,9 @@ function moreTextArticles(obj) {
                 arth1.innerHTML = "<b>" + upperTitle + "</b><br><hr>";
                 artP.innerHTML = upperBody;
                 // divId.appendChild(user);
-                arth1.appendChild(artP);
                 divId.appendChild(arth1);
+                divId.appendChild(artP);
+
 
                 var data = (dataC);
 
@@ -223,10 +224,16 @@ function authorPage() {
 
         var div = document.getElementById("in");
         var newP = document.createElement("p");
+        //var link = document.createElement("a");
+        //link.innerHTML=">>>>>>more details<<<<<<<<<";
         var p = (dataA[i]["name"]);
+        var divA = document.createElement("div");
+        divA.innerHTML="<a href='#' id="+i+" onclick='moreDetailsAuthor(this)'>more information about author</a><br>";
         var upperP = p.toUpperCase();
-        newP.innerHTML = "<a href='#' id=" + i + " value=" + i + " onclick='moreTextAuthor(this)' ><b>" + i + "." + upperP + "</b></a><hr>";
+        newP.innerHTML = "<a href='#' id=" + i + " value=" + i + " onclick='moreTextAuthor(this)' ><b>"+ upperP +"</b></a>";
         div.appendChild(newP);
+        div.appendChild(divA);
+       // div.appendChild(link);
     }
 }
 
@@ -297,3 +304,44 @@ function moreTextAuthor(obj) {
         }
     }
 }
+
+//................................................AUTHOR DETAILS INFORMATION................................
+
+ function moreDetailsAuthor(obj) {
+   var contactInfoId = (obj.id);
+     //console.log(contactInfoId);
+     var xhrUzer = new XMLHttpRequest();
+
+     var rootAuthor = 'http://jsonplaceholder.typicode.com/users/';
+     xhrUzer.open('GET', rootAuthor, false);
+     xhrUzer.send();
+     if (xhrUzer.status != 200) {
+
+         alert(xhrUzer.status + ': ' + xhrUzer.statusText);
+     } else {
+
+         //alert( xhrPosts.responseText );
+         var textU = xhrUzer.responseText;
+         var dataUser = JSON.parse(textU);
+         //console.log(dataU);
+      clearList();
+         for (var i=0;i<dataUser.length;i++){
+             //var userId=(dataUser[i]["id"]);
+             if(i==contactInfoId){
+                 var divUser = document.getElementById("in");
+                 var newUlUser = document.createElement("ul");
+
+                 var nameUser = (dataUser[i]["name"]);
+                 var UserName = (dataUser[i]["username"]);
+                 var emailUser = (dataUser[i]["email"]);
+                 var streetUser = (dataUser[i]["address"]["street"]);
+                 var cityUser = (dataUser[i]["address"]["city"]);
+                 var zipUser = (dataUser[i]["address"]["zipcode"]);
+                 var upperName = nameUser.charAt(0).toUpperCase() + nameUser.substr(1).toLowerCase();
+                 var upperNick = UserName.charAt(0).toUpperCase() +UserName.substr(1).toLowerCase();
+                 newUlUser.innerHTML = "<li><b>"+"Name:"+ upperName + "</b><br></li><li>"+"<b>Nickname:</b>"+upperNick+"<br></li><li>"+"<b>Email:</b>"+emailUser+"<br></li><li>"+"<b>Street:</b>"+streetUser+"</li><li>"+"<b>City:</b>"+cityUser+"</li><li>"+"<b>Coll:</b>"+zipUser+"</li>";
+                 divUser.appendChild(newUlUser);
+             }
+         }
+     }
+ }
