@@ -54,7 +54,7 @@ function getArtCom() {
         var dataPosts = JSON.parse(t);
 
     }
-//.............................................запрос на комменты......................................................var xhrComments = new XMLHttpRequest();
+    //.............................................запрос на комменты......................................................var xhrComments = new XMLHttpRequest();
     var xhrComments = new XMLHttpRequest();
     var root = 'http://jsonplaceholder.typicode.com/comments/';
     xhrComments.open('GET', root, false);
@@ -70,7 +70,7 @@ function getArtCom() {
         var dataComments = JSON.parse(text);
         //console.log(dataComments);
     }
-//...............................новый список всех статей и комментариев................................
+    //...............................новый список всех статей и комментариев................................
     clearList();
     for (var i = 0; i < dataPosts.length; i++) {
 
@@ -111,9 +111,9 @@ function getArtCom() {
 function moreTextArticles(obj) {
 
 
-    var linkId = (obj.id);   // get id link
+    var linkId = (obj.id); // get id link
     // console.log(linkId);
-//......................................POSTS REQ..............................................
+    //......................................POSTS REQ..............................................
     var xhrPostsId = new XMLHttpRequest();
     var rootPosts = 'http://jsonplaceholder.typicode.com/posts/';
 
@@ -131,8 +131,8 @@ function moreTextArticles(obj) {
         var dataPost = JSON.parse(t);
         // console.log(dataPost);
         //var artId =(dataPost[i]);
-//...........................................END POSTS REQ..............................................
-//...........................................COMMENTS REQ.................................................
+        //...........................................END POSTS REQ..............................................
+        //...........................................COMMENTS REQ.................................................
         var xhrCom = new XMLHttpRequest();
         var rootC = 'http://jsonplaceholder.typicode.com/comments/';
         xhrCom.open('GET', rootC, false);
@@ -177,10 +177,10 @@ function moreTextArticles(obj) {
 
                 //console.log(pId);
                 //console.log(linkId);
-                for(var value in data){
-                //.............................COMMENTS.................................
+                for (var value in data) {
+                    //.............................COMMENTS.................................
                     var pId = (data[value]['postId']);
-                    if(pId==usid) {
+                    if (pId == usid) {
                         var nameComments = (data[value]['name']);
                         var emailComments = (data[value]['email']);
                         var bodyComments = (data[value]['body']);
@@ -228,12 +228,12 @@ function authorPage() {
         //link.innerHTML=">>>>>>more details<<<<<<<<<";
         var p = (dataA[i]["name"]);
         var divA = document.createElement("div");
-        divA.innerHTML="<a href='#' id="+i+" onclick='moreDetailsAuthor(this)'>more information about author</a><br>";
+        divA.innerHTML = "<a href='#' id=" + i + " onclick='moreDetailsAuthor(this)'>more information about author</a><br>";
         var upperP = p.toUpperCase();
-        newP.innerHTML = "<a href='#' id=" + i + " value=" + i + " onclick='moreTextAuthor(this)' ><b>"+ upperP +"</b></a>";
+        newP.innerHTML = "<a href='#' id=" + i + " value=" + i + " onclick='moreTextAuthor(this)' ><b>" + upperP + "</b></a>";
         div.appendChild(newP);
         div.appendChild(divA);
-       // div.appendChild(link);
+        // div.appendChild(link);
     }
 }
 
@@ -307,41 +307,40 @@ function moreTextAuthor(obj) {
 
 //................................................AUTHOR DETAILS INFORMATION................................
 
- function moreDetailsAuthor(obj) {
-   var contactInfoId = (obj.id);
-     //console.log(contactInfoId);
-     var xhrUzer = new XMLHttpRequest();
+function moreDetailsAuthor(obj) {
+    var contactInfoId = (obj.id);
+    //console.log(contactInfoId);
+    var xhrUzer = new XMLHttpRequest();
 
-     var rootAuthor = 'http://jsonplaceholder.typicode.com/users/';
-     xhrUzer.open('GET', rootAuthor, false);
-     xhrUzer.send();
-     if (xhrUzer.status != 200) {
+    var rootAuthor = 'http://jsonplaceholder.typicode.com/users/';
+    xhrUzer.open('GET', rootAuthor, false);
+    xhrUzer.send();
+    if (xhrUzer.status != 200) {
 
-         alert(xhrUzer.status + ': ' + xhrUzer.statusText);
-     } else {
+        alert(xhrUzer.status + ': ' + xhrUzer.statusText);
+    } else {
 
-         //alert( xhrPosts.responseText );
-         var textU = xhrUzer.responseText;
-         var dataUser = JSON.parse(textU);
-         //console.log(dataU);
-      clearList();
-         for (var i=0;i<dataUser.length;i++){
-             //var userId=(dataUser[i]["id"]);
-             if(i==contactInfoId){
-                 var divUser = document.getElementById("in");
-                 var newUlUser = document.createElement("ul");
+        var textU = xhrUzer.responseText;
+        var dataUser = JSON.parse(textU);
+        //console.log(dataU);
+        clearList();
+        for (var i = 0; i < dataUser.length; i++) {
+            //var userId=(dataUser[i]["id"]);
+            if (i == contactInfoId) {
+                var divUser = document.getElementById("in");
+                var newUlUser = document.createElement("ul");
 
-                 var nameUser = (dataUser[i]["name"]);
-                 var UserName = (dataUser[i]["username"]);
-                 var emailUser = (dataUser[i]["email"]);
-                 var streetUser = (dataUser[i]["address"]["street"]);
-                 var cityUser = (dataUser[i]["address"]["city"]);
-                 var zipUser = (dataUser[i]["address"]["zipcode"]);
-                 var upperName = nameUser.charAt(0).toUpperCase() + nameUser.substr(1).toLowerCase();
-                 var upperNick = UserName.charAt(0).toUpperCase() +UserName.substr(1).toLowerCase();
-                 newUlUser.innerHTML = "<li><b>"+"Name:"+ upperName + "</b><br></li><li>"+"<b>Nickname:</b>"+upperNick+"<br></li><li>"+"<b>Email:</b>"+emailUser+"<br></li><li>"+"<b>Street:</b>"+streetUser+"</li><li>"+"<b>City:</b>"+cityUser+"</li><li>"+"<b>Coll:</b>"+zipUser+"</li>";
-                 divUser.appendChild(newUlUser);
-             }
-         }
-     }
- }
+                var nameUser = (dataUser[i]["name"]);
+                var UserName = (dataUser[i]["username"]);
+                var emailUser = (dataUser[i]["email"]);
+                var streetUser = (dataUser[i]["address"]["street"]);
+                var cityUser = (dataUser[i]["address"]["city"]);
+                var zipUser = (dataUser[i]["address"]["zipcode"]);
+                var upperName = nameUser.charAt(0).toUpperCase() + nameUser.substr(1).toLowerCase();
+                var upperNick = UserName.charAt(0).toUpperCase() + UserName.substr(1).toLowerCase();
+                newUlUser.innerHTML = "<li><b>" + "Name:" + upperName + "</b><br></li><li>" + "<b>Nickname:</b>" + upperNick + "<br></li><li>" + "<b>Email:</b>" + emailUser + "<br></li><li>" + "<b>Street:</b>" + streetUser + "</li><li>" + "<b>City:</b>" + cityUser + "</li><li>" + "<b>Coll:</b>" + zipUser + "</li>";
+                divUser.appendChild(newUlUser);
+            }
+        }
+    }
+}
