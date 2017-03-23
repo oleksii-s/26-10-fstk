@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>News Portal</title>
+    <meta name="description" content="news portal">
+    <meta name="author" content="RomanenkoEN">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <img alt="Bootstrap Image Preview" src="img/logo.jpg">
+        </div>
+        <div class="col-md-9">
+            <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse navbar-menubuilder">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li><a href='index.html'>Articles</a></li>
+                            <li><a href='authors.html'>Authors</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="art" class="col-md-12">
+            <div class="page-header">
+                <h1>Articles</h1>
+            </div>
+            <br>
+
+            <div class="articles">
+                <script>
+                    $.ajax('http://jsonplaceholder.typicode.com/posts', {
+                        method: 'GET'
+                    }).then(function (data) {
+                        data.forEach(function (article) {
+                            var title = art.appendChild(document.createElement('h2'));
+                            var body = art.appendChild(document.createElement('p'));
+                            var link = art.appendChild(document.createElement('p'));
+                            var line = art.appendChild(document.createElement('hr'));
+                            title.innerHTML = article.title;
+                            body.innerHTML = article.body;
+                            link.innerHTML = "<a class='btn' href='article.html?id=" + article.id + "'>View details »</a>";
+                        });
+                    });
+                </script>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <h3>All rights reserved 2017</h3>
+    </div>
+</div>
+</body>
+</html>

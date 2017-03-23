@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>News Portal</title>
+    <meta name="description" content="news portal">
+    <meta name="author" content="RomanenkoEN">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <img alt="Bootstrap Image Preview" src="img/logo.jpg">
+        </div>
+        <div class="col-md-9">
+            <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse navbar-menubuilder">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li><a href='index.html'>Articles</a></li>
+                            <li><a href='authors.html'>Authors</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="art" class="col-md-12">
+            <div class="page-header">
+                <h1>Article</h1>
+            </div>
+            <br>
+
+            <div class="article">
+                <script>
+                    var id_article = getURLParam(location.search, 'id');
+
+                    $.ajax('http://jsonplaceholder.typicode.com/posts', {
+                        method: 'GET'
+                    }).then(function (data) {
+                        data.forEach(function (article) {
+                            if (article.id == id_article) {
+                                var title = art.appendChild(document.createElement('h2'));
+                                var body = art.appendChild(document.createElement('p'));
+                                var link = art.appendChild(document.createElement('p'));
+                                var line = art.appendChild(document.createElement('hr'));
+                                title.innerHTML = article.title;
+                                for (var i = 0; i < 20; i++) {
+                                    body.innerHTML += article.body;
+                                }
+                                link.innerHTML = "<a class='btn' onclick='showComments()'>Show comments »</a>";
+                            }
+                        });
+                    });
+
+                    function getURLParam(url, param) {
+                        return decodeURI(url.replace(new RegExp("^(?:.*[&\\?]" + encodeURI(param).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+                    }
+
+                    function showComments() {
+                        $.ajax('http://jsonplaceholder.typicode.com/comments', {
+                            method: 'GET'
+                        }).then(function (data) {
+                            data.forEach(function (comment) {
+                                if (comment.postId == id_article) {
+                                    var email = comments.appendChild(document.createElement('p'));
+                                    var body = comments.appendChild(document.createElement('p'));
+                                    var line = comments.appendChild(document.createElement('hr'));
+                                    email.innerHTML = '<b>' + comment.email + '<b>';
+                                    body.innerHTML = comment.body;
+                                }
+                            });
+                        });
+                    }
+                </script>
+            </div>
+
+        </div>
+        <div id="comments">
+        </div>
+    </div>
+    <div class="row">
+        <h3>All rights reserved 2017</h3>
+    </div>
+</div>
+</body>
+</html>
