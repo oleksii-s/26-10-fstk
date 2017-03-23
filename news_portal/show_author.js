@@ -30,7 +30,7 @@ function show_author(data, j){
 
     if(j + 1) { //for main page index.js
         var class_author = document.getElementsByClassName('author');
-            class_author[j].getElementsByTagName('a')[0].innerHTML = data['name'];
+        class_author[j].getElementsByTagName('a')[0].innerHTML = data['name'];
 
     } else { //for article.js page
         var author = document.getElementById('author').getElementsByTagName('a')[0];
