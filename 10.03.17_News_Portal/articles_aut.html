@@ -55,7 +55,7 @@
                                 title.innerHTML = article.title;
                                 body.innerHTML = article.body;
                                 link.innerHTML = "<a class='btn' href='article.html?id=" + article.id + "'>View details »</a>";
-                                showAuthor(article.userId);
+                                showAuthorName(article.userId);
                             }
                         });
                     });
@@ -64,7 +64,7 @@
                         return decodeURI(url.replace(new RegExp("^(?:.*[&\\?]" + encodeURI(param).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
                     }
 
-                    function showAuthor(userId) {
+                    function showAuthorName(userId) {
                         $.ajax('http://jsonplaceholder.typicode.com/users', {
                             method: 'GET'
                         }).then(function (data) {
