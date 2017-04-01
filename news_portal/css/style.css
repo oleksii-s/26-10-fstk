@@ -128,14 +128,11 @@ h2 {
     border-bottom: dotted 1px lightgrey;
 }
 .row div {
-    height: 250px;
+    height: 300px;
     padding: 20px 20px;
     background-color: #37245c;
     opacity: 0.95;
-}
-.row div:nth-child(2) {
-    margin-left: 4%;
-    margin-right: 4%;
+    border: solid 10px white;
 }
 .row div:hover {
     opacity: 1;
@@ -165,7 +162,7 @@ h2 {
 /*content*/
 .author, .show_comment {
     float: right;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .author a, .show_comment a, .link_read_articles a {
     text-decoration:none;
@@ -180,10 +177,10 @@ h2 {
 .author a:hover, .show_comment a:hover, .link_read_articles a:hover {
     background: black;
     color: yellow;
-    -webkit-transition : all 0.2s ease-out;
-    -moz-transition : all 0.2s ease-out;
-    -o-transition : all 0.2s ease-out;
-    transition : all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 .title a {
     text-decoration:none;

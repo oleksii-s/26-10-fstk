@@ -3,61 +3,70 @@
 getData(show_full_article);
 
 //function for ajax
-function getData(func, path)
-{
+function getData(func, path) {
     var root = "http://jsonplaceholder.typicode.com/posts/";
     var strGET = window.location.search.replace('?id=', '');
+
     var xhr = new XMLHttpRequest();
-    if(path){
+
+    if (path) {
         strGET += '/' + path;
     }
+
     xhr.open("GET", root + strGET, true);
-    xhr.onreadystatechange = function()
-    {
+
+    xhr.onreadystatechange = function() {
+
         if (xhr.readyState != 4) return;
-        if (xhr.status != 200){
+
+        if (xhr.status != 200) {
             alert(xhr.status + ': ' + xhr.statusText);
-        }else{
-            try{
+        } else {
+            try {
                 var data = JSON.parse(xhr.responseText);
-            }catch (e){
+            } catch(e) {
                 alert("Invalid answer " + e.message);
             }
+
             return  func(data);
         }
     };
+
     xhr.send();
 }
 
-function show_full_article(data)
-{
+function show_full_article(data) {
     document.getElementById('title').innerHTML = data['title'];
-    document.getElementById('author').innerHTML = "" + data['by <a href='../author_articles.shtml?id=userId'>'] + "" + getAuthor(data['userId']) + "</a>";
+    document.getElementById('author').innerHTML = "by <a href='author_articles.shtml?id=" +
+        data['userId'] + "'>" + getAuthor(data['userId']) + "</a>";
     document.getElementById('article').innerHTML = data['body'];
 }
 
-function show_comments(data)
-{
+function show_comments(data) {
     var obj = document.getElementById('comments');
-    for(var i = 0; i < data.length; i++){
+
+    for (var i = 0; i < data.length; i++) {
         var ava = document.createElement('div');
-        ava.innerHTML = "<div><img src='../images/ava.png' alt='avatar'></div>";
+        ava.innerHTML = "<div><img src='images/ava.png' alt='avatar'></div>";
         var comment = document.createElement('div');
         var email = '<div><span class="email">By ' + data[i]['email'] + '</span><br/><br/>';
         var comment_title = '<span class="comment_title">' + data[i]['name'] + '</span><br/>';
         var comment_body = '<span class="comment_body">' + data[i]['body'] + '</span><br/><br/></div>';
-        comment.innerHTML = '<div class="comment">' + ava.innerHTML + email + comment_title + comment_body + '</div>';
+        comment.innerHTML = '<div class="comment">' + ava.innerHTML + email +
+            comment_title + comment_body + '</div>';
+
         obj.appendChild(comment);
     }
 }
 
-function showHide()
-{
+function showHide() {
     var obj = document.getElementById('comments');
-    if(obj.style.display != "block"){
+
+    if (obj.style.display != "block") {
         obj.style.display = "block";
-    }else{
+    } else {
         obj.style.display = "none";
     }
+
     getData(show_comments, 'comments');
 }
