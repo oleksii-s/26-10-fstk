@@ -9,14 +9,14 @@ dataProvider('GET', target)
     .then(response => JSON.parse(response))
     .then(posts => {
         if (posts.length > 0)
-            return posts.map((elem) => '<div><h2>' + elem.title + '</h2><p>' + elem.body + '</p></div>')
+            return posts.map((elem) => '<div><h2>' + elem.title + '</h2><p>' + elem.body + '</p></div>');
     })
     .then(data => {
         let container = document.getElementById('container');
-        container.innerHTML = data.join('')
+        container.innerHTML = data.join('');
     })
     .catch(error => {
-        alert(error)
+        alert(error);
     });
 
 function dataProvider(method, url) {
