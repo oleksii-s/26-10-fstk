@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Очередь событий</title>
+</head>
+<body>
+    <textarea rows="8" cols="40" id="area">Кликни меня</textarea>
+    <script>
+        area.onmousedown = function(e) { this.value += "\nmousedown\n"; this.scrollTop = this.scrollHeight; };
+        area.onmouseup = function(e) { this.value += "mouseup\n"; this.scrollTop = this.scrollHeight; };
+        area.onclick = function(e) { this.value += "click\n"; this.scrollTop = this.scrollHeight; };
+    </script>
+</body>
+</html>

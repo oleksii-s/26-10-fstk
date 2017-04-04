@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XHR POST, формы, кодировка</title>
+</head>
+<body>
+    <form action="/submit" method="GET">
+        <input name="name" value="Oleksii">
+        <input name="surname" value="Semko">
+    </form>
+
+    <!--Кодировка urlencoded в JS-->
+    <script>
+        var space = encodeURIComponent(' '); // %20
+        var slash = encodeURIComponent('/'); // %2F
+    </script>
+
+
+    <!--GET-запрос-->
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        var params = 'name=' + encodeURIComponent(name) +
+                '&surname=' + encodeURIComponent(surname);
+
+        xhr.open("GET", '/submit?' + params, true);
+
+        xhr.onreadystatechange = ...;
+
+        xhr.send();
+    </script>
+
+
+    <!--POST с urlencoded-->
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        var body = 'name=' + encodeURIComponent(name) +
+                '&surname=' + encodeURIComponent(surname);
+
+        xhr.open("POST", '/submit', true)
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+
+        xhr.onreadystatechange = ...;
+
+        xhr.send(body);
+    </script>
+
+
+    <!--Кодировка multipart/form-data-->
+    <form action="/submit" method="POST" enctype="multipart/form-data">
+        <input name="name" value="Виктор">
+        <input name="surname" value="Цой">
+    </form>
+    <script>
+        // POST с multipart/form-data
+        var data = {
+            name: 'Oleksii',
+            surname: 'Semko'
+        };
+
+        var boundary = String(Math.random()).slice(2);
+        var boundaryMiddle = '--' + boundary + '\r\n';
+        var boundaryLast = '--' + boundary + '--\r\n';
+
+        var body = ['\r\n'];
+        for (var key in data) {
+            // добавление поля
+            body.push('Content-Disposition: form-data; name="' + key + '"\r\n\r\n' + data[key] + '\r\n');
+        }
+
+        body = body.join(boundaryMiddle) + boundaryLast;
+
+        // Тело запроса готово, отправляем
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/submit', true);
+
+        xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundary);
+
+        xhr.onreadystatechange = function() {
+            if (this.readyState != 4) return;
+
+            alert( this.responseText );
+        };
+
+        xhr.send(body);
+    </script>
+
+
+    <!--FormData-->
+    <script>
+        // создать объект для формы
+        var formData = new FormData(document.forms.person);
+
+        // добавить к пересылке ещё пару ключ - значение
+        formData.append("patronym", "Робертович");
+
+        // отослать
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/url");
+        xhr.send(formData);
+    </script>
+
+
+    <!--Другие кодировки-->
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        var json = JSON.stringify({
+            name: "Виктор",
+            surname: "Цой"
+        });
+
+        xhr.open("POST", '/submit', true)
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+        xhr.onreadystatechange = ...;
+
+        // Отсылаем объект в формате JSON и с Content-Type application/json
+        // Сервер должен уметь такой Content-Type принимать и раскодировать
+        xhr.send(json);
+    </script>
+</body>
+</html>

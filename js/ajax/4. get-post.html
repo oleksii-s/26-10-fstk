@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GET и POST-запросы</title>
+</head>
+<body>
+
+<script>
+    // Пример с GET
+    // ...
+    var params = 'name=' + encodeURIComponent(name) + '&surname=' + encodeURIComponent(surname);
+    xmlhttp.open("GET", '/script.html?'+params, true);
+    // ...
+    xmlhttp.send(null)
+</script>
+
+<script>
+    // Пример с POST
+    // ...
+    var params = 'name=' + encodeURIComponent(name) + '&surname=' + encodeURIComponent(surname);
+    xmlhttp.open("POST", '/script.html', true);
+    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // ...
+    xmlhttp.send(params)
+</script>
+
+</body>
+</html>
