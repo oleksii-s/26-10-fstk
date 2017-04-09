@@ -10,12 +10,12 @@
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
     <script src="js/show_date.js"></script>
     <script src="js/author_articles.js"></script>
-    <script src="js/show_author.js"></script>
 </head>
 <body onload="show_date()">
 <div id="wrapper">
     <!--#include file="tpls/header.html" -->
     <!--#include file="tpls/nav.html" -->
+    <div id="author_art"></div><hr>
     <section id="sec"></section>
 </div>
 <!--#include file="tpls/footer.html" -->

@@ -1,72 +1,76 @@
 "use strict";
-getData();
 
-//ajax function
-function getData() {
-    var root = "http://jsonplaceholder.typicode.com/posts";
+let target = "http://jsonplaceholder.typicode.com/posts";
+let author_target = "https://jsonplaceholder.typicode.com/users/";
 
-    var xhr = new XMLHttpRequest();
-
-    xhr.open("GET", root, true);
-
-    xhr.onreadystatechange = function()
-    {
-        if (xhr.readyState != 4) return;
-
-        if (xhr.status != 200) {
-            alert(xhr.status + ': ' + xhr.statusText);
-        } else {
-            try {
-                var data = JSON.parse(xhr.responseText);
-            } catch (e) {
-                alert("Invalid answer " + e.message);
+let request1 = dataProvider('GET', target)
+    .then(response => JSON.parse(response))
+    .then(data => {
+        let section = document.getElementById('section');
+        for (let i = 0; i < data.length/3; i++) {
+            let cell = '<div class="col-xs-12 col-sm-4"></div>';
+            section.innerHTML += '<div class="row">' + cell + cell + cell + '</div>';
+        }
+        return data;
+    })
+    .then(data => {
+        for (let i = 0; i < data.length; i++) {
+            let {userId, id, body, title} = data[i];
+            let cell = document.getElementsByClassName('col-xs-12 col-sm-4')[i];
+            if (i < data.length) {
+                let author_link = "<a href='author_articles.shtml?id=" + userId + "'></a>";
+                let title_link = '<a href="article.shtml?id=' + id + '">' + title + '</a>';
+                let author = "<span class='author'>" + author_link + "</span><br>";
+                let title1 = '<span class="title">' + title_link + '</span><br><br>';
+                let desc = '<span class="desc">' + body.substr(0, 100) + '...' + '</span>';
+                let link = "<a href='article.shtml?id=" + data[i]['id'] + "'>Read more>>></a>";
+                cell.innerHTML = author + title1 + desc + " " + link;
+            } else {
+                cell.innerHTML = "<div class='empty'></div>";
             }
-
-            return  show_articles(data);
         }
-    };
+    })
+    .catch(error => {
+        alert(error);
+    });
 
-    xhr.send();
-}
-
-//creating content with articles
-function show_articles(data) {
-    var section = document.getElementById("section");
-
-    function cell_content(i)
-    {
-        if (i < data.length) {
-            var author_link = "<a href='author_articles.shtml?id=" + data[i]['userId'] + "'>" +
-                data[i]['userId'] + "</a>";
-            var title_link = '<a href="article.shtml?id=' + data[i]['id'] + '">' +
-                data[i]['title'] + '</a>';
-            var author = "<span class='author'>" + author_link + "</span><br>";
-            var title = '<span class="title">' + title_link + '</span><br><br>';
-            var desc = '<span class="desc">' + data[i]['body'].substr(0,100) + '...' + '</span>';
-            var link = "<a href='article.shtml?id=" + data[i]['id'] + "'>Read more>>></a>";
-            return author + title + desc + " " + link;
-        } else {
-
-            return "<div class='empty'></div>";
+let request2 = dataProvider('GET', author_target)
+    .then(response => JSON.parse(response))
+    .then(data => {
+        let class_author = document.getElementsByClassName('author');
+        for (let j = 0; j < class_author.length; j++) {
+            let userId = class_author[j].getElementsByTagName('a')[0].getAttribute('href');
+            userId = userId.replace('author_articles.shtml?id=', '') - 1;
+            class_author[j].getElementsByTagName('a')[0].innerHTML = data[userId].name;
         }
-    }
+    })
+    .catch(error => {
+        alert(error);
+    });
 
-    for (var i=0; i < data.length; i++) {
-        var cell1 = '<div class="col-xs-12 col-sm-4">'+ cell_content(i++) +'</div>';
-        var cell2 = '<div class="col-xs-12 col-sm-4">' + cell_content(i++) + '</div>';
-        var cell3 = '<div class="col-xs-12 col-sm-4">' + cell_content(i) + '</div>';
-        section.innerHTML += '<div class="row">' + cell1 + cell2 + cell3 + '</div>';
-   }
+Promise.all([request1, request2])
+    .then(results => {})
+    .catch(error => {
+        alert(error);
+    });
 
-    author();
-}
+function dataProvider(method, url) {
 
-function author() {
-    var class_author = document.getElementsByClassName('author');
+    return new Promise(function(resolve, reject) {
 
-    for (var j = 0; j < class_author.length; j++) {
-        var id = class_author[j].getElementsByTagName('a')[0].innerHTML;
+        let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+        let xhr = new XHR();
 
-        getAuthor(id, j);
-    }
+        xhr.open(method, url, true);
+
+        xhr.onload = function() {
+            resolve(this.response);
+        };
+
+        xhr.onerror = function() {
+            reject(new Error("Network Error"));
+        };
+
+        xhr.send();
+    });
 }

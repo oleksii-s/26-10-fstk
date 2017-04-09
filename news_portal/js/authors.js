@@ -1,86 +1,77 @@
 "use strict";
-getData();
 
-function getData() {
-    var root = "http://jsonplaceholder.typicode.com/users";
+let target = "http://jsonplaceholder.typicode.com/users";
 
-    var xhr = new XMLHttpRequest();
+dataProvider('GET', target)
+    .then(response => JSON.parse(response))
+    .then(data => {
+        for (let i = 0; i < data.length; i++) {
+            let {id, name } = data[i];
+            let list = document.getElementById('authors_content');
+            let ava = "<div class='ava'><img src='images/ava.png' alt='avatar'></div>";
+            let authors_name = '<div class="name_link"><span class="authors_name">' +
+                '<a href="javascript:void(0)">' + name + '</a></span>';
+            let hidden_block = '<div class="info" style="display: none;"></div><br/><br/>';
+            let link = "<span class='link_read_articles'><a href='author_articles.shtml?id=" +
+                id + "'>Read articles>>></a></span></div>";
 
-    xhr.open("GET", root, true);
-
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState != 4) return;
-
-        if (xhr.status != 200) {
-            alert(xhr.status + ': ' + xhr.statusText);
-        } else {
-            try {
-                var data = JSON.parse(xhr.responseText);
-            } catch(e) {
-                alert("Invalid answer " + e.message);
-            }
-
-            return show_authors_list(data);
+            list.innerHTML += "<div class='author_block'>" + ava + authors_name + hidden_block + link + "</div>";
         }
-    };
-
-    xhr.send();
-}
-
-function show_authors_list(data) {
-    //LIST
-    for (var i=0; i< data.length; i++) {
-        var list = document.getElementById('authors_content');
-        var id = data[i]['id'] - 1;
-        var ava = "<div class='author_block'><div class='ava'>" +
-            "<img src='images/ava.png' alt='avatar'></div>";
-        var authors_name = '<div class="name_link"><span class="authors_name">' +
-            '<a href="javascript:void(0)" onclick="' + id + '">' + data[i]['name'] +
-            '</a></span><br/><div class="info" style="display: none;"></div><br/>';
-        var link = "<span class='link_read_articles'><a href='author_articles.shtml?id=" +
-            data[i]['id'] + "'>Read articles>>></a></span></div></div>";
-
-        list.innerHTML += ava + authors_name + link;
-
+        return data;
+    })
+    .then(data => {
+        //setAtribut onclick
+        let elems = document.body.getElementsByClassName('authors_name');
+        for (let i = 0; i < data.length; i++) {
+            elems[i].getElementsByTagName('a')[0].setAttribute("onclick", "showHide(" + i + ")");
+        }
+        return data;
+    })
+    .then(data => {
         //popup info
-        var username = '<span class="username">Username: ' + data[i]['username'] +
-            '</span><br/>';
-        var email = '<span class="email">Email: ' + data[i]['email'] + '</span><br/>';
-        var phone = '<span class="phone">Phone: ' + data[i]['phone'] + '</span><br/>';
-        var website = '<span class="website">Website: <a href="#">' + data[i]['website'] +
-            '</a></span><br/>';
-        var company = '<span class="company">Company: ' + data[i]['company']['name'] +
-            '</span><br/>';
-        var popup = document.getElementsByClassName('info')[i];
-        var info = document.createElement('div');
+        for (let i = 0; i < data.length; i++) {
+            let {username, email, phone, website, company} = data[i];
+            let a_username = '<span class="username">Username: ' + username + '</span><br/>';
+            let a_email = '<span class="email">Email: ' + email + '</span><br/>';
+            let a_phone = '<span class="phone">Phone: ' + phone + '</span><br/>';
+            let a_website = '<span class="website">Website: <a href="#">' + website + '</a></span><br/>';
+            let a_company = '<span class="company">Company: ' + company.name + '</span><br/>';
+            let popup = document.getElementsByClassName('info')[i];
+            let info = document.createElement('div');
 
-        info.innerHTML = '<div>' + email + username + phone + website + company + '</div>';
-        popup.appendChild(info);
-    }
-    //setOnClick
-    function setOnClick() {
-        var elems = document.body.getElementsByClassName('authors_name');
-
-        for (var i = 0; i < elems.length; i++) {
-            var onclick = elems[i].getElementsByTagName('a')[0].getAttribute("onclick");
-
-            if ( typeof(onclick) != "function" ) {
-                elems[i].getElementsByTagName('a')[0].setAttribute('onclick','showHide(' +
-                    onclick + ');');
-            }
+            info.innerHTML = '<div>' + a_email + a_username + a_phone + a_website + a_company + '</div>';
+            popup.appendChild(info);
         }
-    }
+    })
+    .catch(error => {
+    alert(error);
+});
 
-    setOnClick();
+
+
+function dataProvider(method, url) {
+
+    return new Promise(function(resolve, reject) {
+
+        let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+        let xhr = new XHR();
+
+        xhr.open(method, url, true);
+
+        xhr.onload = function() {
+            resolve(this.response);
+        };
+
+        xhr.onerror = function() {
+            reject(new Error("Network Error"));
+        };
+
+        xhr.send();
+    });
 }
 
-//popup function
 function showHide(i) {
-    var obj = document.getElementsByClassName('info')[i];
+    let obj = document.getElementsByClassName('info')[i];
 
-    if (obj.style.display != "block") {
-        obj.style.display = "block";
-    } else {
-        obj.style.display = "none";
-    }
+    obj.style.display != "block" ? obj.style.display = "block" : obj.style.display = "none";
 }

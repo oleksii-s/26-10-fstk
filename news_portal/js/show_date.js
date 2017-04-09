@@ -2,17 +2,17 @@
 
 function show_date() {
     Date.prototype.getMonthName = function() {
-        var month = ['January','February','March','April','May','June','July',
+        let month = ['January','February','March','April','May','June','July',
             'August','September','October','Novemeber','December'];
 
         return month[this.getMonth()];
     };
 
-    var today = new Date();
+    let today = new Date();
 
-    var year = today.getFullYear();
-    var month = today.getMonthName();
-    var day = today.getDate();
+    let year = today.getFullYear();
+    let month = today.getMonthName();
+    let day = today.getDate();
 
     document.getElementById('date').innerHTML = month + ' ' +day + ', '+year;
 }

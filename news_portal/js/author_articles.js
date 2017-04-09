@@ -1,38 +1,54 @@
 "use strict";
 
-getData();
+let author_target = "https://jsonplaceholder.typicode.com/users/";
+author_target += window.location.search.replace('?id=', '');
 
-//function for ajax
-function getData() {
-    var root = "http://jsonplaceholder.typicode.com/posts?userId=";
-    var strGET = window.location.search.replace('?id=', '');
+let target = "http://jsonplaceholder.typicode.com/posts?userId=";
 
-    var xhr = new XMLHttpRequest();
+dataProvider('GET', author_target)
+    .then(response => JSON.parse(response))
+    .then(({name, id}) => {
+        let author = document.getElementById('author_art');
+        author.innerHTML = name + "'s Articles";
+        return id;
+    })
+    .then(id => {
+        dataProvider('GET', target + id)
+            .then(response => JSON.parse(response))
+            .then(data => {
+                for (let i = 0; i < data.length; i++) {
+                    let { id, title } = data[i];
+                    let section = document.getElementById('sec');
+                    let articles_name = "<div class='article_name'><a href='article.shtml?id=" + id + "'>" + title + "</a></div>";
+                    let read_full_article = "<div class='show_comment'><a href='article.shtml?id=" + id + "'>Read full article>>></a></div>";
+                    section.innerHTML += "<div class='list'>" + articles_name + read_full_article + "</div><br/>";
+                }
+            })
+            .catch(error => {
+                alert(error);
+            });
+    })
+    .catch(error => {
+        alert(error);
+    });
 
-    xhr.open("GET", root + strGET, true);
+function dataProvider(method, url) {
 
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState != 4) return;
+    return new Promise(function(resolve, reject) {
 
-        if (xhr.status != 200) {
-            alert(xhr.status + ': ' + xhr.statusText);
-        } else {
-            try {
-                var data = JSON.parse(xhr.responseText);
-            } catch (e) {
-                alert("Invalid answer " + e.message);
-            }
+        let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+        let xhr = new XHR();
 
-            return show_full_article(data);
-        }
-    };
+        xhr.open(method, url, true);
 
-    xhr.send();
-}
+        xhr.onload = function() {
+            resolve(this.response);
+        };
 
-function show_full_article(data) {
-    for (var i = 0; i < data.length; i++) {
-        var section = document.getElementById('sec');
-        section.innerHTML += "<div class='list'><div class='article_name'><a href='article.shtml?id=" + data[i]['id'] + "'>" + data[i]['title'] + "</a><article></div><div class='show_comment'><a href='article.shtml?id=" + data[i]['id'] + "'>Read full article>>></a></div></div><br/>";
-    }
+        xhr.onerror = function() {
+            reject(new Error("Network Error"));
+        };
+
+        xhr.send();
+    });
 }
