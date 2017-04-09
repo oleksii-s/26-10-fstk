@@ -1,0 +1,11 @@
+#contenteditable {
+  border: 1px solid #777;
+  border-radius: 5px;
+  width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#contenteditable button {
+  display: inline-block;
+}

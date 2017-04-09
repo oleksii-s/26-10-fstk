@@ -1,0 +1,40 @@
+html, body {
+  font-family : Arial, SansSerif;
+  font-size : 11px;
+  padding: 20px;
+}
+
+#playground {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.basket {
+  border : 1px solid #777;
+  width : 105px;
+  height: 120px;
+  padding : 10px;
+  margin: 0 0 20px;
+  border-radius:0 0 10px 10px;
+  background-color : #eee;
+  box-shadow: inset 0px 0px 5px #777;
+}
+
+.basket .ball {
+  width : 30px;
+  height: 30px;
+  border-radius:15px;
+  box-shadow: 5px 5px 10px #777;
+  float : right;
+}
+
+.ball {
+  border : 1px solid #FF7F50;
+  width : 20px;
+  height: 20px;
+  border-radius:10px;
+  background-color : #FF8C00;
+  box-shadow: 0px 0px 5px #777;
+  float : left;
+  margin : 5px;
+}

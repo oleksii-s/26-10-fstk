@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5: control</title>
+</head>
+<body>
+<form>
+    Число из интервала:<br/>
+    <input type='range' min='0' max='100' step='10' value='10'/><br/>
+    Целое число:<br/>
+    <input type='number' min='-100' max='100' step='1' value='10'/><br/>
+    Дата и время:<br/>
+    <input type='datetime'/><br/>
+    Дата:<br/>
+    <input type='date'/><br/>
+    Время:<br/>
+    <input type='time'/><br/>
+    Месяц:<br/>
+    <input type='month'/><br/>
+    Неделя:<br/>
+    <input type='week'/><br/>
+    Цвет:<br/>
+    <input type='color'/><br/>
+    url:<br/>
+    <input type='url' value='domain.ru'/><br/>
+    email:<br/>
+    <input type='email' value='@domain.ru'/><br/><br/>
+    <input type='submit' value='Подтвердить'/>
+</form>
+
+<div><meter min='-50' low='-10' high='30' max='50' value='-15' title='градусы'></meter></div>
+<div><meter min='-50' low='-10' high='30' max='50' value='20' optimum='20' title='градусы'></meter></div>
+<div><meter min='-50' low='-10' high='30' max='50' value='35' title='градусы'></meter></div>
+
+<div><progress max='100' value='70' title='%'></progress></div>
+</body>
+</html>

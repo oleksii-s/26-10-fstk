@@ -1,0 +1,19 @@
+body {
+  padding: 20px;
+}
+
+.section {
+  margin: 0 auto;
+  width: 860px;
+}
+
+div.selected {
+  padding: 10px 0;
+}
+
+canvas {
+  background: #999999;
+  border: 1px solid darkslategrey;
+  border-radius: 5px;
+  margin: 20px 0;
+}

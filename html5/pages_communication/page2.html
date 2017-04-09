@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5: Communication between pages. Page 2</title>
+</head>
+<body onload="init()">
+
+<p><u>page2.html:</u></p>
+<div id='target'>жду сообщения...</div>
+<div id='origin'>от...</div>
+
+<script type="text/javascript">
+  function init()
+  {
+    if (window.addEventListener)
+      window.addEventListener('message', receiveMessage, false);
+    else
+      window.attachEvent('onmessage', receiveMessage);
+  }
+
+  function receiveMessage(event)
+  {
+    document.getElementById('target').innerHTML = event.data;
+    document.getElementById('origin').innerHTML = 'от ' + event.origin;
+  }
+</script>
+
+</body>
+</html>

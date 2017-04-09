@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5: Communication between pages. Page 1</title>
+</head>
+<body onload='init()'>
+
+<p><u>message_source.html:</u></p>
+<iframe id='target' src='page2.html'>Не удалось загрузить messages_target.html!</iframe>
+<form id='form'>
+    <textarea id='message'><p><i>Текст сообщения</i></p></textarea><br/>
+    <input type='submit'/>
+</form>
+
+<script type="text/javascript">
+  function init()
+  {
+    document.getElementById("form").onsubmit = sendMessage;
+  }
+
+  function sendMessage()
+  {
+    var location = window.location;
+    var message = document.getElementById('message').value;
+    var target = document.getElementById('target');
+
+    target.contentWindow.postMessage(message, location.protocol+"//"+location.host);
+    return false;
+  }
+</script>
+
+</body>
+</html>

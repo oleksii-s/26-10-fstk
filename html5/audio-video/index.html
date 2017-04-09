@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5: Audio & Video</title>
+</head>
+<body>
+
+<div id="playground">
+    <!--Атрибуты:-->
+    <!--autoplay-->
+    <!--autobuffer-->
+    <!--controls-->
+    <!--height-->
+    <!--loop-->
+    <!--preload-->
+    <!--poster-->
+    <!--src-->
+    <!--width-->
+
+    <h2> Один источник </h2>
+    <video src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" width="300" height="200" controls>
+        Your browser does not support the video element.
+    </video>
+
+    <h2> Один источник (с субтитрами) </h2>
+    <video src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" width="300" height="200" controls>
+        <track kind="subtitles" src="foo.en.vtt" srclang="en"
+               label="English">
+        <track kind="subtitles" src="foo.sv.vtt" srclang="sv"
+               label="Svenska">
+        Your browser does not support the video element.
+    </video>
+
+    <h2> Несколько источников разных форматов + заставка</h2>
+    <video width="480" controls autoplay poster="https://archive.org/download/WebmVp8Vorbis/webmvp8.gif" >
+        <source
+                src="https://archive.org/download/WebmVp8Vorbis/webmvp8.webm"
+                type="video/webm">
+        <source
+                src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4"
+                type="video/mp4">
+        <source
+                src="https://archive.org/download/WebmVp8Vorbis/webmvp8.ogv"
+                type="video/ogg">
+        Your browser doesn't support HTML5 video tag.
+    </video>
+
+    <h2>Аудио один источник:</h2>
+    <audio controls src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h2>Аудио 2 источника:</h2>
+    <audio controls>
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+</body>
+</html>

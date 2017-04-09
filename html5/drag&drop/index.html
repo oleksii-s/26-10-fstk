@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HTML5: Drag and Drop</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div id="playground">
+    <div class='basket' ondragenter='return true' ondragover='return false' ondrop='return drop(event)'></div>
+
+    <div class='ball' draggable='true' id='ball01' ondragstart='return startDrag(event)' ondragend='return endDrag(event)'></div>
+    <div class='ball' draggable='true' id='ball02' ondragstart='return startDrag(event)' ondragend='return endDrag(event)'></div>
+    <div class='ball' draggable='true' id='ball03' ondragstart='return startDrag(event)' ondragend='return endDrag(event)'></div>
+    <div class='ball' draggable='true' id='ball04' ondragstart='return startDrag(event)' ondragend='return endDrag(event)'></div>
+</div>
+
+<script src="js/index.js"></script>
+</body>
+</html>

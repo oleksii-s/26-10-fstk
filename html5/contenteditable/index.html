@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5: Editable content & Browser storage</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div id="contenteditable" contenteditable="true" style="border : 1px solid #777;border-radius:5px; width:400px">
+    <p>Содержимое данного блока можно редактировать, поскольку для него определен атрибут <i>contenteditable</i>:<br><br> <code>&lt;div contenteditable='true'&gt;</code></p>
+    <p><small>В ходе редактирования ячеек таблицы ширина колонок и высота строчек изменяется автоматически.</small></p>
+    <table style="border : 1px solid #777;">
+        <tbody><tr><th>Колонка 1</th><th>Колонка 2</th><th>Колонка 3</th></tr>
+        <tr><td>Ячейка 11</td><td>Ячейка 12</td><td>Ячейка 13</td></tr>
+        <tr><td>Ячейка 21</td><td>Ячейка 22</td><td>Ячейка 23</td></tr>
+        </tbody></table>
+    <p><small>Для ввода нового элемента списка нажмите [Enter].</small></p>
+    <ul>
+        <li>Элемент списка 1</li>
+        <li>Элемент списка 2</li>
+        <li>Элемент списка 3</li>
+    </ul>
+    <p><small>После добавления нового элемента в список &lt;ol&gt; нумерация будет обновлена автоматически.</small></p>
+    <ol>
+        <li>Элемент нумерованного списка 1</li>
+        <li>Элемент нумерованного списка 2</li>
+        <li>Элемент нумерованного списка 3</li>
+    </ol>
+
+    <button onclick="storeData()">Сохранить в sessionStorage</button>
+    <button onclick="restoreData()">Восстановить из sessionStorage</button>
+</div>
+
+<script>
+    function storeData() {
+      sessionStorage.setItem("contenteditable", document.getElementById("contenteditable").innerHTML);
+      alert("Данные сохранены.");
+    }
+
+    function restoreData() {
+      document.getElementById("contenteditable").innerHTML=sessionStorage.getItem("contenteditable");
+      alert("Данные восстановлены.");
+    }
+</script>
+
+</body>
+</html>

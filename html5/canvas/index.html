@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5: Canvas</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body onload='selectOperation(1)'>
+
+<div class='section'>
+    <button onclick='selectOperation(1)'>перо</button>
+    <button class='button' onclick='selectOperation(2)'>линии</button>
+    <button class='button' onclick='selectOperation(3)'>полигоны</button>
+
+    <div class='selected' id='selected'>Выбрано:</div>
+
+    <form>
+        цвет линий: <input id='stroke' type='color'/>
+        цвет заливки: <input id='fill' type='color'/>
+    </form>
+</div>
+
+<div class='section'>
+    <canvas id='canvas' onmousedown='mouseDown(event)' onmouseup='mouseUp(event)'
+            onmousemove='mouseMove(event)' width='800px' height='400px'>
+    </canvas>
+</div>
+
+<script src="js/index.js"></script>
+
+</body>
+</html>
