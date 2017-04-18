@@ -1,0 +1,20 @@
+#multi-column div {
+  -webkit-column-count: 5;
+  -moz-column-count: 5;
+  column-count: 5;
+  -moz-column-gap: 2em;
+  -webkit-column-gap: 2em;
+  column-gap: 2em;
+
+  /*column-count*/
+  /*column-fill*/
+  /*column-gap*/
+  /*column-rule*/
+  /*column-rule-color*/
+  /*column-rule-style*/
+  /*column-rule-width*/
+  /*column-span*/
+  /*column-width*/
+  /*columns*/
+}
+
