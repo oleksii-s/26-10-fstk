@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="index.html">
+    <label>Some data: </label>
+    <input id="data" type="number" max="100" min="10" value="55"/>
+
+    <label>Another data: </label>
+    <input id="data1" type="number" max="200" min="10" value="155"/>
+
+
+    <label>One more data: </label>
+    <input id="data2" type="number" max="300" min="10" value="255"/>
+
+    <input onclick="submitHandler(); return false;" type="submit" value="Save"/>
+    <input onclick="clearCookies()" type="reset" value="Clear"/>
+</form>
+<script src="index.js"></script>
+</body>
+</html>

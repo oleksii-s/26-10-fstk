@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5: Web Storage</title>
+</head>
+<body>
+<section>
+    <form action="/">
+        <label>Select your BG color: </label>
+        <input id="favcolor" type="color" value="#ffffff"/>
+
+        <label>Select Font Size: </label>
+        <input id="fontwt" type="number" max="14" min="10" value="13"/>
+
+        <input onclick="setSettings(); return false;" type="submit" value="Save"/>
+        <input onclick="clearSettings()" type="reset" value="Clear"/>
+    </form>
+</section>
+<script src="index.js"></script>
+</body>
+</html>
