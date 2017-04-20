@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3: Transition</title>
+    <style type="text/css">
+        body {
+            padding: 100px;
+        }
+
+        .attribute {
+            font-weight: 800;
+        }
+
+        button {
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 auto;
+            display: block;
+            font: bold 18px sans-serif;
+            background: #fd7c2a;
+            -webkit-transition: background 2s; /* For Safari 3.0 to 6.0 */
+            transition: background 2s; /* For modern browsers */
+        }
+
+        button:hover {
+            background: #3cc16e;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h3>transition</h3>
+        <p>Универсальное свойство, которое позволяет одновременно задать значения
+            <span class="attribute">transition-property</span>,
+            <span class="attribute">transition-duration</span>,
+            <span class="attribute">transition-timing-function</span> и
+            <span class="attribute">transition-delay</span>.
+            Устанавливает эффект перехода между двумя состояниями элемента, они могут быть определены с помощью псевдоэлемента
+            <span class="attribute">:hover</span> или <span class="attribute">:active</span>,
+            а также динамически через JavaScript.
+        </p>
+        <p>Значение <span class="attribute">none</span> oтменяет эффект перехода.</p>
+    </div>
+    <button type="button">Hover on me</button>
+</body>
+</html>
