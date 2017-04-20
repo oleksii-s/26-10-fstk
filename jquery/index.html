@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style type="text/css">
+        .add
+        {
+            background-color:#67E667;
+            border:1px solid;
+        }
+        #text2
+        {
+            display:none;
+        }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function () {
+
+        $(":button").click(function () {
+          $(":button").hide();
+          $("#wrap1").addClass("add");
+          $("#wrap1").animate({height: 280}, 2000);
+          $("#wrap1").animate({width: 400}, 2000);
+          $("#wrap1").animate({padding: 20}, 2000, function () {
+            $("#text1").hide(2000, function () {
+              $("#text2").show(2000);
+            });
+          });
+        });
+
+      });
+    </script>
+</head>
+<body>
+<div id="wrap1">
+    <p id="text1">Я первый абзац на странице.</p>
+    <div id="text2">
+        <p><b>jQuery</b> - это JavaScript библиотека значительно упрощающая написание кода.</p>
+        <p>Девиз jQuery <i>"write less, do more"</i> (пиши меньше, делай больше) максимально точно отражает главное предназначение jQuery.</p>
+        <p>jQuery содержит функции позволяющие создавать анимацию и обработчики событий.</p>
+        <p>jQuery облегчает выбор элементов в DOM и создание AJAX запросов. </p>
+    </div>
+</div>
+<input type="button" value="Изменить оформление абзаца" />
+</body>
+</html>
