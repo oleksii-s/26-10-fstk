@@ -12,10 +12,17 @@ a:hover {
     text-decoration: none;
     color: black;
 }
+a:focus {
+    text-decoration: none;
+}
 #wrapper {
     width: 90%;
     margin: 0 auto;
     margin-top: 30px;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
 }
 
 /*header*/
@@ -24,6 +31,8 @@ header {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: oblique;
     font-size: 16px;
+    height: 160px;
+    margin-bottom: 75px;
 }
 #top {
     width: 100%;
@@ -77,9 +86,12 @@ h1 a{
 #nav {
     border: none;
     border-bottom: solid 3px black;
-    margin-bottom: 50px;
-    background-color: inherit;
+    background: rgba(255, 255, 255, .9);
     text-align: center;
+    top: 170px;
+    position: fixed;
+    z-index: 1000;
+    width: inherit;
 }
 nav a {
     text-decoration: none;
@@ -121,6 +133,7 @@ h2 {
 /*articles decoration*/
 #section {
     margin: 0 auto;
+    /*margin-top: 50px;*/
 }
 .row{
     margin: 0 auto;
@@ -130,7 +143,8 @@ h2 {
 .row div {
     height: 300px;
     padding: 20px 20px;
-    background-color: #37245c;
+    background: linear-gradient(to top right, #c33764, #1d2671);
+    /*background-color: #37245c;*/
     opacity: 0.95;
     border: solid 10px white;
 }
@@ -159,6 +173,7 @@ h2 {
     background-color: white;
     opacity: 1;
 }
+
 /*content*/
 .author, .show_comment {
     float: right;
@@ -325,4 +340,64 @@ footer {
     color: grey;
     font-size: 12px;
     float: left;
+}
+/*sidebar menu */
+aside {
+    top: 0;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    padding: 10px;
+    width: 16%;
+    float: left;
+    height: 100%;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    background: linear-gradient(to left, white, lightgray);
+}
+aside a {
+    text-decoration:none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-size: 16px;
+    color: #37245c;
+}
+aside a:hover {
+    color: deepskyblue;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+aside a:focus {
+    color: deepskyblue;
+}
+aside li {
+    padding-top: 10px;
+}
+.glyphicon-menu-right, .glyphicon-menu-left {
+    /*color: yellow;*/
+    color: #37245c;
+    /*background: #37245c;*/
+    width:30px;
+    height:30px;
+    text-align: center;
+    border-radius: 50%;
+    /*border: 2px solid black;*/
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    font-size: 20px;
+    padding-top: 8px;
+}
+.glyphicon-menu-right:focus, .glyphicon-menu-left:focus {
+    color: #37245c;
+}
+.glyphicon-menu-right:hover, .glyphicon-menu-left:hover {
+    color: yellow;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
