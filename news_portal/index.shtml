@@ -20,7 +20,7 @@
 <div id="wrapper">
     <!--#include file="tpls/header.html" -->
     <!--#include file="tpls/nav.html" -->
-     <section>
+    <section>
         <div id="section"></div>
     </section>
 </div>

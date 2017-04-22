@@ -133,45 +133,37 @@ h2 {
 /*articles decoration*/
 #section {
     margin: 0 auto;
-    /*margin-top: 50px;*/
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 10px;
 }
-.row{
-    margin: 0 auto;
-    padding: 30px 0;
-    border-bottom: dotted 1px lightgrey;
-}
-.row div {
-    height: 300px;
-    padding: 20px 20px;
+.child {
+    width: 32%;
+    margin-top: 40px;
+    padding: 20px;
+    padding-bottom: 60px;
+    align-self: stretch;
     background: linear-gradient(to top right, #c33764, #1d2671);
-    /*background-color: #37245c;*/
     opacity: 0.95;
-    border: solid 10px white;
 }
-.row div:hover {
+.child:hover {
     opacity: 1;
     -webkit-transition : all 0.3s ease-out;
     -moz-transition : all 0.3s ease-out;
     -o-transition : all 0.3s ease-out;
     transition : all 0.3s ease-out;
 }
-.row a {
+.child a {
     color: deepskyblue;
     font-size: 12px;
 }
-.row a:hover {
+.child a:hover {
     color: yellow;
     -webkit-transition : all 0.3s ease-out;
     -moz-transition : all 0.3s ease-out;
     -o-transition : all 0.3s ease-out;
     transition : all 0.3s ease-out;
-}
-.row div .empty {
-    margin-top: -20px;
-    margin-left: -20px;
-    width: 150%;
-    background-color: white;
-    opacity: 1;
 }
 
 /*content*/
