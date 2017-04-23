@@ -13,11 +13,11 @@
     <script src="js/index.js"></script>
 </head>
 <body onload="show_date()">
-<aside id="slideout" style="left: -13%;">
+<aside id="slideout" style="left: 0;">
     <ul id="sidebar"></ul>
-    <a href="javascript:void(0)" onclick="showHide()" class="glyphicon glyphicon-menu-right" aria-hidden="true"></a>
+    <a href="javascript:void(0)" onclick="showHide()" class="glyphicon glyphicon-menu-left" aria-hidden="true"></a>
 </aside>
-<div id="wrapper">
+<div id="main_wrapper">
     <!--#include file="tpls/header.html" -->
     <!--#include file="tpls/nav.html" -->
     <section>

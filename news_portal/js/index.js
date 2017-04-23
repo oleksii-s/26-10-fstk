@@ -25,21 +25,24 @@ let request1 = dataProvider('GET', target)
 let request2 = dataProvider('GET', author_target)
     .then(response => JSON.parse(response))
     .then(data => {
-        let class_author = document.getElementsByClassName('author_link');
-        for (let j = 0; j < class_author.length; j++) {
-            let userId = class_author[j].getAttribute('href');
-            userId = userId.replace('author_articles.shtml?id=', '') - 1;
-            class_author[j].innerHTML = data[userId].name;
+        if (localStorage.getItem("author") == null) {
+            localStorage['author'] = data[0].name;
         }
-        return data;
-    })
-    .then(data => {
         let aside = document.getElementsByTagName('aside')[0].getElementsByTagName('ul')[0];
         for (let i = 0; i < data.length; i++) {
             let author = "'" + data[i].name + "'";
             aside.innerHTML += '<li><a href="javascript:void(0)" onclick="chooseAuthor(' + author + ')">' + data[i].name + '</a></li>';
         }
         aside.innerHTML += '<li><b><a href="javascript:void(0)" onclick="chooseAuthor(1)">Show all</a></b></li>';
+        return data;
+    })
+    .then(data => {
+        let class_author = document.getElementsByClassName('author_link');
+        for (let j = 0; j < class_author.length; j++) {
+            let userId = class_author[j].getAttribute('href');
+            userId = userId.replace('author_articles.shtml?id=', '') - 1;
+            class_author[j].innerHTML = data[userId].name;
+        }
     })
     .catch(error => {
         alert(error);
@@ -48,9 +51,7 @@ let request2 = dataProvider('GET', author_target)
 Promise.all([request1, request2])
     .then(() => {
         let storage = localStorage.getItem("author");
-        if (storage != null) {
-            chooseAuthor(storage);
-        }
+        chooseAuthor(storage);
     })
     .catch(error => {
         alert(error);
@@ -79,7 +80,7 @@ function dataProvider(method, url) {
 //show or hide sidebar
 function showHide() {
     let obj = document.getElementById('slideout');
-    let wrapper = document.getElementById('wrapper');
+    let wrapper = document.getElementById('main_wrapper');
     let button = obj.getElementsByClassName('glyphicon')[0];
 
     if(obj.style.left != "-13%") {
