@@ -15,7 +15,7 @@ function loader(method, url) {
         let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
         let xhr = new XHR();
 
-        xhr.open(method, url, true);
+        xhr.open(method, url, false);
         xhr.onload = function() {
             if (this.status == 200) {
                 resolve(this.response);
@@ -53,7 +53,7 @@ loader('GET', author)
                     localStorage.setItem('username', user.name);
                 });
                 link.style.fontSize='1.5rem';
-                link.href="homepage.html";
+                link.href="index.html";
                 link.innerHTML= user.name;
             }
         );
