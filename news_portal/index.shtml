@@ -13,9 +13,9 @@
     <script src="js/index.js"></script>
 </head>
 <body onload="show_date()">
-<aside id="slideout" style="left: 0;">
+<aside id="slideout">
     <ul id="sidebar"></ul>
-    <a href="javascript:void(0)" onclick="showHide()" class="glyphicon glyphicon-menu-left" aria-hidden="true"></a>
+    <a href="javascript:void(0)" id="arrow" class="glyphicon glyphicon-menu-left" aria-hidden="true"></a>
 </aside>
 <div id="main_wrapper">
     <!--#include file="tpls/header.html" -->

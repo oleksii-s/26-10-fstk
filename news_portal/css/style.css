@@ -292,10 +292,11 @@ h2 {
 .link_read_articles {
     margin-left: 20px;
 }
-.info {
+.author_block .info {
     padding: 5px 10px;
     margin-top: 10px;
     border: 1px solid lightgray;
+    display: block;
 }
 /*author_articles page*/
 #author_art {
@@ -357,14 +358,11 @@ aside a {
     color: #37245c;
 }
 aside a:hover {
-    color: deepskyblue;
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-}
-aside a:focus {
-    color: deepskyblue;
+    color: deepskyblue !important;
+    -webkit-transition: all 0.2s ease-out !important;
+    -moz-transition: all 0.2s ease-out !important;
+    -o-transition: all 0.2s ease-out !important;
+    transition: all 0.2s ease-out !important;
 }
 aside li {
     padding-top: 10px;
@@ -388,10 +386,10 @@ aside li {
 }
 .glyphicon-menu-right:hover, .glyphicon-menu-left:hover {
     color: yellow;
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out !important;
+    -moz-transition: all 0.2s ease-out !important;
+    -o-transition: all 0.2s ease-out !important;
+    transition: all 0.2s ease-out !important;
 }
 #main_wrapper {
     width: 80%;
@@ -405,5 +403,9 @@ aside li {
     transition-duration: 0.3s;
 }
 .active {
-    color: red;
+    color: deepskyblue;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
 }

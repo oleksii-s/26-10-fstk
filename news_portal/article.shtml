@@ -24,7 +24,7 @@
         <div id="author"></div>
         <div id="article_date">February 17, 2017</div><br/>
         <div id="article"></div><br/>
-        <div class='show_comment'><a href="javascript:void(0)" onclick="showHide()">Show comments</a></div><br/><br/>
+        <div class='show_comment'><a href="javascript:void(0)">Show comments</a></div><br/><br/>
         <div id="comments" style="display: none;"></div>
     </section>
 </div>

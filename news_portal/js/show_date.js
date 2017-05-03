@@ -14,5 +14,5 @@ function show_date() {
     let month = today.getMonthName();
     let day = today.getDate();
 
-    document.getElementById('date').innerHTML = month + ' ' +day + ', '+year;
+    $('#date').html(month + ' ' +day + ', '+year);
 }
