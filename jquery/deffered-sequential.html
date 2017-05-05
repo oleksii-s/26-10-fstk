@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deferred-объекты в jQuery</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- последовательное выполнение асинхронных операций.
+следующая операция не начинается пока текущая не закончится. -->
+
+<div id="console-log"></div>
+
+<script>
+	(function(){
+		var consoleLine = "<p class=\"console-line\"></p>";
+		window.console = {
+			log: function (text) {
+				$("#console-log").append($(consoleLine).html(text));
+			}
+		};
+	}());
+
+    $.ajax('http://echo.jsontest.com/id/1')
+        .then(function(result){
+            console.log(JSON.stringify(result));
+            return $.ajax('http://echo.jsontest.com/id/2')
+        }).then(function(result){
+        console.log(JSON.stringify(result));
+        return $.ajax('http://echo.jsontest.com/id/3')
+    }).then(function(result){
+        console.log(JSON.stringify(result));
+    });
+</script>
+</body>
+</html>

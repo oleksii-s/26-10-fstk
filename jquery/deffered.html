@@ -1,0 +1,65 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Deferred-объекты в jQuery</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<form autocomplete="off">
+    <section>
+        <header>
+            <th>Вопросы теста</th>
+            <th>Да/Нет</th>
+        </header>
+        <div>
+            <label for="test_1">Вопрос 1</label>
+            <input type="radio" name="test_1" id="test_1" value="1">
+            <input type="radio" name="test_1" id="test_1" value="0">
+        </div>
+        <div>
+            <label for="test_2">Вопрос 2</label>
+            <input type="radio" name="test_2" id="test_2" value="1">
+            <input type="radio" name="test_2" id="test_2" value="0">
+        </div>
+        <div>
+            <label for="test_3">Вопрос 3</label>
+            <input type="radio" name="test_3" id="test_3" value="1">
+            <input type="radio" name="test_3" id="test_3" value="0">
+        </div>
+    </section>
+</form>
+<p>Выполнено: 0%</p>
+</body>
+</html>
+<script>
+    'use strict';
+
+
+    let completed = 0, /* кол-во пройденных вопросов */
+        defr = $.Deferred(), /* Создание Deferred-объекта */
+        successMessage = 'Тест пройден.';
+
+    defr
+      .progress(function () {
+      	/* Обработчик состояния 'ожидание' */
+        $('p').html('Выполнено: ' + Math.round(completed * 100 / 3) + '%');
+      })
+      .done(function () {
+      	/* Обработчики состояния 'выполнено' */
+        $('p').html(successMessage);
+      })
+      .done(function () {
+        alert('Результат теста: ' + successMessage);
+      });
+
+    $('input').on('change', function () {
+      $(this).siblings().attr('disabled', '');
+      if (++completed !== 3) {
+      	/* Обработать состояние 'ожидание' */
+        defr.notify();
+      } else {
+      	/* Изменить состояние на 'выполнено' при ответе на все вопросы */
+        defr.resolve();
+      }
+    });
+</script>
