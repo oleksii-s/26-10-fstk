@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MVVM</title>
+    <style type="text/css" media="screen">
+        body{ font-size: 130%; }
+    </style>
+</head>
+
+<body style="font-size: 150%;">
+    <div>
+        <h1>MVVM - <small>TODO app</small></h1>
+        <form data-bind="submit: addItem">
+            <h2>Tasks:</h2>
+            <ul data-bind="foreach: items">
+                <li>
+                    <label data-bind="click: $parent.removeItem">
+                        <input type="checkbox"> <span data-bind="text: $data"></span></label>
+                </li>
+            </ul>
+            <h3>Create new task:</h3>
+            <input placeholder="I need to do" data-bind='value: itemToAdd, valueUpdate: "afterkeydown"'>
+            <input value="+" type="submit" data-bind='enable: itemToAdd().length > 0'>
+        </form>
+    </div>
+    <script src="js/knockout-3.4.0.min.js"></script>
+    <script src="js/viewmodel.js"></script>
+</body>
+
+</html>
