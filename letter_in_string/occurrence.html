@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Occurrence</title>
+</head>
+<body>
+<script>
+    var str = prompt("pls, write smth:", "");
+    var letter = prompt("which letter you want to count?", "");
+    function occurr(str, letter)
+    {
+        var count = 0;
+        var length = str.length;
+        for(var i = 1; i <= length; i++){
+            if(str.slice(-1) == letter){
+                count++
+            }
+            str = str.slice(0, -1);
+        }
+        alert(count);
+    }
+    occurr(str, letter);
+</script>
+</body>
+</html>

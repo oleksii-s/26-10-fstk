@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Range of Integers</title>
+</head>
+<body>
+<script>
+    var x = prompt("Please, add MIN number:","");
+    var y = prompt("Please, add MAX number:","");
+    var arr = [];
+    //Creating array with integers [++x, ...till ..., --y]
+    function isValidNumber(x, y) {
+        x *= 1;
+        y *= 1;
+        if (isNaN(x) || isNaN(y) || x == "" || y == "" || x > y) {
+            x = prompt("Please, add MIN number:","");
+            y = prompt("Please, add MAX number:","");
+            isValidNumber(x, y);
+        } else {
+            for (var i = x + 1; i < y; i++) {
+                arr.push(i);
+            }
+            alert(arr);
+        }
+    }
+    isValidNumber(x, y);
+
+</script>
+</body>
+</html>

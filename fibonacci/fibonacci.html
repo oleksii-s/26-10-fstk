@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci</title>
+</head>
+<body>
+<script>
+    var n = prompt("How many Fibonacci numbers you would like to see?", "");
+    function isValidNumber(n) {
+       if (isNaN(n) || n == '') {
+            n = prompt('Please, add a NUMBER:', '');
+            isValidNumber(n);
+        } else if (n === null) {
+            window.stop()
+        } else {
+           fibonacci(n);
+        }
+    }
+   var arr = [0, 1];
+   function fibonacci(n){
+   for(var i=0; i<n-2; i++) {
+       var next_element = arr[arr.length - 1] + arr[arr.length - 2];
+       arr.push(next_element);
+   }
+   alert(arr);
+  }
+    isValidNumber(n)
+</script>
+</body>
+</html>
