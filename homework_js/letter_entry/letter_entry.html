@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Letter_entry</title>
+</head>
+<body>
+
+<script>
+
+    function letter_entry (str, lett) {
+        var count = 0;
+        for (var i = 0; i < str.length; i++) {
+            if (str[i] == lett) {
+                count++;
+            }
+        }
+        return alert (count);
+    }
+
+    var string = prompt('Введите строку', '');
+    while (!string) {
+        string = prompt('Строка не должна быть пустой! Введите строку', '');
+    }
+    var letter = prompt('Введите искомую букву', '');
+    while (letter.length != 1) {
+        letter = prompt('Введите только одну букву', '');
+    }
+
+    letter_entry(string, letter);
+
+</script>
+
+</body>
+</html>

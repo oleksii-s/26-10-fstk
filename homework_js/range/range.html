@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Range</title>
+</head>
+<body>
+
+<script>
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    function range(x,y) {
+        x = + x;
+        y = + y;
+
+        var arr = [];
+        for (var i = x + 1; i < y; i++){
+            arr.push(i);
+        }
+
+        return alert ('['+ arr + ']');
+    }
+
+    var min = prompt('Введите минимальное число диапазона x', '');
+    var max = prompt('Введите максимальное число диапазона y', '');
+    min = + min;
+    max = + max;
+
+    while (!isNumeric(min) || !isNumeric(max) || min >= max) {
+        min = prompt('Неверный формат данных. Введите минимальное число диапазона x', '');
+        max = prompt('Введите максимальное число диапазона y', '');
+        min = + min;
+        max = + max;
+    }
+
+    range (min,max);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(Update cell)</title>
+    <style>
+        table {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        td {
+            border:1px solid;
+            height: 20px;
+            width: 40px;
+        }
+    </style>
+
+</head>
+<body>
+<script>
+    function createTable() {
+        var x = document.body.appendChild(document.createElement('table'));
+        var y = x.appendChild(document.createElement('tbody'));
+
+        var rand1 = Math.floor((Math.random() * 10) + 1);
+        var rand2 = Math.floor((Math.random() * 10) + 1);
+
+        for (var i = 0; i < rand1; i++) {
+            var z = y.appendChild(document.createElement('tr'));
+            for (var j = 0; j < rand2; j++) {
+                var t = z.appendChild(document.createElement('td'));
+            }
+        }
+    }
+
+    function updateCell(row,col,text){
+        if (row > document.querySelector('table').rows.length ||
+                col > document.querySelector('table').rows[0].cells.length){
+            alert ("Невозможно записать текст. Ячейка не существует!");
+            return;
+        }
+        document.querySelector('table').rows[row-1].cells[col-1].innerHTML = text;
+    }
+
+    createTable();
+    updateCell(2,2,'Hello');
+
+</script>
+</body>
+</html>

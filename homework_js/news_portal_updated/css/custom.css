@@ -1,0 +1,10 @@
+
+.shortened-text {
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.col-md-4 {
+    border-bottom: 1px solid gainsboro;
+    height: 100px;
+}

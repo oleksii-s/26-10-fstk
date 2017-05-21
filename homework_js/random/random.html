@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random</title>
+</head>
+<body>
+
+<script>
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    var rand = Math.floor((Math.random() * 10) + 1);
+    console.log (rand); //для проверки какое число выпало в рандоме
+
+    var number = prompt('Введите число от 1 до 10', '');
+
+    while (!isNumeric(number) || number < 1 || number > 10) {
+        number = prompt('Неверный формат данных. Введите число от 1 до 10', '');
+    }
+
+    if ( number == rand) {
+        alert ('Отличная работа!');
+    } else {
+        alert ('Неудача');
+    }
+
+</script>
+
+</body>
+</html>

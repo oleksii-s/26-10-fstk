@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(list of songs)</title>
+</head>
+<body>
+
+<ul>
+    <li>Metallica</li>
+    <li>Evanescence</li>
+    <li>Steklovata</li>
+    <li>Glasslands</li>
+    <li>Leningrad</li>
+    <li>Balthazar</li>
+    <li>Megadeth</li>
+</ul>
+
+<input type="button" name="changep" value="Start">
+
+<script>
+
+    var button = document.querySelector('input');
+    var list = document.getElementsByTagName('ul')[0];
+    button.onclick = function(){
+     alert("Первый исполнитель - " + list.firstElementChild.innerHTML + "\n Последний исполнитель - " +
+             list.lastElementChild.innerHTML);
+    }
+
+</script>
+
+
+</body>
+</html>

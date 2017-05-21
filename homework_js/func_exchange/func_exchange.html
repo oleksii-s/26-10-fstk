@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exchange</title>
+</head>
+<body>
+
+<script>
+
+var person ={
+    name: "Anatoliy",
+    age: "25",
+    religion: "Alcoholic",
+    sex: "Male"
+};
+
+var clone = {};
+
+function exchange (obj) {
+
+    for (var key in obj) {
+        clone[obj[key]] = key;
+    }
+
+    return clone;
+}
+
+exchange (person);
+console.log(clone);
+
+</script>
+
+</body>
+</html>

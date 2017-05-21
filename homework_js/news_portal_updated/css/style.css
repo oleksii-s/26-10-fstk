@@ -1,0 +1,142 @@
+* {
+    margin-left:0;
+    padding-left:0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+
+#wrapper {
+    width: 60%;
+    margin: 0 auto;
+    background: white;
+    border-radius: 6px;
+}
+
+a {
+    text-decoration: none;
+    color: #059BD8;
+}
+
+a:hover {
+    color:#f4af00;
+}
+
+h3 {
+    font-size: 1rem;
+
+}
+
+#article {
+    padding: 5px 10px 10px 10px;
+}
+
+.title {
+    color:#706e66;
+}
+
+li {
+    margin: 0 0 5px 0;
+    list-style-position:inside;
+    list-style: none;
+}
+
+.shortened-text {
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.post {
+    margin: 0 auto;
+    padding: 5px 10px 10px 10px;
+    border-bottom:1px solid grey;
+}
+
+nav {
+    margin: 0 auto;
+    border-top: 1px solid #E3E3E3;
+    border-bottom: 1px solid #E3E3E3;
+    background: #F6F6F6;
+    text-align: center;
+}
+
+nav li {
+    list-style: none;
+    display: inline;
+    font-size: 1.3rem;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+nav a {
+    margin:0 25px 0 5px;
+}
+
+.dialogbox {
+    position: relative;
+    max-width: 500px;
+    height: auto;
+    margin: 20px 10px;
+    padding: 5px;
+    background-color: #DADADA;
+    border-radius: 3px;
+    border: 5px solid #ccc;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #797979;
+}
+
+.info {
+    color:inherit;
+}
+
+.info:hover {
+    color:grey;
+}
+
+/*============POPUP===============*/
+.popup {
+    position: relative;
+    width: 30%;
+    height: auto;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.popup .popuptext {
+    position: absolute;
+    left:90%;
+    top:-110%;
+    visibility: hidden;
+    width: 250px;
+    height: 65px;
+    overflow: auto;
+    background-color: #DADADA;
+    color: #797979;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: left;
+    border-radius: 3px;
+    padding: 8px 5px;
+    z-index: 1;
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+/*===============================*/
