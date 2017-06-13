@@ -1,14 +1,24 @@
-/**
- * Created by oleksii-s on 13.06.17.
- */
-// создание элемента
-const title = React.createElement(
-    'h1',   // элемент, который мы создаем
-    {id: 'title'},  // свойства, которые будет иметь создаваемый элемент
-    'Hello React'   // внутреннее содержимое
-)
-// рендеринг элемента
+const user = {
+    id : 5,
+    age: 33,
+    firstName: 'John',
+    lastName: 'Bubble',
+    getFullName: function(){
+        return `${this.firstName} ${this.lastName}`;
+    }
+};
+const now = new Date();
+const userClassName = "user-info";
+const styleObj = {
+    color:'red',
+    fontFamily:'Verdana'
+};
 ReactDOM.render(
-    title,  // элемент, который мы хотим создать
-    document.getElementById('container')    // где мы этот элемент хотим создать
-)
+    <div className={userClassName}  style={styleObj} id={user.id} >
+        <p>Полное имя: {user.getFullName()}</p>
+        <p>Возраст: {user.age}</p>
+        <p>Год рождения: {now.getFullYear() - user.age}</p>
+        <p>Время генерации данных: {now.toLocaleTimeString()}</p>
+    </div>,
+    document.getElementById("container")
+);
