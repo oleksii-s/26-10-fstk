@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hello React</title>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="container"></div>
+
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+
+    <script type="text/babel">
+      // function tick() {
+      //   ReactDOM.render(
+      //       <div>
+      //         <h1>Element 1</h1>
+      //         <h2>Current time {new Date().toLocaleTimeString()}.</h2>
+      //       </div>,
+      //       document.getElementById("header")
+      //   );
+      // }
+      // setInterval(tick, 1000);
+      ReactDOM.render(
+          <div>
+            <h1>Element 1</h1>
+            <h2>Current time {new Date().toLocaleTimeString()}.</h2>
+          </div>,
+          document.getElementById("header")
+      );
+      ReactDOM.render(
+          <div>
+              <h2>Element 2 (list)</h2>
+              <ul>
+                  <li>iPhone 7</li>
+                  <li>Samsung Galaxy A5</li>
+                  <li>HTC U Ultra</li>
+                  <li>Pixel XL</li>
+              </ul>
+          </div>,
+          document.getElementById("container"),
+          function(){ console.log("рендеринг элемента React");}
+      )
+    </script>
+</body>
+</html>

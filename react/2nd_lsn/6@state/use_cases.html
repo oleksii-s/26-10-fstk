@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Компоненты в React</title>
+</head>
+<body>
+    <div id="header"></div>
+
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+
+    <script type="text/babel">
+        class Hello extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {welcome: "Добро пожаловать на сайт!"};
+            }
+            render() {
+                return <h1>{this.state.welcome}</h1>;
+            }
+        }
+        ReactDOM.render(
+            <Hello />,
+            document.getElementById("header")
+        )
+
+
+        // React.createClass() example
+        var Hello = React.createClass({
+            getInitialState : function(){
+                return {welcome: "Добро пожаловать на сайт!"};
+            },
+            render: function() {
+                return (<h1>{this.state.welcome}</h1>);
+            }
+        });
+        ReactDOM.render(
+            <Hello />,
+            document.getElementById("header")
+        )
+    </script>
+</body>
+</html>

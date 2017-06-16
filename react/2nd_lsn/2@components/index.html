@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hello React</title>
+</head>
+<body>
+    <div id="header"></div>
+
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+
+    <script type="text/babel">
+        // Functional component.
+        // function Hello(props) {
+        //   return <h1>Hello, {props.name}</h1>;
+        // }
+
+        // Method-helper
+        // var Hello = React.createClass({
+        //     render: function(){
+        //         return(<h1>Привет, студент!</h1>);
+        //     }
+        // });
+
+        // Es6 arrow functions.
+        // var Hello =() => {
+        //     return (<h1>Привет, студент!</h1>);
+        // }
+
+        class Hello extends React.Component {
+          render() {
+            return <h1>Привет, студент!</h1>;
+          }
+        }
+
+        ReactDOM.render(
+            <Hello />,
+            document.getElementById("header")
+        )
+    </script>
+</body>
+</html>
