@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Маршруты в React</title>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/react-router@3.0.0/umd/ReactRouter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+
+    <script type="text/babel">
+    var Router = ReactRouter.Router;
+    var Route = ReactRouter.Route;
+    var IndexRoute = ReactRouter.IndexRoute;
+    var Link = ReactRouter.Link;
+    var browserHistory = ReactRouter.browserHistory;
+
+    var phones =[
+                    {id: 1, name: "iPhone 7"},
+                    {id: 2, name: "Google Pixel"},
+                    {id: 3, name: "HTC U Ultra"}
+                ];
+
+    class Products extends React.Component{
+        render(){
+            return <div>
+                        {this.props.children}
+                   </div>;
+        }
+    }
+     class ProductsList extends React.Component{
+        render(){
+            return <div>
+                <h2>Список товаров</h2>
+                <ul>
+                    {
+                        phones.map(function(item){
+                            return <li key={item.id}>
+                                     <Link to={`/products/${item.id}`}>{item.name}</Link>
+                                   </li>
+                        })
+                    }
+                </ul>
+            </div>;
+        }
+    }
+    class Product extends React.Component{
+        render(){
+            var prodId = this.props.params.id;
+            var phone;
+            for(var i=0; i<phones.length; i++){
+                if(phones[i].id==prodId){
+                    phone = phones[i];
+                    break;
+                }
+            }
+            if(phone===undefined)
+                return <h2>Товар не найден</h2>;
+            else
+                return <h2>Товар {phone.name}</h2>;
+        }
+    }
+    ReactDOM.render(
+        <Router history={browserHistory}>
+            <Route path="products" component={Products}>
+                <IndexRoute component={ProductsList} />
+                <Route path=":id" component={Product} />
+            </Route>
+        </Router>,
+        document.getElementById("container")
+    )
+    </script>
+</body>
+</html>
