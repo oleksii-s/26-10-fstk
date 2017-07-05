@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(styles of paragraph)</title>
+</head>
+<body>
+
+<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
+Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
+используя Lorem Ipsum для распечатки образцов.</p>
+
+<input type="button" name="changep" value="Change">
+
+<script>
+
+    var button = document.querySelector('input');
+    var paragraph = document.querySelector('p');
+    button.onclick = function(){
+        paragraph.style.fontSize = '24px';
+        paragraph.style.fontWeight="bold";
+        paragraph.style.color = '#0000ff';
+    }
+
+</script>
+
+</body>
+</html>

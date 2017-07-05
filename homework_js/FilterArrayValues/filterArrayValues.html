@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filterArrayValues</title>
+</head>
+<body>
+
+<script>
+
+    function filterArrayValues(arr, a, b) {
+
+        arr.reduceRight(function(previousValue, currentItem, index, arr) {
+            if (currentItem < a || currentItem > b ) {
+                arr.splice(index, 1);
+            }
+        },0);
+
+    }
+    var arr = [1,-1,2,3,4,4,4,11,12,15,90,3];
+    filterArrayValues(arr, 0, 4);
+    alert(arr);
+
+</script>
+
+</body>
+</html>

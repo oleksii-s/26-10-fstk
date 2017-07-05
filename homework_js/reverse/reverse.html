@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reverse</title>
+</head>
+<body>
+
+<script>
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    function reverse (num) {
+
+        var str1 = '';
+
+        for (var i = num.length - 1; i >=0; i--) {
+            str1 += num[i];
+        }
+        return alert (str1);
+    }
+
+    var number = prompt('Введите число', '');
+
+    while (!isNumeric(number)) {
+        number = prompt('Неверный формат данных. Введите число', '');
+    }
+
+    reverse(number);
+
+</script>
+
+</body>
+</html>

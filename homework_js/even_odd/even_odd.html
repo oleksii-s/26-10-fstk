@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Even_odd</title>
+</head>
+<body>
+
+<script>
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    function even_odd (num) {
+        if (num % 2 == 0) {
+            alert ('Четное число');
+        } else {
+            alert ('Нечетное число');
+        }
+    }
+
+    var number = prompt('Введите число', '');
+
+    while (!isNumeric(number)) {
+        number = prompt('Неверный формат данных. Введите число', '');
+    }
+
+    even_odd (number);
+
+</script>
+
+</body>
+</html>

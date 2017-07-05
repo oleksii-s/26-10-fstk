@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>favoriteSong</title>
+</head>
+<body>
+
+<script>
+
+    function Song(name) {
+        this.name = name;
+        this.played = Math.floor(Math.random() * 20);
+    }
+
+    var collectionSongs = [
+        song_first = new Song("Morroder"),
+        song_second = new Song("Groovejet"),
+        song_third = new Song("Sunny"),
+        song_fourth = new Song ("Faint"),
+        song_fifth = new Song ("Leave me")
+    ];
+
+    function favoriteSong (arr) {
+        arr.forEach(function(item, i) {
+            console.log("Index of song - " + i + "\nSong's name - " + item.name + "\nSong's played - " + item.played);
+        });
+    }
+
+    favoriteSong(collectionSongs);
+
+</script>
+
+</body>
+</html>

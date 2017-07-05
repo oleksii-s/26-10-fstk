@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>compareObjects</title>
+</head>
+<body>
+
+<script>
+
+    function compareObjects (obj1,obj2,prop) {
+        if (prop in obj1 && prop in obj2) {
+            obj1[prop] > obj2[prop] ? console.log(prop + ':' + obj1[prop]):console.log(prop + ':' + obj2[prop]);
+        } else {
+            console.log ('Такого свойства не существует!');
+        }
+    }
+
+    var obj1 = {
+      name: 'Xenon',
+        age: 25,
+        religion: 'Catholic'
+    };
+
+    var obj2 = new function() {
+        this.name = 'Peter';
+        this.age = 30;
+        this.religion = 'Pastafari';
+    };
+
+    compareObjects(obj1,obj2,"name");
+
+</script>
+
+</body>
+</html>

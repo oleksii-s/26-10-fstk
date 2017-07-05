@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(Sphere Volume)</title>
+
+</head>
+<body>
+
+
+<form>
+    <label for="numb">Введите радиус сферы:</label><br>
+    <input type="number" id="numb" name="rad">
+    <input type="button" value="Отправить">
+</form>
+
+
+<script>
+    var button = document.querySelector("input[type=button]");
+    function compute() {
+        var radius = + document.querySelector("input[type=number]").value;
+        if (radius <=0) {
+            alert ("Радиус должен быть положительным!");
+            return;
+        }
+        var volume = Math.round((4/3) * Math.PI * Math.pow(radius, 3) * 1000) / 1000;
+        var elem = document.body.appendChild(document.createElement('p'));
+        elem.innerHTML="Объем сферы равен " + volume;
+    }
+
+    button.addEventListener("click",compute);
+
+
+</script>
+</body>
+</html>

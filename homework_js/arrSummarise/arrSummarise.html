@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arrSummarise</title>
+</head>
+<body>
+
+<script>
+
+    function arrSummarise(arr) {
+        var new_arr = [];
+        arr.reduce(function(sum, current, index) {
+            return new_arr[index]=sum+current;
+        },0);
+
+        alert( new_arr );
+
+    }
+    var arr = [1,2,3,4,5];
+    arrSummarise(arr);
+
+</script>
+
+</body>
+</html>

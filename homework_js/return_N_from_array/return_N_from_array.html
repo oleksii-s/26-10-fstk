@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Return N from array</title>
+</head>
+<body>
+<script>
+
+    function nFromArray(arr) {
+
+        var evenArr = arr.filter(function(number) {
+            return number % 2 === 0;
+        });
+
+        if (evenArr.length === 1) {
+            return alert (evenArr);
+        }else {
+            evenArr = arr.filter(function(number) {
+                return number % 2 !== 0;
+            });
+            return alert (evenArr);
+        }
+
+    }
+    var arr = [3, 2, 4, 0, 100, 4, 12, 2602, 36, 36, 48, 54, 66, 78];
+    nFromArray(arr);
+
+</script>
+</body>
+</html>
